@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="textarea__label"
+  />
+  <textarea
+    class="textarea"
+    data-testid="arke-textarea"
+  />
+</DocumentFragment>
+`;

@@ -1,0 +1,26 @@
+@import "../src/components/Autocomplete/Autocomplete.css";
+@import "../src/components/Button/Button.css";
+@import "../src/components/Checkbox/Checkbox.css";
+@import "../src/components/Chip/Chip.css";
+@import "../src/components/Dialog/Dialog.css";
+@import "../src/components/Input/Input.css";
+@import "../src/components/Json/Json.css";
+@import "../src/components/Popover/Popover.css";
+@import "../src/components/Select/Select.css";
+@import "../src/components/Spinner/Spinner.css";
+@import "../src/components/Tabs/Tabs.css";
+@import "../src/components/Badge/Badge.css";
+@import "../src/components/Avatar/Avatar.css";
+@import "../src/components/Switch/Switch.css";
+@import "../src/components/Radio/Radio.css";
+@import "../src/components/RadioGroup/RadioGroup.css";
+@import "../src/components/Menu/Menu.css";
+@import "../src/components/Stepper/Stepper.css";
+@import "../src/components/Skeleton/Skeleton.css";
+@import "../src/components/Drawer/Drawer.css";
+@import "../src/components/Breadcrumb/Breadcrumb.css";
+@import "../src/components/TextArea/TextArea.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

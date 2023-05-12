@@ -1,0 +1,46 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  Release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.1
+        with:
+         version: 7.1.7
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build package
+        run: pnpm build
+      - name: Test
+        run: pnpm test
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+      - name: Setup semantic-release
+        run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog -D
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PA_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+  Deploy-Docs:
+    name: Deploy Docs
+    uses: './.github/workflows/docs.yml'
+    secrets: inherit
+    needs: Release

@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stepper should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex-column justify-center items-center h-10"
+    data-testid="arke-stepper"
+  >
+    <section
+      class="flex w-full"
+    >
+      <div
+        class="step"
+        data-testid="arke-step"
+      >
+        <div
+          class="z-10 bg-background"
+        >
+          <div
+            class="w-10 h-10 flex justify-center items-center rounded-full bg-secondary text-background drop-shadow-md"
+          >
+            <span
+              class="select-none"
+            >
+              1
+            </span>
+          </div>
+        </div>
+        <section
+          class="px-4 mt-2 text-center"
+        >
+          <span
+            class="font-bold"
+          >
+            first
+          </span>
+        </section>
+      </div>
+      <div
+        class="step"
+        data-testid="arke-step"
+      >
+        <div
+          class="z-10 bg-background"
+        >
+          <div
+            class="w-10 h-10 flex justify-center items-center rounded-full border-neutral border-2 opacity-70"
+          >
+            <span
+              class="select-none"
+            >
+              2
+            </span>
+          </div>
+        </div>
+        <section
+          class="px-4 mt-2 text-center"
+        >
+          <span
+            class=""
+          >
+            second
+          </span>
+        </section>
+      </div>
+      <div
+        class="step"
+        data-testid="arke-step"
+      >
+        <div
+          class="z-10 bg-background"
+        >
+          <div
+            class="w-10 h-10 flex justify-center items-center rounded-full border-neutral border-2 opacity-70"
+          >
+            <span
+              class="select-none"
+            >
+              3
+            </span>
+          </div>
+        </div>
+        <section
+          class="px-4 mt-2 text-center"
+        >
+          <span
+            class=""
+          >
+            third
+          </span>
+        </section>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;
