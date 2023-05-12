@@ -1,3 +1,10 @@
+## [0.24.2](https://github.com/arkemishub/ui/compare/v0.24.1...v0.24.2) (2023-05-12)
+
+
+### Bug Fixes
+
+* input type ([#1](https://github.com/arkemishub/ui/issues/1)) ([5895204](https://github.com/arkemishub/ui/commit/5895204a9e62bbfed26af7b6731d221dacd481a8))
+
 ## [0.24.1](https://github.com/arkemishub/ui/compare/v0.24.0...v0.24.1) (2023-04-19)
 
 
