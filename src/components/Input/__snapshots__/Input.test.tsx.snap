@@ -6,6 +6,7 @@ exports[`Input should match snapshot 1`] = `
     <input
       class="input"
       data-testid="arke-input"
+      type="text"
       value="Value"
     />
   </div>

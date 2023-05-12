@@ -43,6 +43,7 @@ function Input({
           hasError && "input--error",
           className
         )}
+        type={type}
         {...props}
       />
       {helperText && (
