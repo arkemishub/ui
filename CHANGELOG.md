@@ -1,3 +1,10 @@
+## [0.24.3](https://github.com/arkemishub/ui/compare/v0.24.2...v0.24.3) (2023-06-09)
+
+
+### Bug Fixes
+
+* dialog and select behaviour with overflow ([#6](https://github.com/arkemishub/ui/issues/6)) ([9c325a3](https://github.com/arkemishub/ui/commit/9c325a367f9ffb635f5447d5eaefd807e809b6da))
+
 ## [0.24.2](https://github.com/arkemishub/ui/compare/v0.24.1...v0.24.2) (2023-05-12)
 
 
