@@ -15,11 +15,11 @@
  */
 
 .dialog {
-    @apply mx-auto w-full rounded bg-background text-background-contrast px-6 py-4 max-w-xl
+    @apply mx-auto w-full rounded bg-background text-background-contrast overflow-y-auto max-w-xl max-h-[80vh]
 }
 
 .dialog__container {
-    @apply relative z-50
+    @apply relative z-50 px-6 py-4
 }
 
 .dialog__overlay {
@@ -31,7 +31,11 @@
 }
 
 .dialog__head {
-    @apply mb-6 flex gap-4
+    @apply bg-background flex gap-4 sticky top-0 z-10 px-6 pt-4
+}
+
+.dialog__body {
+    @apply px-6 py-4
 }
 
 .dialog__title {
