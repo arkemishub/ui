@@ -19,9 +19,21 @@ import type { IDialogProps } from "./Dialog.types";
 import { Button } from "../Button";
 import { twMerge } from "tailwind-merge";
 
-function Dialog({ open, onClose, title, children, className }: IDialogProps) {
+function Dialog({
+  open,
+  onClose,
+  title,
+  children,
+  className,
+  initialFocus,
+}: IDialogProps) {
   return (
-    <HeadlessDialog className="dialog__container" open={open} onClose={onClose}>
+    <HeadlessDialog
+      initialFocus={initialFocus}
+      className="dialog__container"
+      open={open}
+      onClose={onClose}
+    >
       <div className="dialog__overlay" aria-hidden="true" />
       <div className="dialog__overlay__content">
         <HeadlessDialog.Panel
