@@ -30,7 +30,7 @@ describe("Autocomplete", () => {
       <Autocomplete
         onChange={() => null}
         values={mockValues}
-        renderLabel={(val) => val.id}
+        getDisplayValue={(val) => val.id}
       />
     );
     expect(asFragment()).toMatchSnapshot();
@@ -41,7 +41,7 @@ describe("Autocomplete", () => {
       <Autocomplete
         onChange={() => null}
         values={mockValues}
-        renderLabel={(val) => val.id}
+        getDisplayValue={(val) => val.id}
       />
     );
     expect(getByTestId("arke-autocomplete")).toBeInTheDocument();
@@ -53,7 +53,7 @@ describe("Autocomplete", () => {
       <Autocomplete
         onChange={() => null}
         values={mockValues}
-        renderLabel={(val) => val.id}
+        getDisplayValue={(val) => val.id}
         onInputChange={onInputChange}
       />
     );
@@ -69,7 +69,7 @@ describe("Autocomplete", () => {
       <Autocomplete
         onChange={() => null}
         values={mockValues}
-        renderLabel={(val) => val.name}
+        getDisplayValue={(val) => val.name}
       />
     );
     act(() => {
@@ -85,7 +85,7 @@ describe("Autocomplete", () => {
       <Autocomplete
         onChange={onChange}
         values={mockValues}
-        renderLabel={(val) => val.name}
+        getDisplayValue={(val) => val.name}
       />
     );
     act(() => {
@@ -104,13 +104,14 @@ describe("Autocomplete", () => {
       <Autocomplete
         onChange={() => null}
         values={mockValues}
-        renderLabel={(val) => val.name}
+        getDisplayValue={(val) => val.name}
+        renderLabel={(val) => val.id}
       />
     );
     act(() => {
       userEvent.type(getByTestId("arke-autocomplete"), "Test");
     });
-    expect(getByText("Test 1")).toBeInTheDocument();
+    expect(getByText("1")).toBeInTheDocument();
   });
 
   test("should render value when is selected", () => {
@@ -118,7 +119,7 @@ describe("Autocomplete", () => {
       <Autocomplete
         onChange={() => null}
         values={mockValues}
-        renderLabel={(val) => val.name}
+        getDisplayValue={(val) => val.name}
         value={mockValues[0]}
       />
     );
@@ -130,7 +131,7 @@ describe("Autocomplete", () => {
       <Autocomplete
         onChange={() => null}
         values={mockValues}
-        renderLabel={(val) => val.name}
+        getDisplayValue={(val) => val.name}
         multiple
         value={mockValues}
       />
@@ -145,7 +146,7 @@ describe("Autocomplete", () => {
       <Autocomplete
         onChange={onChange}
         values={mockValues}
-        renderLabel={(val) => val.name}
+        getDisplayValue={(val) => val.name}
         multiple
         value={[mockValues[0], mockValues[1]]}
       />

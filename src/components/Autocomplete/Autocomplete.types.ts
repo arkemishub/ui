@@ -19,7 +19,7 @@ import { ChangeEventHandler, ReactNode } from "react";
 type AutocompleteBaseProps<TValue> = {
   values?: TValue[];
   label?: string;
-  renderLabel: (val: TValue) => ReactNode;
+  renderLabel?: (val: TValue) => ReactNode;
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
   placeholder?: string;
@@ -28,6 +28,7 @@ type AutocompleteBaseProps<TValue> = {
   disabled?: boolean;
   onInputChange?: ChangeEventHandler<HTMLInputElement>;
   renderChips?: boolean;
+  getDisplayValue: (val: TValue) => string;
 };
 
 export type IAutocompleteProps<
