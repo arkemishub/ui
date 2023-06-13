@@ -1,3 +1,10 @@
+## [0.24.4](https://github.com/arkemishub/ui/compare/v0.24.3...v0.24.4) (2023-06-13)
+
+
+### Bug Fixes
+
+* add missing Drawer export ([#9](https://github.com/arkemishub/ui/issues/9)) ([585160a](https://github.com/arkemishub/ui/commit/585160a45760dc2c03acc29c408a3d1657c0cd9e))
+
 ## [0.24.3](https://github.com/arkemishub/ui/compare/v0.24.2...v0.24.3) (2023-06-09)
 
 
