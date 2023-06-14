@@ -33,43 +33,49 @@ function Drawer({
   useClickOutside(ref, onClose);
   return (
     <>
-      {open && (
-        <div className="drawer__overlay" aria-hidden="true">
-          <div
-            ref={ref}
-            data-testid="arke-drawer"
-            role="presentation"
-            className={twMerge(
-              "drawer",
-              position === "right" && "drawer__right",
-              position === "left" && "drawer__left",
-              className
-            )}
-          >
-            <div className="drawer__head">
-              {title && <p className="drawer__title">{title}</p>}
-              <Button onClick={onClose} className="drawer__close__button">
-                <svg
-                  data-testid="arke-drawer-close"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="h-4 w-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </Button>
-            </div>
-            {children}
-          </div>
+      <div
+        className={twMerge("drawer__overlay", !open ? "hidden" : "visible")}
+        aria-hidden="true"
+      />
+      <div
+        ref={ref}
+        data-testid="arke-drawer"
+        role="presentation"
+        className={twMerge(
+          "drawer",
+          position === "right" && "drawer__right",
+          position === "left" && "drawer__left",
+          position === "bottom" && "drawer__bottom",
+          position === "top" && "drawer__top",
+          !open && position === "left" ? "-translate-x-full" : "",
+          !open && position === "right" ? "translate-x-full" : "",
+          !open && position === "bottom" ? "translate-y-full" : "",
+          !open && position === "top" ? "-translate-y-full" : "",
+          className
+        )}
+      >
+        <div className="drawer__head">
+          {title && <p className="drawer__title">{title}</p>}
+          <Button onClick={onClose} className="drawer__close__button">
+            <svg
+              data-testid="arke-drawer-close"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </Button>
         </div>
-      )}
+        {children}
+      </div>
     </>
   );
 }

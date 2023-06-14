@@ -53,10 +53,10 @@ describe("Drawer", () => {
   });
 
   it("should not render drawer when open prop is false", () => {
-    const { queryAllByTestId } = render(
+    const { getByTestId } = render(
       <Drawer open={false} onClose={() => null} />
     );
-    expect(queryAllByTestId("arke-drawer")).toHaveLength(0);
+    expect(getByTestId("arke-drawer")).toHaveClass("-translate-x-full");
   });
 
   it("should call onClose when close button is clicked", () => {
