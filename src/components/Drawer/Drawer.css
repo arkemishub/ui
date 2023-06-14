@@ -15,7 +15,7 @@
  */
 
 .drawer {
-    @apply flex absolute flex-col w-full max-w-[350px] bg-background text-background-contrast px-6 py-4
+    @apply flex flex-col w-full h-full bg-background text-background-contrast px-6 py-4 overflow-y-auto fixed z-40 transition-transform
 }
 
 .drawer__overlay {
@@ -31,11 +31,19 @@
 }
 
 .drawer__right {
-    @apply right-0 h-full
+    @apply top-0 right-0 h-full
 }
 
 .drawer__left {
-    @apply left-0 h-full
+    @apply top-0 left-0 h-full
+}
+
+.drawer__bottom {
+    @apply bottom-0 w-full max-w-[inherit]
+}
+
+.drawer__top {
+    @apply top-0 w-full max-w-[inherit]
 }
 
 .drawer__close__button {
