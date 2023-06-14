@@ -15,7 +15,7 @@
  */
 
 .drawer {
-    @apply flex flex-col w-full h-full bg-background text-background-contrast px-6 py-4 overflow-y-auto fixed z-40 transition-transform
+    @apply flex flex-col w-full h-full bg-background text-background-contrast px-6 py-4 overflow-y-auto fixed z-40 transition-transform duration-300
 }
 
 .drawer__overlay {
@@ -39,11 +39,11 @@
 }
 
 .drawer__bottom {
-    @apply bottom-0 w-full max-w-[inherit]
+    @apply left-0 bottom-0 w-full max-w-[inherit]
 }
 
 .drawer__top {
-    @apply top-0 w-full max-w-[inherit]
+    @apply left-0 top-0 w-full max-w-[inherit]
 }
 
 .drawer__close__button {
