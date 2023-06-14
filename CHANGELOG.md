@@ -1,3 +1,10 @@
+## [0.25.1](https://github.com/arkemishub/ui/compare/v0.25.0...v0.25.1) (2023-06-14)
+
+
+### Bug Fixes
+
+* drawer onClose outside drawer ([bfb01fe](https://github.com/arkemishub/ui/commit/bfb01fe9c90d92ea0bcd45b6a0ad644d16d6dd17))
+
 # [0.25.0](https://github.com/arkemishub/ui/compare/v0.24.4...v0.25.0) (2023-06-14)
 
 
