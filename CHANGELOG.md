@@ -1,3 +1,10 @@
+# [0.25.0](https://github.com/arkemishub/ui/compare/v0.24.4...v0.25.0) (2023-06-14)
+
+
+### Features
+
+* drawer animation improvements ([#10](https://github.com/arkemishub/ui/issues/10)) ([b5068ac](https://github.com/arkemishub/ui/commit/b5068aca1782523a808a07ead87796c34e5396cb))
+
 ## [0.24.4](https://github.com/arkemishub/ui/compare/v0.24.3...v0.24.4) (2023-06-13)
 
 
