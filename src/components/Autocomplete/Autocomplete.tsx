@@ -51,23 +51,24 @@ function Autocomplete<TValue>({
   helperText,
   onChange,
   onInputChange,
+  getDisplayValue,
   renderChips = true,
 }: IAutocompleteProps<TValue, boolean | undefined>): JSX.Element {
   const [inputValue, setInputValue] = useState<string>("");
   type TActualValue = true extends typeof multiple ? TValue[] : TValue;
 
-  const onRenderLabel = (value: TValue) =>
+  const onGetDisplayValue = (value: TValue) =>
     (value &&
       (Array.isArray(value)
-        ? (value as TValue[]).map((val) => renderLabel(val)).join(", ")
-        : renderLabel(value))) ??
+        ? (value as TValue[]).map((val) => getDisplayValue(val)).join(", ")
+        : getDisplayValue(value))) ??
     "";
 
   useEffect(() => {
     if (multiple) {
       setInputValue("");
     } else {
-      setInputValue(onRenderLabel(value as TValue));
+      setInputValue(onGetDisplayValue(value as TValue));
     }
   }, [value]);
 
@@ -98,7 +99,7 @@ function Autocomplete<TValue>({
             <Combobox.Input
               as={Fragment}
               onChange={(e) => onInputChange?.(e)}
-              displayValue={onRenderLabel}
+              displayValue={onGetDisplayValue}
             >
               <>
                 <div
@@ -118,7 +119,7 @@ function Autocomplete<TValue>({
                         className="autocomplete__chip"
                         onDelete={() => handleOnDelete(index)}
                       >
-                        {onRenderLabel(item)}
+                        {onGetDisplayValue(item)}
                       </Chip>
                     ))}
                   <input
@@ -169,7 +170,7 @@ function Autocomplete<TValue>({
                       (selected || active) && "autocomplete__option--active"
                     )}
                   >
-                    {renderLabel?.(val)}
+                    {renderLabel ? renderLabel(val) : getDisplayValue(val)}
                   </li>
                 )}
               </Combobox.Option>

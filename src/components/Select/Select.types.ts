@@ -22,7 +22,7 @@ export type ISelectProps<T extends unknown> = {
   onChange: (val: T) => void;
   multiple?: boolean;
   label?: string;
-  renderLabel: (val: T) => string;
+  renderLabel: (val: T) => ReactNode;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
   helperText?: string;
