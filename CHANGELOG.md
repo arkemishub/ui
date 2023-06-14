@@ -1,3 +1,10 @@
+## [0.25.2](https://github.com/arkemishub/ui/compare/v0.25.1...v0.25.2) (2023-06-14)
+
+
+### Bug Fixes
+
+* use ReactNode instead of string for renderLabel ([#7](https://github.com/arkemishub/ui/issues/7)) ([0d6535a](https://github.com/arkemishub/ui/commit/0d6535a292af41ab5018bb3df1063ff1e629fc7e))
+
 ## [0.25.1](https://github.com/arkemishub/ui/compare/v0.25.0...v0.25.1) (2023-06-14)
 
 

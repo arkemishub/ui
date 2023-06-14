@@ -1,6 +1,6 @@
 {
   "name": "@arkejs/ui",
-  "version": "0.25.1",
+  "version": "0.25.2",
   "description": "Arke UI components library based on tailwindcss",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
