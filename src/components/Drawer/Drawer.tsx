@@ -30,7 +30,7 @@ function Drawer({
   position = "left",
 }: IDrawerProps) {
   const ref = useRef<any>();
-  useClickOutside(ref, onClose);
+  useClickOutside(ref, open ? onClose : () => null);
   return (
     <>
       <div
