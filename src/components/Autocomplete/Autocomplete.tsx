@@ -71,6 +71,7 @@ function Autocomplete<TValue>({
   renderChips = true,
   nullable,
   clearable,
+  className,
 }: IAutocompleteProps<
   TValue,
   boolean | undefined,
@@ -149,7 +150,8 @@ function Autocomplete<TValue>({
                     "autocomplete__input__container",
                     multiple && "autocomplete__input__container--multiple",
                     hasError && "autocomplete__input__container--error",
-                    startAdornment && "pl-10"
+                    startAdornment && "pl-10",
+                    className
                   )}
                 >
                   {Array.isArray(value) &&
