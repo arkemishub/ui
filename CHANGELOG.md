@@ -1,3 +1,10 @@
+# [0.26.0](https://github.com/arkemishub/ui/compare/v0.25.2...v0.26.0) (2023-06-16)
+
+
+### Features
+
+* add nullable and clearable to Autocomplete ([#12](https://github.com/arkemishub/ui/issues/12)) ([8f4773c](https://github.com/arkemishub/ui/commit/8f4773c62c54e0e0fb207db733facb009a8b1b21))
+
 ## [0.25.2](https://github.com/arkemishub/ui/compare/v0.25.1...v0.25.2) (2023-06-14)
 
 
