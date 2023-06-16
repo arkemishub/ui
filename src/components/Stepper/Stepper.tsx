@@ -29,7 +29,6 @@ export function Stepper({ children, active, color }: IStepperProps) {
           index: i,
           color: color,
         });
-        console.log(newChild);
         acc.push(newChild);
       }
       return acc;

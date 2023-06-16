@@ -28,27 +28,41 @@ type AutocompleteBaseProps<TValue> = {
   disabled?: boolean;
   onInputChange?: ChangeEventHandler<HTMLInputElement>;
   renderChips?: boolean;
-  getDisplayValue: (val: TValue) => string;
+  getDisplayValue: (val: TValue) => string | undefined;
 };
 
 export type IAutocompleteProps<
   TValue,
-  TMultiple extends boolean | undefined
+  TMultiple extends boolean | undefined,
+  TNullable extends boolean | undefined
 > = Extract<
   | ({
+      nullable: true;
       multiple: true;
       onChange: (val: TValue[]) => void;
       value?: TValue[];
+      clearable?: boolean;
     } & AutocompleteBaseProps<TValue>)
   | ({
-      multiple: false;
-      onChange: (val: TValue) => void;
-      value?: TValue;
+      nullable: true;
+      multiple?: false;
+      onChange: (val: TValue | null) => void;
+      value?: TValue | null;
+      clearable?: boolean;
     } & AutocompleteBaseProps<TValue>)
   | ({
+      nullable?: false;
+      multiple: true;
+      onChange: (val: TValue[]) => void;
+      value?: TValue[];
+      clearable?: never;
+    } & AutocompleteBaseProps<TValue>)
+  | ({
+      nullable?: false;
       multiple?: false;
       onChange: (val: TValue) => void;
       value?: TValue;
+      clearable?: never;
     } & AutocompleteBaseProps<TValue>),
-  { multiple?: TMultiple }
+  { multiple?: TMultiple; nullable?: TNullable }
 >;

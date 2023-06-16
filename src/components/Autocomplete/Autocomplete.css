@@ -48,6 +48,13 @@
     @apply bg-primary text-primary-contrast
 }
 
+.autocomplete__clear {
+    @apply mr-2 !px-0
+}
+
+.autocomplete__clear__icon {
+    @apply w-4 h-4 stroke-2 cursor-pointer stroke-neutral
+}
 
 .autocomplete__endAdornment {
     @apply absolute inset-y-0 right-0 flex items-center pr-4
