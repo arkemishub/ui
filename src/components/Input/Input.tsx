@@ -16,6 +16,7 @@
 
 import type { IInputProps } from "./Input.types";
 import { twMerge } from "tailwind-merge";
+import { useRef } from "react";
 
 function Input({
   type,
@@ -25,8 +26,14 @@ function Input({
   helperText,
   hasError = false,
   disabled = false,
+  startAdornment,
+  endAdornment,
   ...props
 }: IInputProps) {
+  const startAdornmentRef = useRef<HTMLDivElement>(null);
+
+  console.log(startAdornmentRef.current);
+
   return (
     <div>
       {label && (
@@ -34,18 +41,28 @@ function Input({
           {label}
         </label>
       )}
-      <input
-        data-testid="arke-input"
-        disabled={disabled}
-        className={twMerge(
-          "input",
-          fullWidth && "w-full",
-          hasError && "input--error",
-          className
+      <div className={twMerge("input__container", fullWidth && "w-full")}>
+        {startAdornment && (
+          <div ref={startAdornmentRef} className="input__startAdornment">
+            {startAdornment}
+          </div>
         )}
-        type={type}
-        {...props}
-      />
+        <input
+          data-testid="arke-input"
+          disabled={disabled}
+          className={twMerge(
+            "input",
+            fullWidth && "w-full",
+            hasError && "input--error",
+            className
+          )}
+          type={type}
+          {...props}
+        />
+        {endAdornment && (
+          <div className="input__endAdornment">{endAdornment}</div>
+        )}
+      </div>
       {helperText && (
         <div
           className={twMerge(

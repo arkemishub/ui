@@ -21,4 +21,6 @@ export type IInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   helperText?: string;
   hasError?: boolean;
   label?: string;
+  startAdornment?: React.ReactNode;
+  endAdornment?: React.ReactNode;
 };

@@ -116,7 +116,7 @@ function Autocomplete<TValue>({
   }
 
   const shouldDisplayClear = useMemo(
-    () => clearable && nullable && value !== null,
+    () => clearable && nullable && typeof value !== "undefined",
     [clearable, nullable, value]
   );
 

@@ -14,6 +14,18 @@
  * limitations under the License.
  */
 
+.input__container {
+    @apply relative inline-block
+}
+
+.input__startAdornment {
+    @apply absolute left-0 top-0 h-full flex items-center p-2
+}
+
+.input__endAdornment {
+    @apply absolute right-0 top-0 h-full flex items-center p-2
+}
+
 .input {
     @apply min-h-[40px] min-w-[120px] border border-neutral rounded-theme bg-background text-background-contrast px-4 focus:ring-0 focus:outline-offset-0 focus:outline-primary disabled:opacity-50 disabled:cursor-not-allowed
 }
