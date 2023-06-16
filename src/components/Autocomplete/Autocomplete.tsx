@@ -16,7 +16,7 @@
 
 import { Combobox, Transition } from "@headlessui/react";
 import { twMerge } from "tailwind-merge";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { IAutocompleteProps } from "./Autocomplete.types";
 import { Chip } from "../Chip";
 
@@ -37,6 +37,22 @@ const ArrowIcon = () => (
   </svg>
 );
 
+const ClearIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth="1.5"
+    className="autocomplete__clear__icon"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M6 18L18 6M6 6l12 12"
+    />
+  </svg>
+);
+
 function Autocomplete<TValue>({
   values,
   value,
@@ -53,7 +69,13 @@ function Autocomplete<TValue>({
   onInputChange,
   getDisplayValue,
   renderChips = true,
-}: IAutocompleteProps<TValue, boolean | undefined>): JSX.Element {
+  nullable,
+  clearable,
+}: IAutocompleteProps<
+  TValue,
+  boolean | undefined,
+  boolean | undefined
+>): JSX.Element {
   const [inputValue, setInputValue] = useState<string>("");
   type TActualValue = true extends typeof multiple ? TValue[] : TValue;
 
@@ -64,12 +86,17 @@ function Autocomplete<TValue>({
         : getDisplayValue(value))) ??
     "";
 
-  useEffect(() => {
+  function updateInputValue() {
     if (multiple) {
       setInputValue("");
     } else {
-      setInputValue(onGetDisplayValue(value as TValue));
+      if (inputValue !== onGetDisplayValue(value as TValue))
+        setInputValue(onGetDisplayValue(value as TValue));
     }
+  }
+
+  useEffect(() => {
+    updateInputValue();
   }, [value]);
 
   function handleOnDelete(index: number) {
@@ -79,14 +106,29 @@ function Autocomplete<TValue>({
     }
   }
 
+  function handleBlur() {
+    updateInputValue();
+  }
+
+  function handleClear() {
+    // @ts-ignore
+    onChange(multiple ? [] : null);
+  }
+
+  const shouldDisplayClear = useMemo(
+    () => clearable && nullable && value !== null,
+    [clearable, nullable, value]
+  );
+
   return (
     <div className="relative">
       <Combobox
         // temporary fix for HeadlessUI types - https://github.com/tailwindlabs/headlessui/issues/1895
-        value={value}
+        value={typeof value === "undefined" && multiple ? [] : value}
         multiple={multiple as undefined}
         onChange={onChange}
         disabled={disabled}
+        nullable={nullable as undefined}
       >
         {label && <Combobox.Label className="label">{label}</Combobox.Label>}
         <div className="relative flex items-center">
@@ -131,6 +173,7 @@ function Autocomplete<TValue>({
                       setInputValue(e.target.value);
                       onInputChange?.(e);
                     }}
+                    onBlur={handleBlur}
                     onKeyDown={(e) => {
                       if (
                         multiple &&
@@ -147,9 +190,17 @@ function Autocomplete<TValue>({
               </>
             </Combobox.Input>
           </Combobox.Button>
-          <Combobox.Button className="autocomplete__endAdornment">
-            {!endAdornment ? <ArrowIcon /> : endAdornment}
-          </Combobox.Button>
+
+          <div className="autocomplete__endAdornment">
+            {shouldDisplayClear && (
+              <button className="autocomplete__clear" onClick={handleClear}>
+                <ClearIcon />
+              </button>
+            )}
+            <Combobox.Button>
+              {!endAdornment ? <ArrowIcon /> : endAdornment}
+            </Combobox.Button>
+          </div>
         </div>
         <Transition
           as={Fragment}

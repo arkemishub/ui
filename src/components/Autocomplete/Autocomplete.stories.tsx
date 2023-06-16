@@ -31,8 +31,8 @@ export default {
   title: "Autocomplete",
   component: Autocomplete,
   argTypes: {
-    renderLabel: {
-      defaultValue: (val: { name: string }) => val.name,
+    getDisplayValue: {
+      defaultValue: (val: { name: string }) => val?.name,
     },
     values: {
       defaultValue: departments,
@@ -43,7 +43,7 @@ export default {
   },
 };
 
-export const Default = (args: IAutocompleteProps<unknown, false>) => {
+export const Default = (args: IAutocompleteProps<unknown, false, false>) => {
   const [{ value, values }, updateArgs] = useArgs();
   const [search, setSearch] = useState("");
 
@@ -64,11 +64,65 @@ export const Default = (args: IAutocompleteProps<unknown, false>) => {
   );
 };
 
-export const Multiple = (args: IAutocompleteProps<unknown, true>) => {
+export const Nullable = (args: IAutocompleteProps<unknown, false, false>) => {
   const [{ value, values }, updateArgs] = useArgs();
   const [search, setSearch] = useState("");
 
   const handleChange = (val: unknown) => updateArgs({ value: val });
+
+  const filteredValues = values.filter((v: { name: string }) =>
+    v.name.toLowerCase().includes(search)
+  );
+
+  return (
+    <>
+      <button onClick={() => handleChange(null)}>reset</button>
+      <Autocomplete
+        {...args}
+        nullable
+        value={value}
+        values={filteredValues}
+        onInputChange={(e) => {
+          setSearch(e.target.value);
+        }}
+        onChange={handleChange}
+      />
+    </>
+  );
+};
+
+export const Clearable = (args: IAutocompleteProps<unknown, false, false>) => {
+  const [{ value, values }, updateArgs] = useArgs();
+  const [search, setSearch] = useState("");
+
+  const handleChange = (val: unknown) => updateArgs({ value: val });
+
+  const filteredValues = values.filter((v: { name: string }) =>
+    v.name.toLowerCase().includes(search)
+  );
+
+  return (
+    <Autocomplete
+      {...args}
+      nullable
+      clearable
+      value={value}
+      values={filteredValues}
+      onInputChange={(e) => {
+        setSearch(e.target.value);
+      }}
+      onChange={handleChange}
+    />
+  );
+};
+
+export const Multiple = (args: IAutocompleteProps<unknown, true, false>) => {
+  const [{ value, values }, updateArgs] = useArgs();
+  const [search, setSearch] = useState("");
+
+  const handleChange = (val: unknown) => {
+    updateArgs({ value: val });
+  };
 
   const filteredValues = values.filter((v: { name: string }) =>
     v.name.toLowerCase().includes(search)
@@ -79,6 +133,8 @@ export const Multiple = (args: IAutocompleteProps<unknown, true>) => {
       {...args}
       label="Select an item"
       value={value}
+      nullable
+      clearable
       values={filteredValues}
       onInputChange={(e) => setSearch(e.target.value)}
       onChange={handleChange}
@@ -87,7 +143,7 @@ export const Multiple = (args: IAutocompleteProps<unknown, true>) => {
   );
 };
 
-export const Icons = (args: IAutocompleteProps<unknown, false>) => {
+export const Icons = (args: IAutocompleteProps<unknown, false, false>) => {
   const [{ value, values }, updateArgs] = useArgs();
   const [search, setSearch] = useState("");
 
