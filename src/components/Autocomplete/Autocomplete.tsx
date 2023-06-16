@@ -124,7 +124,7 @@ function Autocomplete<TValue>({
     <div className="relative">
       <Combobox
         // temporary fix for HeadlessUI types - https://github.com/tailwindlabs/headlessui/issues/1895
-        value={typeof value === "undefined" && multiple ? [] : value}
+        value={typeof value === "undefined" ? (multiple ? [] : null) : value}
         multiple={multiple as undefined}
         onChange={onChange}
         disabled={disabled}
