@@ -21,8 +21,7 @@
 }
 
 .select__options {
-    @apply fixed z-20 mt-2 w-full max-w-[420px] max-h-[300px] overflow-y-auto rounded-theme-sm bg-background
-    text-background-contrast py-2 border border-neutral focus-visible:outline-none
+    @apply absolute z-20 mt-2 w-full rounded-theme-sm bg-background text-background-contrast py-2 border border-neutral
 }
 
 .select__option {
