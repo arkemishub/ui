@@ -20,6 +20,7 @@ export * from "./Avatar";
 export * from "./Badge";
 export * from "./Breadcrumb";
 export * from "./Button";
+export * from "./Calendar";
 export * from "./Checkbox";
 export * from "./Chip";
 export * from "./Dialog";
