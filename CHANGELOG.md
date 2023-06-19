@@ -1,3 +1,10 @@
+## [0.26.1](https://github.com/arkemishub/ui/compare/v0.26.0...v0.26.1) (2023-06-19)
+
+
+### Bug Fixes
+
+* adjust select options positioning ([#14](https://github.com/arkemishub/ui/issues/14)) ([b75619d](https://github.com/arkemishub/ui/commit/b75619da948dff3c0c0c3bffec683c7f602e7e19))
+
 # [0.26.0](https://github.com/arkemishub/ui/compare/v0.25.2...v0.26.0) (2023-06-16)
 
 
