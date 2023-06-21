@@ -1,3 +1,10 @@
+## [0.26.2](https://github.com/arkemishub/ui/compare/v0.26.1...v0.26.2) (2023-06-21)
+
+
+### Bug Fixes
+
+* adjust dialog overflow ([#15](https://github.com/arkemishub/ui/issues/15)) ([448a4ef](https://github.com/arkemishub/ui/commit/448a4efa7688d8507bfe102f48f8e685066c897c))
+
 ## [0.26.1](https://github.com/arkemishub/ui/compare/v0.26.0...v0.26.1) (2023-06-19)
 
 
