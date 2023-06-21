@@ -15,7 +15,7 @@
  */
 
 .dialog {
-    @apply mx-auto w-full rounded bg-background text-background-contrast overflow-y-auto max-w-xl max-h-[80vh]
+    @apply mx-auto w-full rounded bg-background text-background-contrast max-w-xl max-h-[80vh] flex flex-col overflow-hidden
 }
 
 .dialog__container {
@@ -35,7 +35,7 @@
 }
 
 .dialog__body {
-    @apply px-6 py-4
+    @apply px-6 py-4 overflow-y-auto
 }
 
 .dialog__title {
