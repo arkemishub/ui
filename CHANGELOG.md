@@ -1,3 +1,10 @@
+## [0.26.3](https://github.com/arkemishub/ui/compare/v0.26.2...v0.26.3) (2023-06-22)
+
+
+### Bug Fixes
+
+* adjust how children are mapped inside components ([#16](https://github.com/arkemishub/ui/issues/16)) ([d326164](https://github.com/arkemishub/ui/commit/d3261647020ab950245cd0ae208270bf2602a520))
+
 ## [0.26.2](https://github.com/arkemishub/ui/compare/v0.26.1...v0.26.2) (2023-06-21)
 
 
