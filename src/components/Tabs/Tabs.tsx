@@ -15,7 +15,15 @@
  */
 
 import { Tab as HeadlessTab } from "@headlessui/react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  Children,
+  isValidElement,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import type { ITabsProps } from "./Tabs.types";
 import { twMerge } from "tailwind-merge";
 import Tab from "./Tab";
@@ -24,27 +32,20 @@ import TabPanel from "./TabPanel";
 function Tabs({ children, onChange, active = 0, className }: ITabsProps) {
   const [selectedTab, setSelectedTab] = useState(active);
 
-  const { tabs, tabPanels, others } = useMemo(() => {
-    const rawChildren = Array.isArray(children) ? children : [children];
-    return rawChildren.reduce(
-      (acc, child) => {
-        const childType = child.type;
-        if (childType === Tab) {
-          acc.tabs.push(child);
-        } else if (childType === TabPanel) {
-          acc.tabPanels.push(child);
-        } else {
-          acc.others.push(child);
-        }
-
-        return acc;
-      },
-      {
-        tabs: [],
-        tabPanels: [],
-        others: [],
+  const tabs = useMemo(() => {
+    return Children.map(children, (child: ReactNode) => {
+      if (isValidElement(child) && child?.type === Tab) {
+        return child;
       }
-    );
+    });
+  }, [children]);
+
+  const tabPanels = useMemo(() => {
+    return Children.map(children, (child: ReactNode) => {
+      if (isValidElement(child) && child?.type === TabPanel) {
+        return child;
+      }
+    });
   }, [children]);
 
   const handleTabChange = useCallback(
@@ -63,7 +64,6 @@ function Tabs({ children, onChange, active = 0, className }: ITabsProps) {
       <HeadlessTab.List className={twMerge("tabs__list", className)}>
         {tabs}
       </HeadlessTab.List>
-      {others}
       <HeadlessTab.Panels>{tabPanels}</HeadlessTab.Panels>
     </HeadlessTab.Group>
   );

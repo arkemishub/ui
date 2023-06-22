@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React, { isValidElement, ReactComponentElement, useMemo } from "react";
+import React, { Children, isValidElement, useMemo } from "react";
 import { IBreadcrumbProps, ICrumb, ICrumbProps } from "./Breadcrumb.types";
 import { twMerge } from "tailwind-merge";
 
@@ -24,20 +24,13 @@ function Crumb({ children, className }: ICrumbProps) {
 
 const Breadcrumb = ({ children, className, ...props }: IBreadcrumbProps) => {
   const crumbs = useMemo(() => {
-    if (!children) return props.crumbs;
-
-    const rawChildren = Array.isArray(children) ? children : [children];
-    const childrenCrumbs = rawChildren.reduce(
-      (acc: ReactComponentElement<any>[], child) => {
-        if (child.type === Crumb) {
-          acc.push(child);
-        }
-        return acc;
-      },
-      []
-    );
-
-    return childrenCrumbs.length > 0 ? childrenCrumbs : props.crumbs;
+    const childrenCrumbs = Children.map(children, (child) => {
+      if (isValidElement(child) && child?.type === Crumb) {
+        return child;
+      }
+    });
+    if (!childrenCrumbs || childrenCrumbs?.length == 0) return props.crumbs;
+    return childrenCrumbs;
   }, [children, props.crumbs]);
 
   return (

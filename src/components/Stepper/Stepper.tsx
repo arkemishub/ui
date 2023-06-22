@@ -14,25 +14,22 @@
  * limitations under the License.
  */
 
-import { IStepperProps } from "./Stepper.types";
-import React, { ReactComponentElement, useMemo } from "react";
+import { IStepperProps, IStepProps } from "./Stepper.types";
+import React, { Children, cloneElement, isValidElement, useMemo } from "react";
 import Step from "./Step";
+
 export function Stepper({ children, active, color }: IStepperProps) {
   const steps = useMemo(() => {
-    const rawChildren = Array.isArray(children) ? children : [children];
-
-    return rawChildren.reduce((acc: ReactComponentElement<any>[], child, i) => {
-      if (child.type === Step) {
-        const newChild = React.cloneElement(child, {
+    return Children.map(children, (child, index) => {
+      if (isValidElement(child) && child?.type === Step) {
+        return cloneElement(child, {
           active: active,
-          key: i,
-          index: i,
+          key: index,
+          index,
           color: color,
-        });
-        acc.push(newChild);
+        } as Partial<IStepProps>);
       }
-      return acc;
-    }, []);
+    });
   }, [children, active, color]);
 
   return (
