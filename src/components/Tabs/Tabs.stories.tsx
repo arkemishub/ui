@@ -23,11 +23,14 @@ export default {
   component: Tabs,
 };
 
+const tabs = ["Tab 1", "Tab 2", "Tab 3"];
+
 export const Uncontrolled = () => {
   return (
     <Tabs>
-      <Tabs.Tab>Tab 1</Tabs.Tab>
-      <Tabs.Tab>Tab 2</Tabs.Tab>
+      {tabs.map((tab, index) => (
+        <Tabs.Tab key={index}>{tab}</Tabs.Tab>
+      ))}
 
       <Tabs.TabPanel>Content 1</Tabs.TabPanel>
       <Tabs.TabPanel>Content 2</Tabs.TabPanel>
@@ -38,8 +41,9 @@ export const Uncontrolled = () => {
 export const Controlled = (args: Partial<ITabsProps>) => {
   return (
     <Tabs {...args}>
-      <Tabs.Tab>Tab 1</Tabs.Tab>
-      <Tabs.Tab>Tab 2</Tabs.Tab>
+      {tabs.map((tab, index) => (
+        <Tabs.Tab key={index}>{tab}</Tabs.Tab>
+      ))}
 
       <Tabs.TabPanel>Content 1</Tabs.TabPanel>
       <Tabs.TabPanel>Content 2</Tabs.TabPanel>

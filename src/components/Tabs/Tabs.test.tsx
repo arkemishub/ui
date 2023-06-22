@@ -48,8 +48,8 @@ describe("Tabs", () => {
     expect(getByText("Panel 2")).toBeVisible();
   });
 
-  test("should render not recognized children", () => {
-    const { getByText } = render(
+  test("should not render not recognized children", () => {
+    const { queryAllByText } = render(
       <Tabs active={0}>
         <Tabs.Tab>Tab 1</Tabs.Tab>
         <Tabs.Tab>Tab 2</Tabs.Tab>
@@ -59,6 +59,6 @@ describe("Tabs", () => {
       </Tabs>
     );
 
-    expect(getByText("Not recognized")).toBeInTheDocument();
+    expect(queryAllByText("Not recognized")).toHaveLength(0);
   });
 });
