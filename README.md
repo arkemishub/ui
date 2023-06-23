@@ -22,5 +22,6 @@ module.exports = {
         // ... others
         './node_modules/@arkejs/ui/dist/**/*.{js,ts,jsx,tsx}',
     ],
+    plugins: [require("@arkejs/ui/plugin")],
 }
 ```
