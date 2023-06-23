@@ -1,3 +1,10 @@
+## [0.26.4](https://github.com/arkemishub/ui/compare/v0.26.3...v0.26.4) (2023-06-23)
+
+
+### Bug Fixes
+
+* add initialFocus prop to dialog ([#8](https://github.com/arkemishub/ui/issues/8)) ([7b5a6d5](https://github.com/arkemishub/ui/commit/7b5a6d549db47105902073f54b0b7ab776de6a0c))
+
 ## [0.26.3](https://github.com/arkemishub/ui/compare/v0.26.2...v0.26.3) (2023-06-22)
 
 
