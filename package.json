@@ -101,6 +101,7 @@
     "@monaco-editor/react": "^4.4.6",
     "@popperjs/core": "^2.11.6",
     "color": "^4.2.3",
+    "react-day-picker": "^8.7.1",
     "react-popper": "^2.3.0",
     "tailwind-merge": "^1.9.0"
   },

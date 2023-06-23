@@ -20,7 +20,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.1
         with:
-          version: 7.1.7
+          version: latest
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build package
