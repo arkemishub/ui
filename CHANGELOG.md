@@ -1,3 +1,10 @@
+## [0.27.1](https://github.com/arkemishub/ui/compare/v0.27.0...v0.27.1) (2023-06-29)
+
+
+### Bug Fixes
+
+* add className prop on Autocomplete ([#11](https://github.com/arkemishub/ui/issues/11)) ([05c7b28](https://github.com/arkemishub/ui/commit/05c7b28b15396cb9fd32108d32a18487f811809a))
+
 # [0.27.0](https://github.com/arkemishub/ui/compare/v0.26.4...v0.27.0) (2023-06-23)
 
 
