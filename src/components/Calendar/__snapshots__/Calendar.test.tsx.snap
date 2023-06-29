@@ -439,7 +439,7 @@ exports[`Calendar should match snapshot 1`] = `
                 role="presentation"
               >
                 <div
-                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn rdp-day_today"
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
                   role="gridcell"
                 >
                   23
@@ -509,7 +509,7 @@ exports[`Calendar should match snapshot 1`] = `
                 role="presentation"
               >
                 <div
-                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn rdp-day_today"
                   role="gridcell"
                 >
                   29

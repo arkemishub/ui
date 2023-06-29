@@ -29,6 +29,7 @@ type AutocompleteBaseProps<TValue> = {
   onInputChange?: ChangeEventHandler<HTMLInputElement>;
   renderChips?: boolean;
   getDisplayValue: (val: TValue) => string | undefined;
+  className?: string;
 };
 
 export type IAutocompleteProps<
