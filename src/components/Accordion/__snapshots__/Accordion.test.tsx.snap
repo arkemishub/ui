@@ -9,6 +9,8 @@ exports[`Accordion should match snapshot 1`] = `
     <div
       class="accordion__summary"
       data-testid="arke-accordion-summary"
+      role="button"
+      tabindex="0"
     >
       <div
         class="accordion__summary__content"
@@ -18,8 +20,6 @@ exports[`Accordion should match snapshot 1`] = `
       <div
         class="accordion__summary__icon cursor-pointer rotate-180"
         data-testid="arke-accordion-icon"
-        role="button"
-        tabindex="0"
       />
     </div>
     <div
