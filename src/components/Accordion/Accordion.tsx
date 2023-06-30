@@ -31,13 +31,16 @@ export const AccordionSummary = ({
   index,
   disabled,
 }: IAccordionSummaryProps) => (
-  <div className="accordion__summary" data-testid="arke-accordion-summary">
+  <div
+    className="accordion__summary"
+    tabIndex={index}
+    role="button"
+    onClick={() => !disabled && onChange?.()}
+    onKeyDown={() => !disabled && onChange?.()}
+    data-testid="arke-accordion-summary"
+  >
     <div className="accordion__summary__content">{children}</div>
     <div
-      tabIndex={index}
-      role="button"
-      onClick={() => !disabled && onChange?.()}
-      onKeyDown={() => !disabled && onChange?.()}
       className={twMerge(
         "accordion__summary__icon",
         !disabled ? "cursor-pointer" : "cursor-default",

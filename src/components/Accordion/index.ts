@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-export { default as Alert } from "./Accordion";
+export { default as Accordion } from "./Accordion";
 export * from "./Accordion.types";
