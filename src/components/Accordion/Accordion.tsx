@@ -14,7 +14,14 @@
  * limitations under the License.
  */
 
-import React, { cloneElement, ReactElement, ReactNode } from "react";
+import React, {
+  Children,
+  cloneElement,
+  isValidElement,
+  ReactElement,
+  ReactNode,
+  useMemo,
+} from "react";
 import {
   IAccordionDetailProps,
   IAccordionProps,
@@ -81,19 +88,33 @@ function Accordion({
   onChange,
   children,
 }: IAccordionProps) {
+  const content = useMemo(() => {
+    return Children.map(
+      children,
+      (
+        child: ReactElement<IAccordionProps & { index: number }>,
+        index: number
+      ) => {
+        if (isValidElement(child) && child?.type === AccordionSummary)
+          return cloneElement(child, {
+            expanded,
+            onChange,
+            index,
+            disabled,
+          });
+        if (isValidElement(child) && child?.type === AccordionDetail)
+          return cloneElement(child, { expanded });
+      }
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [children]);
+
   return (
     <div
       className={twMerge("accordion", disabled && "opacity-50")}
       data-testid="arke-accordion"
     >
-      {children.map((child: ReactElement, index: number) => (
-        <React.Fragment key={index}>
-          {child.type === AccordionSummary &&
-            cloneElement(child, { expanded, onChange, index, disabled })}
-          {child.type === AccordionDetail && cloneElement(child, { expanded })}
-        </React.Fragment>
-      ))}
-      {}
+      {content}
     </div>
   );
 }
