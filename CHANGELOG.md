@@ -1,3 +1,10 @@
+# [0.28.0](https://github.com/arkemishub/ui/compare/v0.27.1...v0.28.0) (2023-06-30)
+
+
+### Features
+
+* Add Accordion component ([#18](https://github.com/arkemishub/ui/issues/18)) ([0a2aa35](https://github.com/arkemishub/ui/commit/0a2aa35821898962c2b079be5204a2447c25d4c4))
+
 ## [0.27.1](https://github.com/arkemishub/ui/compare/v0.27.0...v0.27.1) (2023-06-29)
 
 
