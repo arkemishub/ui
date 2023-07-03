@@ -1,0 +1,58 @@
+@tailwind base;
+@import "./syntax-highlight.css";
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .docs__tabs__list {
+        @apply inline-flex w-auto mb-4
+    }
+
+    .docs__tabs__list .tab {
+        @apply border-b-2 border-transparent rounded-none text-left mr-8 text-sm whitespace-nowrap w-auto px-4
+    }
+
+    .docs__tabs__list .tab--selected {
+        @apply border-b-2 bg-transparent text-primary border-primary
+    }
+
+    .docs__table {
+        @apply rounded-theme border-2 border-background-400
+    }
+
+    .docs__table th:first-child {
+        @apply rounded-tl-theme-sm
+    }
+
+    .docs__table th:last-child {
+        @apply rounded-tr-theme-sm
+    }
+
+    .docs__table code {
+        @apply bg-background-400 rounded-theme-sm px-2 py-1
+    }
+
+    .docs__table table {
+        @apply w-full border-collapse
+    }
+
+    .docs__table table th {
+        @apply bg-background-400 text-left px-4 py-2
+    }
+
+    .docs__table table td {
+        @apply px-4 py-2 border-b border-background-400 text-sm
+    }
+
+    .docs__table table tr:last-child td {
+        @apply border-none
+    }
+
+    .docs__table .chip {
+        @apply text-neutral px-0
+    }
+
+    .section__heading {
+        @apply mb-4 mt-8 text-2xl font-semibold
+    }
+}

@@ -1,0 +1,11 @@
+div[data-rehype-pretty-code-fragment] {
+    overflow: hidden;
+}
+
+div[data-rehype-pretty-code-fragment] code {
+    display: grid;
+}
+
+div[data-rehype-pretty-code-fragment] pre {
+    overflow-x: auto;
+}

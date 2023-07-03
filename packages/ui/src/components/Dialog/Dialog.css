@@ -1,0 +1,47 @@
+/**
+ * Copyright 2023 Arkemis S.r.l.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.dialog {
+    @apply mx-auto w-full rounded bg-background text-background-contrast max-w-xl max-h-[80vh] flex flex-col overflow-hidden
+}
+
+.dialog__container {
+    @apply relative z-50 px-6 py-4
+}
+
+.dialog__overlay {
+    @apply fixed inset-0 bg-black/30
+}
+
+.dialog__overlay__content {
+    @apply fixed inset-0 flex items-center justify-center
+}
+
+.dialog__head {
+    @apply bg-background flex gap-4 sticky top-0 z-10 px-6 pt-4
+}
+
+.dialog__body {
+    @apply px-6 py-4 overflow-y-auto
+}
+
+.dialog__title {
+    @apply text-lg font-bold
+}
+
+.dialog__close__button {
+    @apply ml-auto h-6 w-6 p-1
+}
