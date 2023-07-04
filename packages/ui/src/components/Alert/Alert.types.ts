@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-import { PropsWithChildren, MouseEventHandler } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 export interface IAlertProps extends PropsWithChildren<{}> {
   color?: "error" | "warning" | "info" | "success";
   className?: string;
-  icon?: JSX.Element;
+  icon?: ReactNode;
   title?: string;
-  onClick?: MouseEventHandler<HTMLSpanElement>;
   onDismiss?(): void;
-  dismissable?: boolean;
+  dismissible?: boolean;
 }

@@ -31,7 +31,7 @@ const variants: IAlertProps[] = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-5 h-6"
+        className="h-6 w-5"
       >
         <path
           strokeLinecap="round"
@@ -50,7 +50,7 @@ const variants: IAlertProps[] = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-5 h-6"
+        className="h-6 w-5"
       >
         <path
           strokeLinecap="round"
@@ -69,7 +69,7 @@ const variants: IAlertProps[] = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-5 h-6"
+        className="h-6 w-5"
       >
         <path
           strokeLinecap="round"
@@ -88,7 +88,7 @@ const variants: IAlertProps[] = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-5 h-6"
+        className="h-6 w-5"
       >
         <path
           strokeLinecap="round"
@@ -128,9 +128,9 @@ function Alert({
   color,
   title,
   className,
-  onClick,
   onDismiss,
-  dismissable,
+  dismissible = false,
+  icon,
 }: IAlertProps) {
   const [visible, setVisible] = useState(true);
   const selected = useMemo(
@@ -150,18 +150,17 @@ function Alert({
             color === "success" && "alert--success",
             className
           )}
-          onClick={onClick}
         >
           <div className="flex justify-between">
             <div className="flex flex-col">
               <div className="flex gap-2">
-                {selected ? selected.icon : null}
+                {icon ?? selected?.icon ?? null}
                 {title}
               </div>
               {children}
             </div>
-            {dismissable && (
-              <div className="flex align-center">
+            {dismissible && (
+              <div className="align-center flex">
                 <DeleteButton
                   onClick={() => {
                     setVisible(false);

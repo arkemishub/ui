@@ -9,7 +9,7 @@ function Sidebar() {
           <Link
             key={index}
             href={href}
-            className="text-neutral text-sm hover:underline"
+            className="text-neutral block text-sm hover:underline"
           >
             {title}
           </Link>

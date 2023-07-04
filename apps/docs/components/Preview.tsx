@@ -1,7 +1,9 @@
 "use client";
 
-import React, { PropsWithChildren, Suspense } from "react";
+import React, { PropsWithChildren } from "react";
 import { Tabs } from "@arkejs/ui";
+import components from "@/lib/components";
+import { notFound } from "next/navigation";
 
 function Preview({
   name,
@@ -9,7 +11,12 @@ function Preview({
 }: PropsWithChildren<{
   name: string;
 }>) {
-  const Component = React.lazy(() => import(`../examples/${name}.tsx`));
+  const Component = components.find((item) => item.name === name)?.component;
+
+  if (!Component) {
+    return notFound();
+  }
+
   return (
     <>
       <Tabs className="docs__tabs__list">
@@ -17,9 +24,7 @@ function Preview({
         <Tabs.Tab>Code</Tabs.Tab>
         <Tabs.TabPanel>
           <div className="bg-background-400 rounded-theme flex h-[400px] items-center justify-center">
-            <Suspense>
-              <Component />
-            </Suspense>
+            <Component />
           </div>
         </Tabs.TabPanel>
         <Tabs.TabPanel>
