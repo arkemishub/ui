@@ -1,0 +1,49 @@
+---
+title: Badge
+---
+
+<Preview name="Badge" />
+
+## Props
+
+<PropsSpec
+    data={[
+        {
+            name: 'className',
+            type: 'string',
+        },
+        {
+            name: 'color',
+            type: ['primary', 'secondary'],
+            defaultValue: 'primary'
+        },
+        {
+            name: 'label',
+            type: 'string',
+        },
+        {
+            name: 'children',
+            type: 'ReactNode',
+        }
+    ]}
+/>
+
+
+## CSS
+<CSSSpec data={[
+    {
+        name: '.badge',
+        type: '',
+        description: 'Badge'
+    },
+    {
+        name: '.badge--primary',
+        type: 'variant',
+        description: 'Badge with primary accent'
+    },
+    {
+        name: '.badge--secondary',
+        type: 'variant',
+        description: 'Badge with secondary accent'
+    }
+]} />

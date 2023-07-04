@@ -27,14 +27,8 @@ function Avatar({
   size = "md",
 }: IAvatarProps) {
   const initials = useMemo(() => {
-    if (name) {
-      const splittedName = name.split(" ");
-      if (splittedName.length === 1 || splittedName[1] === "") {
-        return `${splittedName[0][0]}`;
-      } else if (splittedName.length >= 2)
-        return `${splittedName[0][0]}${splittedName[1][0]}`;
-    }
-    return "";
+    const words = name?.split(" ");
+    return words?.map((word) => word[0]).join("") ?? null;
   }, [name]);
 
   return (

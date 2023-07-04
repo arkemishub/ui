@@ -23,14 +23,13 @@ import type { IBadgeProps } from "./Badge.types";
 
 function Badge({ className, color, label, children }: IBadgeProps) {
   return (
-    <div>
+    <div className="relative">
       <div
         data-testid="arke-badge"
         className={twMerge(
           "badge",
           color === "primary" && "badge--primary",
           color === "secondary" && "badge--secondary",
-          label && "py-0 px-1.5 text-xs",
           className
         )}
       >

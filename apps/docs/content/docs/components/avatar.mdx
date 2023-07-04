@@ -1,0 +1,80 @@
+---
+title: Avatar
+---
+
+<Preview name="Avatar" />
+
+## Props
+
+<PropsSpec
+    data={[
+        {
+            name: 'className',
+            type: 'string',
+        },
+        {
+            name: 'color',
+            type: ['primary', 'secondary'],
+            defaultValue: 'primary'
+        },
+        {
+            name: 'name',
+            type: 'string',
+        },
+        {
+            name: 'size',
+            type: ['xs', 'sm', 'md', 'lg', 'xl', '2xl'],
+            defaultValue: 'md'
+        },
+    ]}
+/>
+
+
+## CSS
+<CSSSpec data={[
+    {
+        name: '.avatar',
+        type: '',
+        description: 'Avatar'
+    },
+    {
+        name: '.avatar--primary',
+        type: 'variant',
+        description: 'Avatar with primary accent'
+    },
+    {
+        name: '.avatar--secondary',
+        type: 'variant',
+        description: 'Avatar with secondary accent'
+    },
+    {
+        name: '.avatar--xs',
+        type: 'variant',
+        description: 'Avatar with extra small size'
+    },
+    {
+        name: '.avatar--sm',
+        type: 'variant',
+        description: 'Avatar with small size'
+    },
+    {
+        name: '.avatar--md',
+        type: 'variant',
+        description: 'Avatar with medium size'
+    },
+    {
+        name: '.avatar--lg',
+        type: 'variant',
+        description: 'Avatar with large size'
+    },
+    {
+        name: '.avatar--xl',
+        type: 'variant',
+        description: 'Avatar with extra large size'
+    },
+    {
+        name: '.avatar--2xl',
+        type: 'variant',
+        description: 'Avatar with double extra large size'
+    },
+]} />
