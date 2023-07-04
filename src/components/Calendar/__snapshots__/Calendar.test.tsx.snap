@@ -20,7 +20,7 @@ exports[`Calendar should match snapshot 1`] = `
             id="react-day-picker-1"
             role="presentation"
           >
-            July 2023
+            January 2022
           </div>
           <div
             class="space-x-1 flex items-center"
@@ -144,17 +144,6 @@ exports[`Calendar should match snapshot 1`] = `
                   class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
                   role="gridcell"
                 >
-                  25
-                </div>
-              </td>
-              <td
-                class="text-center text-sm p-0 relative"
-                role="presentation"
-              >
-                <div
-                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
-                  role="gridcell"
-                >
                   26
                 </div>
               </td>
@@ -200,6 +189,17 @@ exports[`Calendar should match snapshot 1`] = `
                   role="gridcell"
                 >
                   30
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  31
                 </div>
               </td>
               <td
@@ -255,7 +255,7 @@ exports[`Calendar should match snapshot 1`] = `
                 role="presentation"
               >
                 <div
-                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn rdp-day_today"
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
                   role="gridcell"
                 >
                   5
