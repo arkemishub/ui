@@ -2,7 +2,7 @@
 
 import React, { PropsWithChildren } from "react";
 import { Tabs } from "@arkejs/ui";
-import components from "@/lib/components";
+import components from "@/config/components";
 import { notFound } from "next/navigation";
 
 function Preview({

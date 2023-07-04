@@ -1,5 +1,6 @@
 import Button from "@/examples/Button";
 import Alert from "@/examples/Alert";
+import Autocomplete from "@/examples/Autocomplete";
 
 const components = [
   {
@@ -9,6 +10,10 @@ const components = [
   {
     name: "Alert",
     component: Alert,
+  },
+  {
+    name: "Autocomplete",
+    component: Autocomplete,
   },
 ];
 
