@@ -19,7 +19,7 @@ import { render } from "@testing-library/react";
 
 describe("Calendar", () => {
   it("should match snapshot", () => {
-    const { asFragment } = render(<Calendar />);
+    const { asFragment } = render(<Calendar month={new Date("01-01-2022")} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
