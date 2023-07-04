@@ -1,3 +1,10 @@
+## [0.28.1](https://github.com/arkemishub/ui/compare/v0.28.0...v0.28.1) (2023-07-04)
+
+
+### Bug Fixes
+
+* accordion exports ([#20](https://github.com/arkemishub/ui/issues/20)) ([4fb6291](https://github.com/arkemishub/ui/commit/4fb62912ee430c7151e256c76710ea6278a1f96d))
+
 # [0.28.0](https://github.com/arkemishub/ui/compare/v0.27.1...v0.28.0) (2023-06-30)
 
 
