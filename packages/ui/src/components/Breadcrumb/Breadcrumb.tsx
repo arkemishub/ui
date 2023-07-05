@@ -17,33 +17,29 @@
 "use client";
 
 import React, { Children, isValidElement, useMemo } from "react";
-import { IBreadcrumbProps, ICrumb, ICrumbProps } from "./Breadcrumb.types";
+import { IBreadcrumbProps, ICrumbProps } from "./Breadcrumb.types";
 import { twMerge } from "tailwind-merge";
 
 function Crumb({ children, className }: ICrumbProps) {
   return <span className={className}>{children}</span>;
 }
 
-const Breadcrumb = ({ children, className, ...props }: IBreadcrumbProps) => {
+const Breadcrumb = ({ children, className }: IBreadcrumbProps) => {
   const crumbs = useMemo(() => {
     const childrenCrumbs = Children.map(children, (child) => {
       if (isValidElement(child) && child?.type === Crumb) {
         return child;
       }
     });
-    if (!childrenCrumbs || childrenCrumbs?.length == 0) return props.crumbs;
+    if (!childrenCrumbs || childrenCrumbs?.length == 0) return null;
     return childrenCrumbs;
-  }, [children, props.crumbs]);
+  }, [children]);
 
   return (
     <ul className={twMerge("breadcrumb", className)}>
       {crumbs?.map((crumb, index) => (
         <li key={index} className="breadcrumb__crumb">
-          {isValidElement(crumb) ? (
-            crumb
-          ) : (
-            <a href={(crumb as ICrumb).href}>{(crumb as ICrumb).content}</a>
-          )}
+          {crumb}
           {index !== crumbs.length - 1 && (
             <svg
               className="breadcrumb__crumb__arrow"

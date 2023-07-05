@@ -3,7 +3,6 @@ function CSSSpec({
 }: {
   data: Array<{
     name: string;
-    type: string;
     description: string;
   }>;
 }) {
@@ -19,10 +18,10 @@ function CSSSpec({
             </tr>
           </thead>
           <tbody>
-            {data.map(({ name, type, description }) => (
+            {data.map(({ name, description }) => (
               <tr key={name}>
                 <td>{name}</td>
-                <td>{type}</td>
+                <td>{name.includes("--") ? "variant" : ""}</td>
                 <td>{description}</td>
               </tr>
             ))}

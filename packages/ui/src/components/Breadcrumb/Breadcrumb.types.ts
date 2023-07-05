@@ -14,15 +14,9 @@
  * limitations under the License.
  */
 
-import { PropsWithChildren, ReactNode } from "react";
-
-export interface ICrumb {
-  content: ReactNode;
-  href: string;
-}
+import { PropsWithChildren } from "react";
 
 export interface IBreadcrumbProps extends PropsWithChildren<{}> {
-  crumbs?: ICrumb[];
   className?: string;
 }
 

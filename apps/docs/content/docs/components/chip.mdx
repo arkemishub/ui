@@ -1,0 +1,77 @@
+---
+title: Chip
+---
+
+<Preview name="Chip" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "color",
+      type: ["primary", "secondary"],
+      defaultValue: "primary",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "startAdornment",
+      type: "ReactNode",
+    },
+    {
+      name: "endAdornment",
+      type: "ReactNode",
+    },
+    {
+      name: "onClick",
+      type: "MouseEventHandler(HTMLSpanElement)",
+    },
+    {
+      name: "children",
+      type: "",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".chip",
+      description: "Chip",
+    },
+    {
+      name: ".chip--primary",
+      description: "Chip with primary accent",
+    },
+    {
+      name: ".chip--secondary",
+      description: "Chip with secondary accent",
+    },
+    {
+      name: ".chip--disabled",
+      description: "Chip with disabled state",
+    },
+    {
+      name: ".chip__content",
+      description: "Applied on content of Chip",
+    },
+    {
+      name: ".chip__startAdornment",
+      description: "Applied on start adornment of Chip",
+    },
+    {
+      name: ".chip__endAdornment",
+      description: "Applied on end adornment of Chip",
+    },
+  ]}
+/>

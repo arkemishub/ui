@@ -1,0 +1,102 @@
+---
+title: Select
+---
+
+<Preview name="Select" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "startIcon",
+      type: "ReactNode",
+    },
+    {
+      name: "endIcon",
+      type: "ReactNode",
+    },
+    {
+      name: "hasError",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "helperText",
+      type: "string",
+    },
+    {
+      name: "label",
+      type: "string",
+    },
+    {
+      name: "multiple",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "onChange*",
+      type: "(value: T) => void",
+    },
+    {
+      name: "renderLabel*",
+      type: "(value: T) => ReactNode",
+    },
+    {
+      name: "value",
+      type: "T | T[]",
+    },
+    {
+      name: "values",
+      type: "T[]",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".select__input",
+      description: "Applied to Select input",
+    },
+    {
+      name: ".select__options",
+      description: "Applied to Select options list",
+    },
+    {
+      name: ".select__option",
+      description: "Applied to Select single option",
+    },
+    {
+      name: ".select__option--active",
+      description: "Applied to Select active option",
+    },
+    {
+      name: ".select__startAdornment",
+      description: "Applied to Select start adornment",
+    },
+    {
+      name: ".select__startAdornment__icon",
+      description: "Applied to Select start adornment icon",
+    },
+    {
+      name: ".select__endAdornment",
+      description: "Applied to Select end adornment",
+    },
+    {
+      name: ".select__endAdornment__icon",
+      description: "Applied to Select end adornment icon",
+    },
+  ]}
+/>

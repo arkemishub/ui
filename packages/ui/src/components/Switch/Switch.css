@@ -33,3 +33,11 @@
 .switch__container--disabled {
   @apply opacity-70;
 }
+
+.switch__container--sm {
+  @apply h-4 w-10
+}
+
+.switch__container--md {
+  @apply h-6 w-11
+}

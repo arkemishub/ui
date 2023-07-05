@@ -1,0 +1,86 @@
+---
+title: Switch
+---
+
+<Preview name="Switch" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "checked",
+      type: "boolean",
+    },
+    {
+      name: "onChange",
+      type: "() => void",
+    },
+    {
+      name: "color",
+      type: ["primary", "secondary"],
+    },
+    {
+      name: "label",
+      type: "string",
+    },
+    {
+      name: "labelPosition",
+      type: ["top", "bottom", "left", "right"],
+      defaultValue: "top",
+    },
+    {
+      name: "size",
+      type: ["sm", "md"],
+      defaultValue: "md",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "name",
+      type: "string",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".switch",
+      description: "Switch",
+    },
+    {
+      name: ".switch__container",
+      description: "Applied to Switch container",
+    },
+    {
+      name: ".switch__container--primary",
+      description: "Applied to Switch container with primary accent",
+    },
+    {
+      name: ".switch__container--secondary",
+      description: "Applied to Switch container with secondary accent",
+    },
+    {
+      name: ".switch__container--disabled",
+      description: "Applied to Switch container with disabled state",
+    },
+    {
+      name: ".switch__container--sm",
+      description: "Applied to Switch container with small size",
+    },
+    {
+      name: ".switch__container--md",
+      description: "Applied to Switch container with medium size",
+    },
+  ]}
+/>

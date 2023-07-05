@@ -5,18 +5,29 @@
   "extends": [
     "next/core-web-vitals",
     "turbo",
+    "plugin:mdx/recommended",
     "plugin:tailwindcss/recommended",
     "plugin:prettier/recommended"
   ],
   "plugins": ["tailwindcss","prettier"],
   "rules": {
     "@next/next/no-html-link-for-pages": "off",
-    "tailwindcss/no-custom-classname": "off",
-    "tailwindcss/classnames-order": "error"
+    "tailwindcss/no-custom-classname": "off"
   },
   "settings": {
     "next": {
       "rootDir": ["apps/*/"]
+    },
+    "mdx/code-blocks": true,
+    "mdx/language-mapper": {}
+  },
+  "overrides": [
+    {
+      "files": ["*.mdx"],
+      "extends": ["plugin:mdx/overrides"],
+      "rules": {
+        "react/jsx-no-undef": "off"
+      }
     }
-  }
+  ]
 }

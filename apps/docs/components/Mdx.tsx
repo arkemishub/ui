@@ -20,6 +20,12 @@ const components = {
       <table {...props} />
     </div>
   ),
+  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p className="docs__paragraph" {...props} />
+  ),
+  a: (props: React.HTMLAttributes<HTMLAnchorElement>) => (
+    <a className="docs__link" {...props} />
+  ),
 };
 
 function Mdx({ code }: { code: string }) {

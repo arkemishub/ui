@@ -7,143 +7,133 @@ title: Autocomplete
 ## Props
 
 <PropsSpec
-    data={[
-        {
-            name: 'values',
-            type: 'TValue[]',
-        },
-        {
-            name: "label",
-            type: 'string',
-        },
-        {
-            name: "renderLabel",
-            type: "(val: TValue) => ReactNode"
-        },
-        {
-            name: 'startAdornment',
-            type: 'ReactNode'
-        },
-        {
-            name: 'endAdornment',
-            type: 'ReactNode'
-        },
-        {
-            name: 'placeholder',
-            type: 'string'
-        },
-        {
-            name: 'helperText',
-            type: 'string'
-        },
-        {
-            name: 'hasError',
-            type: 'boolean'
-        },
-        {
-            name: 'disabled',
-            type: 'boolean'
-        },
-        {
-            name: 'onInputChange',
-            type: 'ChangeEventHandler<HTMLInputElement>'
-        },
-        {
-            name: 'renderChips',
-            type: 'boolean'
-        },
-        {
-            name: 'getDisplayValue*',
-            type: '(val: TValue) => string | undefined'
-        },
-        {
-            name: 'nullable',
-            type: 'boolean'
-        },
-        {
-            name: 'multiple',
-            type: 'boolean'
-        },
-        {
-            name: 'onChange*',
-            type: '(val: TValue | TValue[] | null) => void'
-        },
-        {
-            name: 'value',
-            type: 'TValue | TValue[] | null'
-        },
-        {
-            name: 'clearable',
-            type: 'boolean'
-        },
-        {
-            name: 'multiple',
-            type: 'boolean'
-        }
-    ]}
+  data={[
+    {
+      name: "values",
+      type: "TValue[]",
+    },
+    {
+      name: "label",
+      type: "string",
+    },
+    {
+      name: "renderLabel",
+      type: "(val: TValue) => ReactNode",
+    },
+    {
+      name: "startAdornment",
+      type: "ReactNode",
+    },
+    {
+      name: "endAdornment",
+      type: "ReactNode",
+    },
+    {
+      name: "placeholder",
+      type: "string",
+    },
+    {
+      name: "helperText",
+      type: "string",
+    },
+    {
+      name: "hasError",
+      type: "boolean",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+    },
+    {
+      name: "onInputChange",
+      type: "ChangeEventHandler(HTMLInputElement)",
+    },
+    {
+      name: "renderChips",
+      type: "boolean",
+    },
+    {
+      name: "getDisplayValue*",
+      type: "(val: TValue) => string | undefined",
+    },
+    {
+      name: "nullable",
+      type: "boolean",
+    },
+    {
+      name: "multiple",
+      type: "boolean",
+    },
+    {
+      name: "onChange*",
+      type: "(val: TValue | TValue[] | null) => void",
+    },
+    {
+      name: "value",
+      type: "TValue | TValue[] | null",
+    },
+    {
+      name: "clearable",
+      type: "boolean",
+    },
+    {
+      name: "multiple",
+      type: "boolean",
+    },
+  ]}
 />
 
-
 ## CSS
-<CSSSpec data={[
+
+<CSSSpec
+  data={[
     {
-        name: '.autocomplete__input__container',
-        type: '',
-        description: 'Applied to Autocomplete input container'
+      name: ".autocomplete__input__container",
+      description: "Applied to Autocomplete input container",
     },
     {
-        name: '.autocomplete__input__container--mutliple',
-        type: 'variant',
-        description: 'Applied to multiple Autocomplete input container'
+      name: ".autocomplete__input__container--mutliple",
+      description: "Applied to multiple Autocomplete input container",
     },
     {
-        name: '.autocomplete__input__container--error',
-        type: 'variant',
-        description: 'Applied to Autocomplete input container with error state'
+      name: ".autocomplete__input__container--error",
+      description: "Applied to Autocomplete input container with error state",
     },
     {
-        name: '.autocomplete__input',
-        type: '',
-        description: 'Applied to Autocomplete input'
+      name: ".autocomplete__input",
+      description: "Applied to Autocomplete input",
     },
     {
-        name: '.autocomplete__options',
-        type: '',
-        description: 'Applied to Autocomplete options list'
+      name: ".autocomplete__options",
+      description: "Applied to Autocomplete options list",
     },
     {
-        name: '.autocomplete__option',
-        type: '',
-        description: 'Applied to Autocomplete single option'
+      name: ".autocomplete__option",
+      description: "Applied to Autocomplete single option",
     },
     {
-        name: '.autocomplete__option--active',
-        type: 'variant',
-        description: 'Applied to Autocomplete active option'
+      name: ".autocomplete__option--active",
+      description: "Applied to Autocomplete active option",
     },
     {
-        name: '.autocomplete__startAdornment',
-        type: '',
-        description: 'Applied to Autocomplete start adornment'
+      name: ".autocomplete__startAdornment",
+      description: "Applied to Autocomplete start adornment",
     },
     {
-        name: '.autocomplete__startAdornment__icon',
-        type: '',
-        description: 'Applied to Autocomplete start adornment icon'
+      name: ".autocomplete__startAdornment__icon",
+      description: "Applied to Autocomplete start adornment icon",
     },
     {
-        name: '.autocomplete__endAdornment',
-        type: '',
-        description: 'Applied to Autocomplete end adornment'
+      name: ".autocomplete__endAdornment",
+      description: "Applied to Autocomplete end adornment",
     },
     {
-        name: '.autocomplete__endAdornment__icon',
-        type: '',
-        description: 'Applied to Autocomplete end adornment icon'
+      name: ".autocomplete__endAdornment__icon",
+      description: "Applied to Autocomplete end adornment icon",
     },
-{
-        name: '.autocomplete__chip',
-        type: '',
-        description: 'Applied to Autocomplete chips'
-    }
-]} />
+    {
+      name: ".autocomplete__chip",
+      description: "Applied to Autocomplete chips",
+    },
+  ]}
+/>

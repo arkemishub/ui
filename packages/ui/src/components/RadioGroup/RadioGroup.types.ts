@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { ChangeEventHandler } from "react";
 
 export interface IRadioGroupProps {
   children: React.ReactNode;
   name?: string;
   direction?: "row" | "column" | "row-reverse" | "column-reverse";
-  onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void;
-  selected?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  value?: string;
   className?: string;
 }

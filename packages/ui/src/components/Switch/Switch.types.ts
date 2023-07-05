@@ -23,4 +23,5 @@ export interface ISwitchProps {
   size?: "sm" | "md";
   disabled?: boolean;
   name?: string;
+  className?: string;
 }

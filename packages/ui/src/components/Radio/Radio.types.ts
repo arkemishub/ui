@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { ChangeEventHandler } from "react";
 
 export interface IRadioProps {
   name?: string;
@@ -20,7 +21,7 @@ export interface IRadioProps {
   labelPlacement?: "top" | "bottom" | "left" | "right";
   color?: "primary" | "secondary";
   checked?: boolean;
-  onChange?: (e?: any) => void;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
   value?: string;
   disabled?: boolean;
 }

@@ -26,9 +26,10 @@ function Switch({
   color,
   label,
   labelPosition = "top",
-  size,
-  disabled,
+  size = "md",
+  disabled = false,
   name,
+  className,
 }: ISwitchProps) {
   return (
     <div
@@ -42,7 +43,7 @@ function Switch({
       )}
     >
       {label && <label htmlFor={name}>{label}</label>}
-      <div className="h-fit flex items-center">
+      <div className="flex h-fit items-center">
         <HeadlessSwitch
           name={name}
           checked={checked}
@@ -51,9 +52,10 @@ function Switch({
             "switch__container",
             color === "primary" && checked && "switch__container--primary",
             color === "secondary" && checked && "switch__container--secondary",
-            size === "sm" && "h-4 w-10",
-            size === "md" && "h-6 w-11",
-            disabled && "switch__container--disabled"
+            size === "sm" && "switch__container--sm",
+            size === "md" && "switch__container--md",
+            disabled && "switch__container--disabled",
+            className
           )}
           disabled={disabled}
           data-testid="arke-switch"

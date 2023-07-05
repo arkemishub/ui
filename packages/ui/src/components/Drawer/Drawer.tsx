@@ -45,10 +45,10 @@ function Drawer({
         role="presentation"
         className={twMerge(
           "drawer",
-          position === "right" && "drawer__right",
-          position === "left" && "drawer__left",
-          position === "bottom" && "drawer__bottom",
-          position === "top" && "drawer__top",
+          position === "right" && "drawer--right",
+          position === "left" && "drawer--left",
+          position === "bottom" && "drawer--bottom",
+          position === "top" && "drawer--top",
           !open && position === "left" ? "-translate-x-full" : "",
           !open && position === "right" ? "translate-x-full" : "",
           !open && position === "bottom" ? "translate-y-full" : "",

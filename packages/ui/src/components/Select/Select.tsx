@@ -41,7 +41,7 @@ const ArrowIcon = () => (
 function Select<T>({
   value,
   values,
-  multiple,
+  multiple = false,
   onChange,
   label,
   renderLabel,
@@ -49,7 +49,7 @@ function Select<T>({
   endIcon,
   helperText,
   disabled = false,
-  hasError,
+  hasError = false,
   className,
 }: ISelectProps<T>) {
   return (

@@ -26,7 +26,7 @@ function RadioGroup({
   name,
   direction = "column",
   onChange,
-  selected,
+  value,
   className,
 }: IRadioGroupProps) {
   const radioButtons = useMemo(() => {
@@ -38,22 +38,19 @@ function RadioGroup({
         return React.cloneElement(item, {
           name: name,
           key: i,
-          checked: selected === item.props.value,
+          checked: value === item.props.value,
           onChange: onChange,
         });
       });
-  }, [children, name, selected, onChange]);
+  }, [children, name, value, onChange]);
 
   return (
     <div
       data-testid="arke-radio-group"
       className={twMerge(
-        "radio--group__container",
-        "w-fit",
+        "radio__group",
         direction === "column" && "flex flex-col",
         direction === "row" && "flex flex-row gap-4",
-        direction === "row-reverse" && "flex flex-row-reverse gap-4",
-        direction === "column-reverse" && "flex flex-col-reverse",
         className
       )}
     >

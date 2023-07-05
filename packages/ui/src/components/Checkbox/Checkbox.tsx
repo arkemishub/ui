@@ -16,7 +16,7 @@
 
 "use client";
 
-import { CheckboxColor, ICheckboxProps } from "./Checkbox.types";
+import { ICheckboxProps } from "./Checkbox.types";
 import { twMerge } from "tailwind-merge";
 
 function Checkbox({
@@ -28,7 +28,7 @@ function Checkbox({
   helperText,
   hasError = false,
   labelPlacement = "right",
-  color = CheckboxColor.PRIMARY,
+  color = "primary",
 }: ICheckboxProps) {
   return (
     <div
@@ -57,8 +57,8 @@ function Checkbox({
         className={twMerge(
           "checkbox",
           hasError && "checkbox--error",
-          color === CheckboxColor.PRIMARY && "checkbox--primary",
-          color === CheckboxColor.SECONDARY && "checkbox--secondary"
+          color === "primary" && "checkbox--primary",
+          color === "secondary" && "checkbox--secondary"
         )}
       />
       {helperText && (

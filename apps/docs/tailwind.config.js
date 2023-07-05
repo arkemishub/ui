@@ -3,6 +3,8 @@ module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./content/**/*.{js,ts,jsx,tsx,mdx}",
+    "./examples/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@arkejs/ui/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {

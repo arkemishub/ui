@@ -7,57 +7,56 @@ title: Alert
 ## Props
 
 <PropsSpec
-    data={[
-        {
-            name: 'className',
-            type: 'string',
-        },
-        {
-            name: 'color',
-            type: ['error', 'warning', 'success', 'info'],
-        },
-        {
-            name: 'dismissible',
-            type: 'boolean',
-            defaultValue: 'false'
-        },
-        {
-            name: 'onDismiss',
-            type: '() => void',
-        },
-        {
-            name: 'icon',
-            type: "ReactNode"
-        }
-    ]}
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "color",
+      type: ["error", "warning", "success", "info"],
+    },
+    {
+      name: "dismissible",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "onDismiss",
+      type: "() => void",
+    },
+
+    {
+      name: "icon",
+      type: "ReactNode",
+    },
+
+]}
 />
 
-
 ## CSS
-<CSSSpec data={[
+
+<CSSSpec
+  data={[
     {
-        name: '.alert',
-        type: '',
-        description: 'Alert'
+      name: ".alert",
+      description: "Alert",
     },
     {
-        name: '.alert--error',
-        type: 'variant',
-        description: 'Alert with error accent'
+      name: ".alert--error",
+      description: "Alert with error accent",
     },
     {
-        name: '.alert--warning',
-        type: 'variant',
-        description: 'Alert with warning accent'
+      name: ".alert--warning",
+      description: "Alert with warning accent",
     },
     {
-        name: '.alert--success',
-        type: 'variant',
-        description: 'Alert with success accent'
+      name: ".alert--success",
+      description: "Alert with success accent",
     },
     {
-        name: '.alert--info',
-        type: 'variant',
-        description: 'Alert with info accent'
+      name: ".alert--info",
+      description: "Alert with info accent",
     },
-]} />
+  ]}
+/>

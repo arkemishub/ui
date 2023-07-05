@@ -54,7 +54,7 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       rehypeComponentToRawCode,
-      [rehypePrettyCode, { theme: "one-dark-pro" }],
+      [rehypePrettyCode, { theme: "github-dark" }],
       () => (tree) => {
         visit(tree, (node) => {
           if (node?.type === "element" && node?.tagName === "div") {

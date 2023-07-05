@@ -7,57 +7,55 @@ title: Button
 ## Props
 
 <PropsSpec
-    data={[
-        {
-            name: 'className',
-            type: 'string',
-        },
-        {
-            name: 'color',
-            type: ['primary', 'secondary'],
-        },
-        {
-            name: 'disabled',
-            type: 'boolean',
-            defaultValue: 'false'
-        },
-        {
-            name: 'fullWidth',
-            type: 'boolean',
-            defaultValue: 'false'
-        },
-        {
-            name: 'onClick',
-            type: 'MouseEventHandler<HTMLButtonElement>',
-        },
-        {
-            name: 'type',
-            type: ['submit', 'reset'],
-        }
-    ]}
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "color",
+      type: ["primary", "secondary"],
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "fullWidth",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "onClick",
+      type: "MouseEventHandler(HTMLButtonElement)",
+    },
+    {
+      name: "type",
+      type: ["submit", "reset"],
+    },
+  ]}
 />
 
-
 ## CSS
-<CSSSpec data={[
+
+<CSSSpec
+  data={[
     {
-        name: '.btn',
-        type: '',
-        description: 'Button'
+      name: ".btn",
+      description: "Button",
     },
     {
-        name: '.btn--primary',
-        type: 'variant',
-        description: 'Button with primary accent'
+      name: ".btn--primary",
+      description: "Button with primary accent",
     },
     {
-        name: '.btn--secondary',
-        type: 'variant',
-        description: 'Button with secondary accent'
+      name: ".btn--secondary",
+      description: "Button with secondary accent",
     },
     {
-        name: '.btn--disabled',
-        type: 'variant',
-        description: 'Button with disabled state'
-    }
-]} />
+      name: ".btn--disabled",
+      description: "Button with disabled state",
+    },
+  ]}
+/>

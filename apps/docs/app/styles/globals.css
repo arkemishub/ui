@@ -4,6 +4,27 @@
 @tailwind utilities;
 
 @layer components {
+
+    .docs__content {
+        @apply max-w-[90rem] mx-auto px-4
+    }
+
+    .docs__paragraph {
+        @apply my-4
+    }
+
+    .docs__pagination {
+        @apply border-2 border-background-400 px-4 py-2 rounded-theme flex items-center
+    }
+
+    .docs__paragraph code {
+        @apply bg-background-400 rounded-theme-sm px-2 py-1 font-sans
+    }
+
+    .docs__link {
+        @apply text-primary
+    }
+
     .docs__tabs__list {
         @apply inline-flex w-auto mb-4
     }

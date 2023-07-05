@@ -30,19 +30,19 @@
     @apply mb-6 flex gap-4
 }
 
-.drawer__right {
+.drawer--right {
     @apply top-0 right-0 h-full
 }
 
-.drawer__left {
+.drawer--left {
     @apply top-0 left-0 h-full
 }
 
-.drawer__bottom {
+.drawer--bottom {
     @apply left-0 bottom-0 w-full max-w-[inherit]
 }
 
-.drawer__top {
+.drawer--top {
     @apply left-0 top-0 w-full max-w-[inherit]
 }
 

@@ -28,7 +28,7 @@ function Radio({
   checked = false,
   onChange,
   color = "secondary",
-  disabled,
+  disabled = false,
 }: IRadioProps) {
   return (
     <div

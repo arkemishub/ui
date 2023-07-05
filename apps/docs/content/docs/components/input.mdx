@@ -1,0 +1,59 @@
+---
+title: Input
+---
+
+<Preview name="Input" />
+
+## Props
+
+`Input` extends `InputHTMLAttributes<HTMLInputElement>` with following props:
+
+<PropsSpec
+  data={[
+    {
+      name: "fullWidth",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "helperText",
+      type: "string",
+    },
+    {
+      name: "hasError",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "label",
+      type: "string",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".input",
+      description: "Input",
+    },
+    {
+      name: ".input__label",
+      description: "Applied to Input label",
+    },
+    {
+      name: ".input--error",
+      description: "Input with error accent",
+    },
+    {
+      name: ".input__helperText",
+      description: "Applied to Input helper text",
+    },
+    {
+      name: ".input__helperText--error",
+      description: "Applied to Input helper text when input has error state",
+    },
+  ]}
+/>

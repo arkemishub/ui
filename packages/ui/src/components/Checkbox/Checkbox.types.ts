@@ -16,11 +16,6 @@
 
 import { ChangeEventHandler } from "react";
 
-export enum CheckboxColor {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-}
-
 export interface ICheckboxProps {
   name?: string;
   checked: boolean;
@@ -30,5 +25,5 @@ export interface ICheckboxProps {
   helperText?: string;
   hasError?: boolean;
   labelPlacement?: "top" | "bottom" | "left" | "right";
-  color?: CheckboxColor;
+  color?: "primary" | "secondary";
 }
