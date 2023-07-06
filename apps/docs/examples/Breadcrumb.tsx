@@ -5,8 +5,6 @@ function MyBreadcrumb() {
   return (
     <Breadcrumb>
       <Breadcrumb.Crumb>Home</Breadcrumb.Crumb>
-      <Breadcrumb.Crumb>Products</Breadcrumb.Crumb>
-      <Breadcrumb.Crumb>Accessories</Breadcrumb.Crumb>
       <Breadcrumb.Crumb className="text-neutral-400">
         Headphones
       </Breadcrumb.Crumb>

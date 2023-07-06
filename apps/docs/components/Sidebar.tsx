@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Sidebar() {
   return (
-    <aside className="sticky top-16 z-10 h-[calc(100vh-4rem)] py-8">
+    <aside className="sticky top-16 z-10 hidden h-[calc(100vh-4rem)] py-8 md:block">
       <div className="relative h-full overflow-hidden">
         <div className="h-full w-full overflow-scroll">
           {sidebar.map(({ title, href }, index) =>

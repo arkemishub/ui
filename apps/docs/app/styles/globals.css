@@ -38,7 +38,7 @@
     }
 
     .docs__table {
-        @apply rounded-theme border-2 border-background-400
+        @apply rounded-theme border-2 border-background-400 overflow-x-auto w-full block
     }
 
     .docs__table th:first-child {
@@ -54,11 +54,11 @@
     }
 
     .docs__table table {
-        @apply w-full border-collapse
+        @apply w-full
     }
 
     .docs__table table th {
-        @apply bg-background-400 text-left px-4 py-2
+        @apply bg-background-400 text-left px-4 py-2 md:text-base text-sm
     }
 
     .docs__table table td {

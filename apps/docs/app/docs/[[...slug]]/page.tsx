@@ -16,8 +16,8 @@ const DocPage = async ({ params }: { params: { slug: string[] } }) => {
 
   return (
     <>
-      <div className="flex gap-8">
-        <div className="grow">
+      <div className="gap-8 md:grid md:grid-cols-[minmax(0,1fr)_220px]">
+        <div>
           <div className="mb-8">
             <h1 className="text-4xl font-semibold">{doc.title}</h1>
           </div>
