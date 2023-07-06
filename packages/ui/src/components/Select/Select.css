@@ -14,10 +14,22 @@
  * limitations under the License.
  */
 
-@import "../Input/Input.css";
+@import "Inputs";
+
+.select__container {
+    @apply input__container w-full text-left px-4
+}
+
+.select__container:has(button:disabled){
+    @apply opacity-50 cursor-not-allowed
+}
 
 .select__input {
-    @apply input w-full text-left
+    @apply w-full text-left !px-2 !outline-0 !border-0
+}
+
+.select__placeholder {
+    @apply text-[#9ca3af]
 }
 
 .select__options {
@@ -32,18 +44,18 @@
     @apply bg-primary text-primary-contrast
 }
 
-.select__endAdornment {
-    @apply absolute inset-y-0 right-0 flex items-center pr-4 focus-visible:outline-none
-}
-
-.select__endAdornment__icon {
-    @apply w-4 h-4 stroke-2 cursor-pointer
-}
-
 .select__startAdornment {
-    @apply absolute inset-y-0 left-0 flex items-center pl-4 focus-visible:outline-none
+    @apply !px-1 focus-visible:outline-none
 }
 
 .select__startAdornment__icon {
     @apply stroke-2 cursor-pointer
+}
+
+.select__endAdornment {
+    @apply !px-1 flex items-center focus-visible:outline-none
+}
+
+.select__endAdornment__icon {
+    @apply w-4 h-4 stroke-2 cursor-pointer
 }

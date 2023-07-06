@@ -1,44 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Autocomplete should match snapshot 1`] = `
+exports[`Select should match snapshot 1`] = `
 <DocumentFragment>
   <div
     class="relative"
   >
     <div
-      class="relative flex items-center"
+      class="select__container"
     >
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        class="w-full"
-        data-headlessui-state=""
-        id="headlessui-combobox-button-:r0:"
-        tabindex="-1"
-      >
-        <div
-          class="autocomplete__input__container"
-        >
-          <input
-            class="autocomplete__input"
-            data-testid="arke-autocomplete"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        class="autocomplete__endAdornment"
+        class="w-full flex items-center"
       >
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
+          class="select__input"
           data-headlessui-state=""
-          id="headlessui-combobox-button-:r2:"
-          tabindex="-1"
+          data-testid="arke-select"
+          id="headlessui-listbox-button-:r0:"
+          type="button"
+        >
+          <span
+            class="select__placeholder"
+          >
+             
+          </span>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          class="select__endAdornment"
+          data-headlessui-state=""
+          id="headlessui-listbox-button-:r1:"
           type="button"
         >
           <svg
-            class="autocomplete__endAdornment__icon"
+            class="select__endAdornment__icon"
             fill="none"
             stroke="currentColor"
             stroke-width="1.5"

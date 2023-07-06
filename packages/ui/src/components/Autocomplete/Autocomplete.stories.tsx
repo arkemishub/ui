@@ -18,6 +18,7 @@ import React, { useState } from "react";
 import { IAutocompleteProps } from "./Autocomplete.types";
 import { Autocomplete } from "./index";
 import { useArgs } from "@storybook/client-api";
+import { ChevronDownIcon, ClearIcon, UserIcon } from "../../storiesUtils/Icons";
 
 const departments = [
   { id: 1, name: "Marketing", contact: "Durward Reynolds" },
@@ -54,13 +55,36 @@ export const Default = (args: IAutocompleteProps<unknown, false, false>) => {
   );
 
   return (
-    <Autocomplete
-      {...args}
-      value={value}
-      values={filteredValues}
-      onInputChange={(e) => setSearch(e.target.value)}
-      onChange={handleChange}
-    />
+    <div className="flex flex-col gap-2">
+      <Autocomplete
+        {...args}
+        value={value}
+        values={filteredValues}
+        onInputChange={(e) => setSearch(e.target.value)}
+        onChange={handleChange}
+      />
+      <Autocomplete
+        {...args}
+        value={value}
+        values={filteredValues}
+        onInputChange={(e) => setSearch(e.target.value)}
+        onChange={handleChange}
+        startAdornment={<UserIcon />}
+        endAdornment={<ChevronDownIcon className="w-4 h-4" />}
+        clearIcon={<ClearIcon className="w-4 h-4 stroke-black" />}
+        clearable
+        nullable
+      />
+      <Autocomplete
+        {...args}
+        disabled
+        value={value}
+        values={filteredValues}
+        onInputChange={(e) => setSearch(e.target.value)}
+        onChange={handleChange}
+        startAdornment={<UserIcon />}
+      />
+    </div>
   );
 };
 

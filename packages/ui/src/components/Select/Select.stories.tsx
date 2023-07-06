@@ -18,6 +18,7 @@ import React from "react";
 import { ISelectProps } from "./Select.types";
 import { Select } from "./index";
 import { useArgs } from "@storybook/client-api";
+import { UserIcon, ChevronDownIcon } from "../../storiesUtils/Icons";
 
 const departments = [
   { id: 1, name: "Marketing", contact: "Durward Reynolds" },
@@ -37,6 +38,9 @@ export default {
     values: {
       defaultValue: departments,
     },
+    placeholder: {
+      defaultValue: "Select here...",
+    },
   },
 };
 
@@ -46,12 +50,30 @@ export const Default = (args: ISelectProps<unknown>) => {
   const handleChange = (val: unknown) => updateArgs({ value: val });
 
   return (
-    <Select
-      {...args}
-      label="Select an item"
-      value={value}
-      onChange={handleChange}
-    />
+    <>
+      <Select
+        {...args}
+        label="Select an item"
+        value={value}
+        onChange={handleChange}
+      />
+      <Select
+        {...args}
+        label="Select an item"
+        value={value}
+        onChange={handleChange}
+        startAdornment={<UserIcon />}
+        endAdornment={<ChevronDownIcon className="w-4 h-4" />}
+      />
+      <Select
+        {...args}
+        disabled
+        label="Select an item"
+        value={value}
+        onChange={handleChange}
+        startAdornment={<UserIcon />}
+      />
+    </>
   );
 };
 

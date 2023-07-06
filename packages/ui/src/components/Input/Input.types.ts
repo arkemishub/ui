@@ -14,19 +14,15 @@
  * limitations under the License.
  */
 
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
-export type ISelectProps<T extends unknown> = {
-  value?: T;
-  values?: T[];
-  onChange: (val: T) => void;
-  multiple?: boolean;
-  label?: string;
-  renderLabel: (val: T) => ReactNode;
-  startIcon?: ReactNode;
-  endIcon?: ReactNode;
+export type IInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  fullWidth?: boolean;
   helperText?: string;
   hasError?: boolean;
-  disabled?: boolean;
-  className?: string;
+  label?: string;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
+  prefixAdornment?: ReactNode;
+  suffixAdornment?: ReactNode;
 };

@@ -14,22 +14,12 @@
  * limitations under the License.
  */
 
-.input {
-    @apply min-h-[40px] min-w-[120px] border border-neutral rounded-theme bg-background text-background-contrast px-4 focus:ring-0 focus:outline-offset-0 focus:outline-primary disabled:opacity-50 disabled:cursor-not-allowed
+@import "Inputs";
+
+.textarea {
+    @apply input__container py-2
 }
 
-.label {
-    @apply mb-1 block text-sm
-}
-
-.input--error {
-    @apply outline outline-error focus:outline-error
-}
-
-.input__helperText {
-    @apply mt-2 text-sm opacity-50
-}
-
-.input__helperText--error {
-    @apply opacity-100 text-error
+.textarea__label {
+    @apply mb-2
 }

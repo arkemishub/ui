@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
-@import "../Input/Input.css";
+@import "Inputs";
 
 .autocomplete__input__container {
-    @apply input w-full text-left flex
+    @apply input__container w-full text-left flex
+}
+
+.autocomplete__input__container:has(.autocomplete__input:disabled){
+    @apply opacity-50 cursor-not-allowed
 }
 
 .autocomplete__input__container--multiple {
@@ -29,7 +33,7 @@
 }
 
 .autocomplete__input {
-    @apply grow focus-visible:outline-0 bg-background text-background-contrast h-[40px]
+    @apply !px-2 grow focus-visible:outline-0 bg-background text-background-contrast h-[40px]
 }
 
 .autocomplete__chip {
@@ -56,20 +60,20 @@
     @apply w-4 h-4 stroke-2 cursor-pointer stroke-neutral
 }
 
-.autocomplete__endAdornment {
-    @apply absolute inset-y-0 right-0 flex items-center pr-4
-}
-
-.autocomplete__endAdornment__icon {
-    @apply w-4 h-4 stroke-2 cursor-pointer
-}
-
 .autocomplete__startAdornment {
-    @apply absolute inset-y-0 left-0 flex items-center pl-4
+    @apply !px-1 flex items-center
 }
 
 .autocomplete__startAdornment__icon {
     @apply stroke-2 cursor-pointer
+}
+
+.autocomplete__endAdornment {
+    @apply !px-1 flex items-center
+}
+
+.autocomplete__endAdornment__icon {
+    @apply w-4 h-4 stroke-2 cursor-pointer
 }
 
 .autocomplete__input__container:has(input:focus),

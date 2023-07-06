@@ -17,6 +17,8 @@
 import { Select } from "./index";
 import { act, render } from "@testing-library/react";
 import { userEvent } from "@storybook/testing-library";
+import { Autocomplete } from "../Autocomplete";
+import { InfoIcon } from "../../storiesUtils/Icons";
 
 const mockValues = [
   { id: "1", name: "Test 1" },
@@ -91,5 +93,24 @@ describe("Select", () => {
       />
     );
     expect(getByText("Test 1")).toBeVisible();
+  });
+
+  test("should contain start/end Adornment when props is passed", () => {
+    const { container } = render(
+      <Select
+        values={mockValues}
+        onChange={() => null}
+        renderLabel={(val) => val.name}
+        value={mockValues[0]}
+        startAdornment={<InfoIcon />}
+        endAdornment={<InfoIcon />}
+      />
+    );
+    expect(
+      container.getElementsByClassName("select__startAdornment").length
+    ).toBe(1);
+    expect(
+      container.getElementsByClassName("select__endAdornment").length
+    ).toBe(1);
   });
 });

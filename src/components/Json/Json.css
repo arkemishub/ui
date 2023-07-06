@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@import "../Input/Input.css";
+@import "components/Input/Input.css";
 
 .json {
     @apply px-0 bg-transparent min-h-[100px]

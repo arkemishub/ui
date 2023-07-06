@@ -17,6 +17,8 @@
 import { Autocomplete } from "./index";
 import { act, render } from "@testing-library/react";
 import { userEvent } from "@storybook/testing-library";
+import Input from "../Input/Input";
+import { InfoIcon } from "../../storiesUtils/Icons";
 
 const mockValues = [
   { id: "1", name: "Test 1" },
@@ -157,5 +159,23 @@ describe("Autocomplete", () => {
     });
 
     expect(onChange).toHaveBeenCalled();
+  });
+
+  test("should contain start/end Adornment when props is passed", () => {
+    const { container } = render(
+      <Autocomplete
+        onChange={() => null}
+        values={mockValues}
+        getDisplayValue={(val) => val.name}
+        startAdornment={<InfoIcon />}
+        endAdornment={<InfoIcon />}
+      />
+    );
+    expect(
+      container.getElementsByClassName("autocomplete__startAdornment").length
+    ).toBe(1);
+    expect(
+      container.getElementsByClassName("autocomplete__endAdornment").length
+    ).toBe(1);
   });
 });

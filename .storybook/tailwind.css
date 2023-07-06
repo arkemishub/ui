@@ -1,12 +1,12 @@
-@import "../src/components/Autocomplete/Autocomplete.css";
+@import "components/Autocomplete/Autocomplete.css";
 @import "../src/components/Button/Button.css";
 @import "../src/components/Checkbox/Checkbox.css";
 @import "../src/components/Chip/Chip.css";
 @import "../src/components/Dialog/Dialog.css";
-@import "../src/components/Input/Input.css";
+@import "components/Input/Input.css";
 @import "../src/components/Json/Json.css";
 @import "../src/components/Popover/Popover.css";
-@import "../src/components/Select/Select.css";
+@import "components/Select/Select.css";
 @import "../src/components/Spinner/Spinner.css";
 @import "../src/components/Tabs/Tabs.css";
 @import "../src/components/Badge/Badge.css";
@@ -19,7 +19,7 @@
 @import "../src/components/Skeleton/Skeleton.css";
 @import "../src/components/Drawer/Drawer.css";
 @import "../src/components/Breadcrumb/Breadcrumb.css";
-@import "../src/components/TextArea/TextArea.css";
+@import "components/TextArea/TextArea.css";
 
 @tailwind base;
 @tailwind components;
