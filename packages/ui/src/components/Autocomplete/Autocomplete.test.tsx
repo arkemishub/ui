@@ -145,4 +145,22 @@ describe("Autocomplete", () => {
 
     expect(onChange).toHaveBeenCalled();
   });
+
+  test("should contain start/end Adornment when props is passed", () => {
+    const { container } = render(
+      <Autocomplete
+        onChange={() => null}
+        values={mockValues}
+        getDisplayValue={(val) => val.name}
+        startAdornment={"start adornment"}
+        endAdornment={"end adornment"}
+      />
+    );
+    expect(
+      container.getElementsByClassName("autocomplete__startAdornment").length
+    ).toBe(1);
+    expect(
+      container.getElementsByClassName("autocomplete__endAdornment").length
+    ).toBe(1);
+  });
 });

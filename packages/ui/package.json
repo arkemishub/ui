@@ -1,6 +1,6 @@
 {
   "name": "@arkejs/ui",
-  "version": "0.28.1",
+  "version": "0.28.3",
   "description": "Arke UI components library based on tailwindcss",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -32,7 +32,6 @@
   "author": "Arkemis S.r.l.",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@headlessui/react": "^1.7.8",
     "@tailwindcss/forms": "^0.5.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -70,6 +69,7 @@
     "tailwindcss": "^3.2.4"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.8",
     "@monaco-editor/react": "^4.4.6",
     "@popperjs/core": "^2.11.6",
     "color": "^4.2.3",

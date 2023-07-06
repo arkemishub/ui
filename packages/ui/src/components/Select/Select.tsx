@@ -45,15 +45,17 @@ function Select<T>({
   onChange,
   label,
   renderLabel,
-  startIcon,
-  endIcon,
+  renderOption,
+  startAdornment,
+  endAdornment,
   helperText,
   disabled = false,
   hasError = false,
   className,
+  placeholder,
 }: ISelectProps<T>) {
   return (
-    <div className={twMerge("relative", className)}>
+    <div className="relative">
       <Listbox
         value={value}
         multiple={multiple}
@@ -61,28 +63,37 @@ function Select<T>({
         disabled={disabled}
       >
         {label && <Listbox.Label className="label">{label}</Listbox.Label>}
-        <div className="relative flex items-center">
-          {startIcon && (
-            <Listbox.Button className="select__startAdornment">
-              {startIcon}
-            </Listbox.Button>
-          )}
-          <Listbox.Button
-            className={twMerge(
-              "select__input",
-              hasError && "outline outline-error focus:outline-error",
-              startIcon && "pl-10"
+        <div className={twMerge("select__container", className)}>
+          <div className="w-full flex items-center">
+            {startAdornment && (
+              <Listbox.Button className="select__startAdornment">
+                {startAdornment}
+              </Listbox.Button>
             )}
-            data-testid="arke-select"
-          >
-            {value &&
-              (Array.isArray(value)
-                ? value.map((val) => renderLabel(val)).join(", ")
-                : renderLabel(value))}
-          </Listbox.Button>
-          <Listbox.Button className="select__endAdornment">
-            {!endIcon ? <ArrowIcon /> : endIcon}
-          </Listbox.Button>
+            <Listbox.Button
+              className={twMerge(
+                "select__input",
+                hasError && "outline outline-error focus:outline-error"
+              )}
+              data-testid="arke-select"
+            >
+              {value ? (
+                Array.isArray(value) ? (
+                  value.map((val) => renderLabel(val)).join(", ")
+                ) : (
+                  renderLabel(value)
+                )
+              ) : (
+                <span className="select__placeholder">
+                  {placeholder ? placeholder : null}
+                  &nbsp;
+                </span>
+              )}
+            </Listbox.Button>
+            <Listbox.Button className="select__endAdornment">
+              {!endAdornment ? <ArrowIcon /> : endAdornment}
+            </Listbox.Button>
+          </div>
         </div>
         <Transition
           as={Fragment}
@@ -100,7 +111,7 @@ function Select<T>({
                       (selected || active) && "select__option--active"
                     )}
                   >
-                    {renderLabel(val)}
+                    {renderOption ? renderOption(val) : renderLabel(val)}
                   </li>
                 )}
               </Listbox.Option>

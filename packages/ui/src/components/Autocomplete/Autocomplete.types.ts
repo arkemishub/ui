@@ -30,6 +30,7 @@ type AutocompleteBaseProps<TValue> = {
   renderChips?: boolean;
   getDisplayValue: (val: TValue) => string | undefined;
   className?: string;
+  clearIcon?: ReactNode;
 };
 
 export type IAutocompleteProps<

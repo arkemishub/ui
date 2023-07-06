@@ -30,7 +30,7 @@ describe("Input", () => {
     const { getByTestId } = render(
       <Input value="Value" type="text" onChange={() => null} />
     );
-    expect(getByTestId("arke-input")).toBeInTheDocument();
+    expect(getByTestId("arke-container")).toBeInTheDocument();
   });
 
   test("should call onChange when input changes", async () => {
@@ -65,7 +65,7 @@ describe("Input", () => {
     const { getByTestId } = render(
       <Input value="Value" type="text" onChange={() => null} hasError />
     );
-    expect(getByTestId("arke-input")).toHaveClass("input--error");
+    expect(getByTestId("arke-container")).toHaveClass("input--error");
   });
 
   test("should render full width input when fullWidth is true", () => {
@@ -73,7 +73,7 @@ describe("Input", () => {
       <Input value="Value" type="text" onChange={() => null} fullWidth />
     );
 
-    expect(getByTestId("arke-input")).toHaveClass("w-full");
+    expect(getByTestId("arke-container")).toHaveClass("w-full");
   });
 
   test("should render helperText with error class when hasError is true", () => {
@@ -98,6 +98,42 @@ describe("Input", () => {
         className="custom-class"
       />
     );
-    expect(getByTestId("arke-input")).toHaveClass("custom-class");
+    expect(getByTestId("arke-container")).toHaveClass("custom-class");
+  });
+
+  test("should contain start/end Adornment when props is passed", () => {
+    const { container } = render(
+      <Input
+        value="Value"
+        type="text"
+        onChange={() => null}
+        startAdornment={"start adornment"}
+        endAdornment={"end adornment"}
+      />
+    );
+    expect(
+      container.getElementsByClassName("input__startAdornment").length
+    ).toBe(1);
+    expect(container.getElementsByClassName("input__endAdornment").length).toBe(
+      1
+    );
+  });
+
+  test("should contain prefix/suffix Adornment when props is passed", () => {
+    const { container } = render(
+      <Input
+        value="Value"
+        type="text"
+        onChange={() => null}
+        prefixAdornment={"https://"}
+        suffixAdornment={".com"}
+      />
+    );
+    expect(
+      container.getElementsByClassName("input__prefixAdornment").length
+    ).toBe(1);
+    expect(
+      container.getElementsByClassName("input__suffixAdornment").length
+    ).toBe(1);
   });
 });

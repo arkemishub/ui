@@ -74,6 +74,7 @@ function Autocomplete<TValue>({
   nullable,
   clearable,
   className,
+  clearIcon,
 }: IAutocompleteProps<
   TValue,
   boolean | undefined,
@@ -135,11 +136,6 @@ function Autocomplete<TValue>({
       >
         {label && <Combobox.Label className="label">{label}</Combobox.Label>}
         <div className="relative flex items-center">
-          {startAdornment && (
-            <Combobox.Button className="autocomplete__startAdornment">
-              {startAdornment}
-            </Combobox.Button>
-          )}
           <Combobox.Button as="div" className="w-full">
             <Combobox.Input
               as={Fragment}
@@ -152,10 +148,14 @@ function Autocomplete<TValue>({
                     "autocomplete__input__container",
                     multiple && "autocomplete__input__container--multiple",
                     hasError && "autocomplete__input__container--error",
-                    startAdornment && "pl-10",
                     className
                   )}
                 >
+                  {startAdornment && (
+                    <Combobox.Button className="autocomplete__startAdornment">
+                      {startAdornment}
+                    </Combobox.Button>
+                  )}
                   {Array.isArray(value) &&
                     renderChips &&
                     multiple &&
@@ -169,6 +169,7 @@ function Autocomplete<TValue>({
                       </Chip>
                     ))}
                   <input
+                    disabled={disabled}
                     data-testid="arke-autocomplete"
                     className="autocomplete__input"
                     placeholder={placeholder}
@@ -190,21 +191,24 @@ function Autocomplete<TValue>({
                       }
                     }}
                   />
+
+                  <div className="autocomplete__endAdornment">
+                    {shouldDisplayClear && (
+                      <button
+                        className="autocomplete__clear"
+                        onClick={handleClear}
+                      >
+                        {clearIcon ? clearIcon : <ClearIcon />}
+                      </button>
+                    )}
+                    <Combobox.Button>
+                      {!endAdornment ? <ArrowIcon /> : endAdornment}
+                    </Combobox.Button>
+                  </div>
                 </div>
               </>
             </Combobox.Input>
           </Combobox.Button>
-
-          <div className="autocomplete__endAdornment">
-            {shouldDisplayClear && (
-              <button className="autocomplete__clear" onClick={handleClear}>
-                <ClearIcon />
-              </button>
-            )}
-            <Combobox.Button>
-              {!endAdornment ? <ArrowIcon /> : endAdornment}
-            </Combobox.Button>
-          </div>
         </div>
         <Transition
           as={Fragment}
