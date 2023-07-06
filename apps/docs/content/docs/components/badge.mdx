@@ -1,0 +1,50 @@
+---
+title: Badge
+---
+
+The `Badge` component is used to display a small notification or indicator. It supports customization of color and can contain a label or other content.
+
+<Preview name="Badge" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "color",
+      type: ["primary", "secondary"],
+      defaultValue: "primary",
+    },
+    {
+      name: "label",
+      type: "string",
+    },
+    {
+      name: "children",
+      type: "",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".badge",
+      description: "Badge",
+    },
+    {
+      name: ".badge--primary",
+      description: "Badge with primary accent",
+    },
+    {
+      name: ".badge--secondary",
+      description: "Badge with secondary accent",
+    },
+  ]}
+/>

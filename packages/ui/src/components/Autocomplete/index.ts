@@ -14,4 +14,4 @@
  * limitations under the License.
  */
 
-export { default as Autocomplete } from './Autocomplete';
+export { default as Autocomplete } from "./Autocomplete";

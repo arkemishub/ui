@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+"use client";
+
 import type { IInputProps } from "./Input.types";
 import { twMerge } from "tailwind-merge";
 

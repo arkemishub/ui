@@ -1,0 +1,15 @@
+@tailwind components;
+
+@layer components {
+    div[data-rehype-pretty-code-fragment] {
+        @apply overflow-hidden bg-background-400 rounded-theme p-4 text-sm
+    }
+
+    div[data-rehype-pretty-code-fragment] code {
+        @apply grid
+    }
+
+    div[data-rehype-pretty-code-fragment] pre {
+        @apply overflow-x-auto
+    }
+}

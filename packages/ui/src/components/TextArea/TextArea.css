@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@import "Inputs";
+@import "../Input/Input.css";
 
 .textarea {
     @apply input__container py-2

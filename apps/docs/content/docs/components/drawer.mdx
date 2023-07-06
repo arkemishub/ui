@@ -1,0 +1,78 @@
+---
+title: Drawer
+---
+
+The `Drawer` component is used to display a side panel or overlay that slides in from the specified position. It is typically used for navigation menus or additional content.
+
+<Preview name="Drawer" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "onClose*",
+      type: "() => void",
+    },
+    {
+      name: "open*",
+      type: "boolean",
+    },
+    {
+      name: "title",
+      type: "string",
+    },
+    {
+      name: "position",
+      type: ["left", "right", "top", "bottom"],
+      defaultValue: "left",
+    },
+    {
+      name: "children",
+      type: "",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".drawer",
+      description: "Drawer",
+    },
+    {
+      name: ".drawer__overlay",
+      description: "Applied to Drawer overlay",
+    },
+    {
+      name: ".drawer__title",
+      description: "Applied to Drawer title",
+    },
+    {
+      name: ".drawer__head",
+      description: "Applied to Drawer head",
+    },
+    {
+      name: ".drawer--top",
+      description: "Drawer with top position",
+    },
+    {
+      name: ".drawer--bottom",
+      description: "Drawer with bottom position",
+    },
+    {
+      name: ".drawer--left",
+      description: "Drawer with left position",
+    },
+    {
+      name: ".drawer--top",
+      description: "Drawer with right position",
+    },
+  ]}
+/>

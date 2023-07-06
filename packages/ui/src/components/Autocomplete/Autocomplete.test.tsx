@@ -15,10 +15,8 @@
  */
 
 import { Autocomplete } from "./index";
-import { act, render } from "@testing-library/react";
-import { userEvent } from "@storybook/testing-library";
-import Input from "../Input/Input";
-import { InfoIcon } from "../../storiesUtils/Icons";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 const mockValues = [
   { id: "1", name: "Test 1" },
@@ -49,7 +47,7 @@ describe("Autocomplete", () => {
     expect(getByTestId("arke-autocomplete")).toBeInTheDocument();
   });
 
-  test("should call onInputChange when input changes", () => {
+  test("should call onInputChange when input changes", async () => {
     const onInputChange = jest.fn();
     const { getByTestId } = render(
       <Autocomplete
@@ -60,13 +58,11 @@ describe("Autocomplete", () => {
       />
     );
 
-    act(() => {
-      userEvent.type(getByTestId("arke-autocomplete"), "Test");
-    });
+    await userEvent.type(screen.getByTestId("arke-autocomplete"), "Test");
     expect(onInputChange).toHaveBeenCalled();
   });
 
-  test("should render values", () => {
+  test("should render values", async () => {
     const { getByTestId, getByText } = render(
       <Autocomplete
         onChange={() => null}
@@ -74,14 +70,12 @@ describe("Autocomplete", () => {
         getDisplayValue={(val) => val.name}
       />
     );
-    act(() => {
-      userEvent.type(getByTestId("arke-autocomplete"), "Test");
-    });
+    await userEvent.type(getByTestId("arke-autocomplete"), "Test");
 
     expect(getByText("Test 1")).toBeInTheDocument();
   });
 
-  test("should call onChange when value is selected", () => {
+  test("should call onChange when value is selected", async () => {
     const onChange = jest.fn();
     const { getByTestId, getByText } = render(
       <Autocomplete
@@ -90,18 +84,13 @@ describe("Autocomplete", () => {
         getDisplayValue={(val) => val.name}
       />
     );
-    act(() => {
-      userEvent.type(getByTestId("arke-autocomplete"), "Test");
-    });
-
-    act(() => {
-      userEvent.click(getByText("Test 1"));
-    });
+    await userEvent.type(getByTestId("arke-autocomplete"), "Test");
+    await userEvent.click(getByText("Test 1"));
 
     expect(onChange).toHaveBeenCalled();
   });
 
-  test("should render correct label when renderLabel is provided", () => {
+  test("should render correct label when renderLabel is provided", async () => {
     const { getByTestId, getByText } = render(
       <Autocomplete
         onChange={() => null}
@@ -110,9 +99,7 @@ describe("Autocomplete", () => {
         renderLabel={(val) => val.id}
       />
     );
-    act(() => {
-      userEvent.type(getByTestId("arke-autocomplete"), "Test");
-    });
+    await userEvent.type(getByTestId("arke-autocomplete"), "Test");
     expect(getByText("1")).toBeInTheDocument();
   });
 
@@ -142,7 +129,7 @@ describe("Autocomplete", () => {
     expect(queryAllByTestId("arke-chip")).toHaveLength(mockValues.length);
   });
 
-  test("should delete value when chip delete button is clicked", () => {
+  test("should delete value when chip delete button is clicked", async () => {
     const onChange = jest.fn();
     const { queryAllByTestId } = render(
       <Autocomplete
@@ -154,9 +141,7 @@ describe("Autocomplete", () => {
       />
     );
 
-    act(() => {
-      userEvent.click(queryAllByTestId("arke-chip-delete")[0]);
-    });
+    await userEvent.click(queryAllByTestId("arke-chip-delete")[0]);
 
     expect(onChange).toHaveBeenCalled();
   });
@@ -167,8 +152,8 @@ describe("Autocomplete", () => {
         onChange={() => null}
         values={mockValues}
         getDisplayValue={(val) => val.name}
-        startAdornment={<InfoIcon />}
-        endAdornment={<InfoIcon />}
+        startAdornment={"start adornment"}
+        endAdornment={"end adornment"}
       />
     );
     expect(

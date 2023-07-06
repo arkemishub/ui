@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+"use client";
+
 import { Listbox, Transition } from "@headlessui/react";
 import { ISelectProps } from "./Select.types";
 import { Fragment } from "react";
@@ -39,7 +41,7 @@ const ArrowIcon = () => (
 function Select<T>({
   value,
   values,
-  multiple,
+  multiple = false,
   onChange,
   label,
   renderLabel,
@@ -48,7 +50,7 @@ function Select<T>({
   endAdornment,
   helperText,
   disabled = false,
-  hasError,
+  hasError = false,
   className,
   placeholder,
 }: ISelectProps<T>) {

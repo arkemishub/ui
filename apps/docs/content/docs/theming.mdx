@@ -1,0 +1,94 @@
+---
+title: Theming
+---
+
+## Extending the ArkeUI theme
+
+To customize your app and ArkeUI exported components, you will need to add the following configuration to your tailwind.config.js file:
+
+```js
+module.exports = {
+  // ...
+  arkeUI: {
+    theme: {
+      colors: {
+        primary: "#419c34",
+        "primary-contrast": "#ffffff",
+        secondary: "#049bdc",
+        background: "#ffffff",
+      },
+      extra: {
+        rounded: 4,
+        "rounded-sm": 4,
+      },
+    },
+  },
+};
+```
+
+This configuration will extend the ArkeUI theme and add custom colors and extra configurations, such as rounded corners.
+
+After adding this configuration, you can use the custom colors and extra configurations in your CSS classes and utility classes. For example, you can use the bg-primary class to set the background color to the primary color defined in the ArkeUI theme.
+
+Following the full list of keys that can be configured through your tailwind configuration file:
+
+| Name                           | Default Value  |
+| ------------------------------ | -------------- |
+| `theme.primary`                | `#A8FBD7`      |
+| `theme['primary-contrast']`    | auto-generated |
+| `theme.secondary`              | `#000000`      |
+| `theme['secondary-contrast']`  | auto-generated |
+| `theme.background`             | `#FFFFFF`      |
+| `theme['background-contrast']` | auto-generated |
+| `theme.neutral`                | `#c8d6e5`      |
+| `theme['neutral-contrast']`    | auto-generated |
+| `theme.error`                  | `#e74c3c`      |
+| `theme['error-contrast']`      | auto-generated |
+| `theme.success`                | `#2ecc71`      |
+| `theme['success-contrast']`    | auto-generated |
+| `extra.rounded`                | `12`           |
+| `extra['rounded-sm']`          | `4`            |
+
+## Generated colors
+
+Contrast colors and color tones are automatically generated but you can override them by adding the following configuration to your tailwind.config.js file:
+
+```js
+module.exports = {
+  // ...
+  arkeUI: {
+    theme: {
+      colors: {
+        background: {
+          400: "#ebebeb",
+          DEFAULT: "#ffffff",
+        },
+      },
+    },
+  },
+};
+```
+
+## Overriding components styles
+
+You can override classes exported by Arke UI. Overridable classes are defined for every component, give a look at CSS section of each component in the docs for more info.
+
+Here is an example of how easily components style is overridable
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply px-4 py-8;
+  }
+}
+```
+
+Every component has a `className` prop that can be used to add custom classes to the component. For example, you can add a custom class to the `Button` component like this:
+
+```jsx
+<Button className="px-4 py-8" />
+```

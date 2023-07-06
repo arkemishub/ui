@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
+"use client";
+
 import { Combobox, Transition } from "@headlessui/react";
 import { twMerge } from "tailwind-merge";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { IAutocompleteProps } from "./Autocomplete.types";
-import { Chip } from "../../../../../src/components/Chip";
+import { Chip } from "../Chip";
 
 const ArrowIcon = () => (
   <svg

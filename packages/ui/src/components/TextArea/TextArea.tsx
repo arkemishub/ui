@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+"use client";
+
 import { ITextAreaProps } from "./TextArea.types";
 import { twMerge } from "tailwind-merge";
 
