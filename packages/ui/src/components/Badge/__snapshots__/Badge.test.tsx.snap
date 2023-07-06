@@ -2,7 +2,9 @@
 
 exports[`Badge should match snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="relative"
+  >
     <div
       class="badge"
       data-testid="arke-badge"

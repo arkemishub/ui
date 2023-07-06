@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { act, render } from "@testing-library/react";
-import Accordion, { AccordionDetail, AccordionSummary } from "./Accordion";
-import React from "react";
+import { render } from "@testing-library/react";
+import Accordion from "./Accordion";
+import userEvent from "@testing-library/user-event";
 
 const ExpandIcon = () => (
   <svg
@@ -40,29 +40,27 @@ describe("Accordion", () => {
   test("should match snapshot", () => {
     const { asFragment } = render(
       <Accordion expanded={true}>
-        <AccordionSummary expandIcon={<ExpandIcon />}>
+        <Accordion.Summary expandIcon={<ExpandIcon />}>
           Accordion title
-        </AccordionSummary>
-        <AccordionDetail>Accordion title</AccordionDetail>
+        </Accordion.Summary>
+        <Accordion.Detail>Accordion title</Accordion.Detail>
       </Accordion>
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("should call onInputChange when input changes", () => {
+  test("should call onInputChange when input changes", async () => {
     const onExpandChange = jest.fn();
     const { getByTestId } = render(
       <Accordion expanded={true} onChange={onExpandChange}>
-        <AccordionSummary expandIcon={<ExpandIcon />}>
+        <Accordion.Summary expandIcon={<ExpandIcon />}>
           Accordion title
-        </AccordionSummary>
-        <AccordionDetail>Accordion title</AccordionDetail>
+        </Accordion.Summary>
+        <Accordion.Detail>Accordion title</Accordion.Detail>
       </Accordion>
     );
 
-    act(() => {
-      userEvent.click(getByTestId("arke-accordion-icon"));
-    });
+    await userEvent.click(getByTestId("arke-accordion-icon"));
     expect(onExpandChange).toHaveBeenCalled();
   });
 });

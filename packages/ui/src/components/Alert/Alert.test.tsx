@@ -33,25 +33,15 @@ describe("Alert", () => {
     expect(screen.getByRole("presentation")).toHaveClass("custom-class");
   });
 
-  test("should call onClick prop when clicked", () => {
-    const onClick = jest.fn();
-    render(<Alert onClick={onClick}>Alert</Alert>);
-    const alert = screen.getByText("Alert");
-    act(() => {
-      alert.click();
-    });
-    expect(onClick).toHaveBeenCalledTimes(1);
-  });
-
-  test("should render dismiss button when dismissable", () => {
-    render(<Alert dismissable>Alert</Alert>);
+  test("should render dismiss button when dismissible", () => {
+    render(<Alert dismissible>Alert</Alert>);
     expect(screen.getByRole("button")).toBeInTheDocument();
   });
 
   test("should call onDismiss prop when dismiss button is clicked", () => {
     const onDismiss = jest.fn();
     render(
-      <Alert dismissable onDismiss={onDismiss}>
+      <Alert dismissible onDismiss={onDismiss}>
         Alert
       </Alert>
     );

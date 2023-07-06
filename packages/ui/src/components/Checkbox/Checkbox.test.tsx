@@ -18,7 +18,6 @@
 
 import { Checkbox } from "./index";
 import { render } from "@testing-library/react";
-import { CheckboxColor } from "./Checkbox.types";
 
 describe("Checkbox", () => {
   test("should match snapshot", () => {
@@ -78,22 +77,14 @@ describe("Checkbox", () => {
 
   test("should render primary checkbox", () => {
     const { getByTestId } = render(
-      <Checkbox
-        checked={false}
-        onChange={() => null}
-        color={CheckboxColor.PRIMARY}
-      />
+      <Checkbox checked={false} onChange={() => null} color="primary" />
     );
     expect(getByTestId("arke-checkbox")).toHaveClass("checkbox--primary");
   });
 
   test("should render secondary checkbox", () => {
     const { getByTestId } = render(
-      <Checkbox
-        checked={false}
-        onChange={() => null}
-        color={CheckboxColor.SECONDARY}
-      />
+      <Checkbox checked={false} onChange={() => null} color="secondary" />
     );
     expect(getByTestId("arke-checkbox")).toHaveClass("checkbox--secondary");
   });

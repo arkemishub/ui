@@ -15,8 +15,8 @@
  */
 
 import { Popover } from "./index";
-import { act, render } from "@testing-library/react";
-import { userEvent } from "@storybook/testing-library";
+import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 describe("Popover", () => {
   test("should match snapshot", () => {
@@ -33,28 +33,23 @@ describe("Popover", () => {
     expect(getByTestId("arke-popover")).toBeInTheDocument();
   });
 
-  test("should render popover on click", () => {
+  test("should render popover on click", async () => {
     const { getByText } = render(
       <Popover popover={<div>Popover</div>}>Test</Popover>
     );
 
-    act(() => {
-      userEvent.click(getByText("Test"));
-    });
-
+    await userEvent.click(getByText("Test"));
     expect(getByText("Popover")).toBeVisible();
   });
 
-  test("should render popover on hover when tooltip is true", () => {
+  test("should render popover on hover when tooltip is true", async () => {
     const { getByText } = render(
       <Popover popover={<div>Popover</div>} tooltip>
         Test
       </Popover>
     );
 
-    act(() => {
-      userEvent.hover(getByText("Test"));
-    });
+    await userEvent.hover(getByText("Test"));
 
     expect(getByText("Popover")).toBeVisible();
   });

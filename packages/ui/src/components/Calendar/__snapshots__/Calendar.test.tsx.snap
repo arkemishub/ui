@@ -1,0 +1,628 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="rdp calendar"
+  >
+    <div
+      class="flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0"
+    >
+      <div
+        class="space-y-4 rdp-caption_start rdp-caption_end"
+      >
+        <div
+          class="flex justify-center pt-1 relative items-center"
+        >
+          <div
+            aria-live="polite"
+            class="text-sm font-medium"
+            id="react-day-picker-1"
+            role="presentation"
+          >
+            January 2022
+          </div>
+          <div
+            class="space-x-1 flex items-center"
+          >
+            <button
+              aria-label="Go to previous month"
+              class="rdp-button_reset rdp-button rdp-nav_button absolute left-1"
+              name="previous-month"
+              type="button"
+            >
+              <svg
+                class="calendar__icon--left"
+                fill="none"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Go to next month"
+              class="rdp-button_reset rdp-button rdp-nav_button absolute right-1"
+              name="next-month"
+              type="button"
+            >
+              <svg
+                class="calendar__icon--right"
+                fill="none"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <table
+          aria-labelledby="react-day-picker-1"
+          class="w-full border-collapse space-y-1"
+          role="grid"
+        >
+          <thead
+            class="rdp-head"
+          >
+            <tr
+              class="flex"
+            >
+              <th
+                aria-label="Sunday"
+                class="text-neutral rounded-theme-sm w-9 font-normal text-xs"
+                scope="col"
+              >
+                Su
+              </th>
+              <th
+                aria-label="Monday"
+                class="text-neutral rounded-theme-sm w-9 font-normal text-xs"
+                scope="col"
+              >
+                Mo
+              </th>
+              <th
+                aria-label="Tuesday"
+                class="text-neutral rounded-theme-sm w-9 font-normal text-xs"
+                scope="col"
+              >
+                Tu
+              </th>
+              <th
+                aria-label="Wednesday"
+                class="text-neutral rounded-theme-sm w-9 font-normal text-xs"
+                scope="col"
+              >
+                We
+              </th>
+              <th
+                aria-label="Thursday"
+                class="text-neutral rounded-theme-sm w-9 font-normal text-xs"
+                scope="col"
+              >
+                Th
+              </th>
+              <th
+                aria-label="Friday"
+                class="text-neutral rounded-theme-sm w-9 font-normal text-xs"
+                scope="col"
+              >
+                Fr
+              </th>
+              <th
+                aria-label="Saturday"
+                class="text-neutral rounded-theme-sm w-9 font-normal text-xs"
+                scope="col"
+              >
+                Sa
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="rdp-tbody"
+            role="rowgroup"
+          >
+            <tr
+              class="flex w-full mt-2"
+            >
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  26
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  27
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  28
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  29
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  30
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  31
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  1
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="flex w-full mt-2"
+            >
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  2
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  3
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  4
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  5
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  6
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  7
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  8
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="flex w-full mt-2"
+            >
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  9
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  10
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  11
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  12
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  13
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  14
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  15
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="flex w-full mt-2"
+            >
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  16
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  17
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  18
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  19
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  20
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  21
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  22
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="flex w-full mt-2"
+            >
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  23
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  24
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  25
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  26
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  27
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  28
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  29
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="flex w-full mt-2"
+            >
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  30
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn"
+                  role="gridcell"
+                >
+                  31
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  1
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  2
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  3
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  4
+                </div>
+              </td>
+              <td
+                class="text-center text-sm p-0 relative"
+                role="presentation"
+              >
+                <div
+                  class="h-9 w-9 p-0 font-normal hover:bg-neutral hover:text-neutral-contrast btn text-neutral opacity-50"
+                  role="gridcell"
+                >
+                  5
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

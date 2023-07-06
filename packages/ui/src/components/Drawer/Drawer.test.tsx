@@ -17,7 +17,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { Drawer } from "./index";
-import { userEvent } from "@storybook/testing-library";
+import userEvent from "@testing-library/user-event";
 
 const intersectionObserverMock = () => ({
   observe: () => null,
@@ -42,14 +42,14 @@ describe("Drawer", () => {
     const { getByTestId } = render(
       <Drawer open={true} onClose={() => null} position="right" />
     );
-    expect(getByTestId("arke-drawer")).toHaveClass("drawer__right");
+    expect(getByTestId("arke-drawer")).toHaveClass("drawer--right");
   });
 
   test("should render left drawer", () => {
     const { getByTestId } = render(
       <Drawer open={true} onClose={() => null} position="left" />
     );
-    expect(getByTestId("arke-drawer")).toHaveClass("drawer__left");
+    expect(getByTestId("arke-drawer")).toHaveClass("drawer--left");
   });
 
   it("should not render drawer when open prop is false", () => {
@@ -59,10 +59,10 @@ describe("Drawer", () => {
     expect(getByTestId("arke-drawer")).toHaveClass("-translate-x-full");
   });
 
-  it("should call onClose when close button is clicked", () => {
+  it("should call onClose when close button is clicked", async () => {
     const onClose = jest.fn();
     const { getByTestId } = render(<Drawer open={true} onClose={onClose} />);
-    userEvent.click(getByTestId("arke-drawer-close"));
+    await userEvent.click(getByTestId("arke-drawer-close"));
     expect(onClose).toHaveBeenCalled();
   });
 

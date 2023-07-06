@@ -16,7 +16,7 @@
 
 import { render } from "@testing-library/react";
 import { Dialog } from "./index";
-import { userEvent } from "@storybook/testing-library";
+import userEvent from "@testing-library/user-event";
 
 const intersectionObserverMock = () => ({
   observe: () => null,
@@ -44,10 +44,10 @@ describe("Dialog", () => {
     expect(queryAllByTestId("arke-dialog")).toHaveLength(0);
   });
 
-  it("should call onClose when close button is clicked", () => {
+  it("should call onClose when close button is clicked", async () => {
     const onClose = jest.fn();
     const { getByTestId } = render(<Dialog open={true} onClose={onClose} />);
-    userEvent.click(getByTestId("arke-dialog-close"));
+    await userEvent.click(getByTestId("arke-dialog-close"));
     expect(onClose).toHaveBeenCalled();
   });
 

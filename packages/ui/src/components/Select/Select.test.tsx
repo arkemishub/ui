@@ -15,8 +15,8 @@
  */
 
 import { Select } from "./index";
-import { act, render } from "@testing-library/react";
-import { userEvent } from "@storybook/testing-library";
+import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 const mockValues = [
   { id: "1", name: "Test 1" },
@@ -47,7 +47,7 @@ describe("Select", () => {
     expect(getByTestId("arke-select")).toBeInTheDocument();
   });
 
-  test("should render values", () => {
+  test("should render values", async () => {
     const { getByTestId, getByText } = render(
       <Select
         values={mockValues}
@@ -55,15 +55,13 @@ describe("Select", () => {
         renderLabel={(val) => val.name}
       />
     );
-    act(() => {
-      userEvent.click(getByTestId("arke-select"));
-    });
+    await userEvent.click(getByTestId("arke-select"));
     expect(getByText("Test 1")).toBeInTheDocument();
     expect(getByText("Test 2")).toBeInTheDocument();
     expect(getByText("Test 3")).toBeInTheDocument();
   });
 
-  test("should call onChange when value is selected", () => {
+  test("should call onChange when value is selected", async () => {
     const onChange = jest.fn();
     const { getByTestId, getByText } = render(
       <Select
@@ -72,12 +70,8 @@ describe("Select", () => {
         renderLabel={(val) => val.name}
       />
     );
-    act(() => {
-      userEvent.click(getByTestId("arke-select"));
-    });
-    act(() => {
-      userEvent.click(getByText("Test 1"));
-    });
+    await userEvent.click(getByTestId("arke-select"));
+    await userEvent.click(getByText("Test 1"));
     expect(onChange).toHaveBeenCalled();
   });
 

@@ -21,12 +21,14 @@ import { render, screen } from "@testing-library/react";
 
 describe("Breadcrumb", () => {
   it("should match snapshot", () => {
-    const { container } = render(<Breadcrumb />);
+    const { container } = render(
+      <Breadcrumb>
+        <Breadcrumb.Crumb>Home</Breadcrumb.Crumb>
+        <Breadcrumb.Crumb>Library</Breadcrumb.Crumb>
+        <Breadcrumb.Crumb>Data</Breadcrumb.Crumb>
+      </Breadcrumb>
+    );
     expect(container).toMatchSnapshot();
-  });
-
-  it("should render", () => {
-    render(<Breadcrumb />);
   });
 
   it("should render with children", () => {
@@ -64,31 +66,6 @@ describe("Breadcrumb", () => {
 
     expect(screen.getByText("Home")).toBeInTheDocument();
     expect(screen.queryByText("Library")).toBeNull();
-    expect(screen.getByText("Data")).toBeInTheDocument();
-  });
-
-  it("should render with crumbs prop", () => {
-    render(
-      <Breadcrumb
-        crumbs={[
-          {
-            content: "Home",
-            href: "/",
-          },
-          {
-            content: "Library",
-            href: "/library",
-          },
-          {
-            content: "Data",
-            href: "/library/data",
-          },
-        ]}
-      />
-    );
-
-    expect(screen.getByText("Home")).toBeInTheDocument();
-    expect(screen.getByText("Library")).toBeInTheDocument();
     expect(screen.getByText("Data")).toBeInTheDocument();
   });
 });

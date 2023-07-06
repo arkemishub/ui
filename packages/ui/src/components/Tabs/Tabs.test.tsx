@@ -15,8 +15,8 @@
  */
 
 import Tabs from "./Tabs";
-import { act, render } from "@testing-library/react";
-import { userEvent } from "@storybook/testing-library";
+import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 describe("Tabs", () => {
   test("should match snapshot", () => {
@@ -31,7 +31,7 @@ describe("Tabs", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("should show next tab", () => {
+  test("should show next tab", async () => {
     const { getByText } = render(
       <Tabs active={0}>
         <Tabs.Tab>Tab 1</Tabs.Tab>
@@ -41,9 +41,7 @@ describe("Tabs", () => {
       </Tabs>
     );
 
-    act(() => {
-      userEvent.click(getByText("Tab 2"));
-    });
+    await userEvent.click(getByText("Tab 2"));
 
     expect(getByText("Panel 2")).toBeVisible();
   });

@@ -7,7 +7,7 @@ exports[`Drawer it should match snapshot 1`] = `
     class="drawer__overlay visible"
   />
   <div
-    class="drawer drawer__left"
+    class="drawer drawer--left"
     data-testid="arke-drawer"
     role="presentation"
   >

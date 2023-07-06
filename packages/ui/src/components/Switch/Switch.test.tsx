@@ -15,8 +15,8 @@
  */
 
 import { Switch } from "./index";
-import { act, render } from "@testing-library/react";
-import { userEvent } from "@storybook/testing-library";
+import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 describe("Switch", () => {
   test("should match snapshot", () => {
@@ -29,14 +29,12 @@ describe("Switch", () => {
     expect(getByTestId("arke-switch")).toBeInTheDocument();
   });
 
-  test("should call onChange when switch is clicked", () => {
+  test("should call onChange when switch is clicked", async () => {
     const onChange = jest.fn();
     const { getByTestId } = render(<Switch onChange={onChange} />);
     expect(onChange).not.toHaveBeenCalled();
 
-    act(() => {
-      userEvent.click(getByTestId("arke-switch"));
-    });
+    await userEvent.click(getByTestId("arke-switch"));
     expect(onChange).toHaveBeenCalled();
   });
 

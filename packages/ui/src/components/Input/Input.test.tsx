@@ -16,7 +16,7 @@
 
 import Input from "./Input";
 import { render } from "@testing-library/react";
-import { userEvent } from "@storybook/testing-library";
+import userEvent from "@testing-library/user-event";
 
 describe("Input", () => {
   test("should match snapshot", () => {
@@ -33,12 +33,12 @@ describe("Input", () => {
     expect(getByTestId("arke-input")).toBeInTheDocument();
   });
 
-  test("should call onChange when input changes", () => {
+  test("should call onChange when input changes", async () => {
     const onChange = jest.fn();
     const { getByTestId } = render(
       <Input value="Value" type="text" onChange={onChange} />
     );
-    userEvent.type(getByTestId("arke-input"), "Test");
+    await userEvent.type(getByTestId("arke-input"), "Test");
     expect(onChange).toHaveBeenCalled();
   });
 

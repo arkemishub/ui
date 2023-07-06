@@ -6,11 +6,11 @@ exports[`Switch should match snapshot 1`] = `
     class="flex flex-col justify-center gap-1 w-fit"
   >
     <div
-      class="h-fit flex items-center"
+      class="flex h-fit items-center"
     >
       <button
         aria-checked="false"
-        class="switch__container"
+        class="switch__container switch__container--md"
         data-headlessui-state=""
         data-testid="arke-switch"
         id="headlessui-switch-:r0:"
@@ -19,7 +19,7 @@ exports[`Switch should match snapshot 1`] = `
         type="button"
       >
         <span
-          class="switch translate-x-1"
+          class="switch translate-x-1 h-4 w-4"
         />
       </button>
     </div>
