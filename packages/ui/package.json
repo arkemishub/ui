@@ -23,8 +23,7 @@
     "lint": "eslint",
     "test": "jest --coverage --silent",
     "components": "postcss --config src/components src/components/**/*.css --base src --dir dist && cat dist/components/**/*.css > dist/components/base.css && prejss-cli dist/components/base.css --format commonjs",
-    "utilities": "postcss --config src/utilities src/utilities/*.css --base src --dir dist && cat dist/utilities/*.css > dist/utilities/base.css && prejss-cli dist/utilities/base.css --format commonjs",
-    "semantic-release": "semantic-release"
+    "utilities": "postcss --config src/utilities src/utilities/*.css --base src --dir dist && cat dist/utilities/*.css > dist/utilities/base.css && prejss-cli dist/utilities/base.css --format commonjs"
   },
   "keywords": [
     "arke",
