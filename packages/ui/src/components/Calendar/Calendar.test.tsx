@@ -14,12 +14,21 @@
  * limitations under the License.
  */
 
-import { MutableRefObject, PropsWithChildren, ReactNode } from "react";
+import Calendar from "./Calendar";
+import { render } from "@testing-library/react";
 
-export interface IDialogProps extends PropsWithChildren<{}> {
-  open: boolean;
-  onClose: () => void;
-  title?: ReactNode;
-  className?: string;
-  initialFocus?: MutableRefObject<HTMLElement | null>;
-}
+describe("Calendar", () => {
+  it("should match snapshot", () => {
+    const { asFragment } = render(<Calendar month={new Date("01-01-2022")} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("should call onSelect when a day is clicked", () => {
+    const onSelect = jest.fn();
+    const { queryAllByText } = render(
+      <Calendar mode="single" onSelect={onSelect} />
+    );
+    queryAllByText("1")[0].click();
+    expect(onSelect).toHaveBeenCalled();
+  });
+});

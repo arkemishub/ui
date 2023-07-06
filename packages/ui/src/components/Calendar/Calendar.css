@@ -14,12 +14,7 @@
  * limitations under the License.
  */
 
-import { MutableRefObject, PropsWithChildren, ReactNode } from "react";
 
-export interface IDialogProps extends PropsWithChildren<{}> {
-  open: boolean;
-  onClose: () => void;
-  title?: ReactNode;
-  className?: string;
-  initialFocus?: MutableRefObject<HTMLElement | null>;
+.calendar__icon--left, .calendar__icon--right {
+    @apply w-4 h-4 stroke-background-contrast
 }

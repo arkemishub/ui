@@ -19,11 +19,13 @@ import Spinner from "@/examples/Spinner";
 import Switch from "@/examples/Switch";
 import Tabs from "@/examples/Tabs";
 import TextArea from "@/examples/TextArea";
+import Calendar from "@/examples/Calendar";
+import Accordion from "@/examples/Accordion";
 
 const components = [
   {
-    name: "Button",
-    component: Button,
+    name: "Accordion",
+    component: Accordion,
   },
   {
     name: "Alert",
@@ -44,6 +46,14 @@ const components = [
   {
     name: "Breadcrumb",
     component: Breadcrumb,
+  },
+  {
+    name: "Button",
+    component: Button,
+  },
+  {
+    name: "Calendar",
+    component: Calendar,
   },
   {
     name: "Checkbox",

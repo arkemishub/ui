@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { MutableRefObject, PropsWithChildren, ReactNode } from "react";
+import { PropsWithChildren } from "react";
 
-export interface IDialogProps extends PropsWithChildren<{}> {
-  open: boolean;
-  onClose: () => void;
-  title?: ReactNode;
-  className?: string;
-  initialFocus?: MutableRefObject<HTMLElement | null>;
-}
+export interface IAccordionProps
+  extends PropsWithChildren<{
+    expanded: boolean;
+    disabled?: boolean;
+    onChange?: () => void;
+    className?: string;
+  }> {}

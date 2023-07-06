@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
+export * from "./Accordion";
 export * from "./Alert";
 export * from "./Autocomplete";
 export * from "./Avatar";
 export * from "./Badge";
 export * from "./Breadcrumb";
 export * from "./Button";
+export * from "./Calendar";
 export * from "./Checkbox";
 export * from "./Chip";
 export * from "./Dialog";

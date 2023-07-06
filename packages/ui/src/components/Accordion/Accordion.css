@@ -14,12 +14,26 @@
  * limitations under the License.
  */
 
-import { MutableRefObject, PropsWithChildren, ReactNode } from "react";
+.accordion {
+    @apply p-2
+}
 
-export interface IDialogProps extends PropsWithChildren<{}> {
-  open: boolean;
-  onClose: () => void;
-  title?: ReactNode;
-  className?: string;
-  initialFocus?: MutableRefObject<HTMLElement | null>;
+.accordion__summary {
+    @apply flex
+}
+
+.accordion__summary__content {
+    @apply flex-1
+}
+
+.accordion__summary__icon {
+    @apply transition-transform duration-500
+}
+
+.accordion__detail {
+    @apply relative
+}
+
+.alert--success {
+    @apply bg-success text-success-contrast
 }

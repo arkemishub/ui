@@ -13,13 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { DayPicker } from "react-day-picker";
+import { ComponentProps } from "react";
 
-import { MutableRefObject, PropsWithChildren, ReactNode } from "react";
-
-export interface IDialogProps extends PropsWithChildren<{}> {
-  open: boolean;
-  onClose: () => void;
-  title?: ReactNode;
-  className?: string;
-  initialFocus?: MutableRefObject<HTMLElement | null>;
-}
+export type ICalendarProps = ComponentProps<typeof DayPicker>;
