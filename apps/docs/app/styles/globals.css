@@ -6,7 +6,7 @@
 @layer components {
 
     .docs__content {
-        @apply max-w-[90rem] mx-auto px-4
+        @apply max-w-[90rem] mx-auto
     }
 
     .docs__paragraph {

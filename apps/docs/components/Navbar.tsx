@@ -4,8 +4,8 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <header className="border-b-background-400 bg-background sticky top-0 border-b-2 p-4">
-      <div className="docs__content flex items-center gap-8">
+    <header className="border-b-background-400 bg-background sticky top-0 z-30 border-b-2 py-4">
+      <div className="docs__content flex items-center gap-8 px-8">
         <div className="flex items-center gap-2">
           <Image src="/logo.png" alt="logo" width={32} height={32} />
           <p className="font-semibold">arkejs/ui</p>
