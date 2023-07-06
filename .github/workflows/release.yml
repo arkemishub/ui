@@ -29,13 +29,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build package
-        run: pnpm build
+        run: pnpm build --filter=@arkejs/ui
       - name: Test
         run: pnpm test
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
-      - name: Setup semantic-release
-        run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog -D
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
