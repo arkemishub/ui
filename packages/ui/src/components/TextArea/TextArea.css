@@ -17,7 +17,7 @@
 @import "../Input/Input.css";
 
 .textarea {
-    @apply input py-2
+    @apply input__container py-2
 }
 
 .textarea__label {

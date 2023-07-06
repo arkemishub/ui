@@ -14,8 +14,20 @@
  * limitations under the License.
  */
 
+.input__container {
+    @apply z-10 w-full px-2 flex items-center min-h-[40px] min-w-[120px] border border-neutral rounded-theme bg-background text-background-contrast focus:ring-0 focus:outline-offset-0 focus:outline-primary disabled:opacity-50 disabled:cursor-not-allowed
+}
+
+.input__container:has(> .input:focus){
+    @apply outline-offset-0 border border-primary outline outline-2 outline-primary/30 disabled:cursor-not-allowed
+}
+
+.input__container:has(> .input:disabled){
+    @apply opacity-50 cursor-not-allowed
+}
+
 .input {
-    @apply min-h-[40px] min-w-[120px] border border-neutral rounded-theme bg-background text-background-contrast px-4 focus:ring-0 focus:outline-offset-0 focus:outline-primary disabled:opacity-50 disabled:cursor-not-allowed
+    @apply bg-transparent min-h-[40px] min-w-[120px] w-full !px-2 !outline-0 !border-0
 }
 
 .label {
@@ -32,4 +44,28 @@
 
 .input__helperText--error {
     @apply opacity-100 text-error
+}
+
+.input__startAdornment {
+    @apply cursor-pointer ml-1
+}
+
+.input__endAdornment {
+    @apply cursor-pointer mr-1
+}
+
+.input__prefixAdornment {
+    @apply flex items-center px-2 border border-neutral rounded-theme w-fit rounded-tr-none rounded-br-none border-r-0
+}
+
+.input__prefixAdornment .select__options {
+    @apply !w-fit
+}
+
+.input__suffixAdornment {
+    @apply flex items-center px-2 border border-neutral rounded-theme w-fit rounded-tl-none rounded-bl-none border-l-0
+}
+
+.input__suffixAdornment .select__options {
+    @apply !w-fit
 }

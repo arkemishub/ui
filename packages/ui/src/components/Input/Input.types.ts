@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { ReactNode } from "react";
 
 export type IInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   fullWidth?: boolean;
   helperText?: string;
   hasError?: boolean;
   label?: string;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
+  prefixAdornment?: ReactNode;
+  suffixAdornment?: ReactNode;
 };

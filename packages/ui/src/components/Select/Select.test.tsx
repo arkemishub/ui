@@ -86,4 +86,23 @@ describe("Select", () => {
     );
     expect(getByText("Test 1")).toBeVisible();
   });
+
+  test("should contain start/end Adornment when props is passed", () => {
+    const { container } = render(
+      <Select
+        values={mockValues}
+        onChange={() => null}
+        renderLabel={(val) => val.name}
+        value={mockValues[0]}
+        startAdornment={"start adornment"}
+        endAdornment={"end adornment"}
+      />
+    );
+    expect(
+      container.getElementsByClassName("select__startAdornment").length
+    ).toBe(1);
+    expect(
+      container.getElementsByClassName("select__endAdornment").length
+    ).toBe(1);
+  });
 });

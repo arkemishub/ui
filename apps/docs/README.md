@@ -1,30 +1,27 @@
-## Getting Started
+# @arkejs/ui
 
-First, run the development server:
+![UI](https://user-images.githubusercontent.com/81776297/233085905-585ea964-cfa5-4672-90e3-d63910b0583f.png)
 
-```bash
-yarn dev
+[![codecov](https://codecov.io/gh/arkemishub/ui/branch/main/graph/badge.svg?token=RXV4ARVWHO)](https://codecov.io/gh/arkemishub/ui)
+![Build Status](https://img.shields.io/github/actions/workflow/status/arkemishub/ui/release.yml)
+[![npm latest package](https://img.shields.io/npm/v/@arkejs/ui/latest.svg)](https://www.npmjs.com/package/@arkejs/ui)
+[![License](https://img.shields.io/badge/license-Apache2.0-blue.svg)](https://github.com/arkemishub/arke-monorepo/blob/master/LICENSE.txt)
+
+### Getting started
+
+Install the package by running:
+```shell
+pnpm i @arkejs/ui
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Extend your `tailwind.config.js` with
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```js
+module.exports = {
+    content: [
+        // ... others
+        './node_modules/@arkejs/ui/dist/**/*.{js,ts,jsx,tsx}',
+    ],
+    plugins: [require("@arkejs/ui/plugin")],
+}
+```

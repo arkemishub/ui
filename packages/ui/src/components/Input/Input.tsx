@@ -27,6 +27,10 @@ function Input({
   helperText,
   hasError = false,
   disabled = false,
+  startAdornment,
+  endAdornment,
+  prefixAdornment,
+  suffixAdornment,
   ...props
 }: IInputProps) {
   return (
@@ -36,18 +40,40 @@ function Input({
           {label}
         </label>
       )}
-      <input
-        data-testid="arke-input"
-        disabled={disabled}
-        className={twMerge(
-          "input",
-          fullWidth && "w-full",
-          hasError && "input--error",
-          className
+      <div className="flex">
+        {prefixAdornment && (
+          <div className="input__prefixAdornment">{prefixAdornment}</div>
         )}
-        type={type}
-        {...props}
-      />
+        <div
+          className={twMerge(
+            "input__container",
+            (startAdornment || endAdornment) && "px-2",
+            fullWidth && "w-full",
+            hasError && "input--error",
+            prefixAdornment && "rounded-bl-none rounded-tl-none",
+            suffixAdornment && "rounded-br-none rounded-tr-none",
+            className
+          )}
+          data-testid="arke-container"
+        >
+          {startAdornment && (
+            <div className="input__startAdornment">{startAdornment}</div>
+          )}
+          <input
+            className="input"
+            disabled={disabled}
+            type={type}
+            data-testid="arke-input"
+            {...props}
+          />
+          {endAdornment && (
+            <div className="input__endAdornment">{endAdornment}</div>
+          )}
+        </div>
+        {suffixAdornment && (
+          <div className="input__suffixAdornment">{suffixAdornment}</div>
+        )}
+      </div>
       {helperText && (
         <div
           className={twMerge(

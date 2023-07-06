@@ -23,10 +23,12 @@ export type ISelectProps<T extends unknown> = {
   multiple?: boolean;
   label?: string;
   renderLabel: (val: T) => ReactNode;
-  startIcon?: ReactNode;
-  endIcon?: ReactNode;
+  renderOption?: (val: T) => ReactNode;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
   helperText?: string;
   hasError?: boolean;
   disabled?: boolean;
   className?: string;
+  placeholder?: string;
 };
