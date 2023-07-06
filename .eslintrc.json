@@ -1,26 +1,33 @@
 {
-  "plugins": ["prettier", "@typescript-eslint", "jsx-a11y"],
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "root": true,
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
+  "extends": [
+    "next/core-web-vitals",
+    "turbo",
+    "plugin:mdx/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["tailwindcss","prettier"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "tailwindcss/no-custom-classname": "off"
   },
   "settings": {
-    "react": {
-      "version": "detect"
-    }
+    "next": {
+      "rootDir": ["apps/*/"]
+    },
+    "mdx/code-blocks": true,
+    "mdx/language-mapper": {}
   },
-  "extends": [
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended"
-  ],
-  "rules": {
-    "react/react-in-jsx-scope": "off",
-    "react/no-unknown-property": ["error", { "ignore": ["jsx"] }]
-  }
+  "overrides": [
+    {
+      "files": ["*.mdx"],
+      "extends": ["plugin:mdx/overrides"],
+      "rules": {
+        "react/jsx-no-undef": "off"
+      }
+    }
+  ]
 }

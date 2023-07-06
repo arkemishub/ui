@@ -1,0 +1,64 @@
+---
+title: Alert
+---
+
+The `Alert` component provides a way to display informative messages with different accent colors and optional dismissibility.
+
+<Preview name="Alert" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "color",
+      type: ["error", "warning", "success", "info"],
+    },
+    {
+      name: "dismissible",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "onDismiss",
+      type: "() => void",
+    },
+
+    {
+      name: "icon",
+      type: "ReactNode",
+    },
+
+]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".alert",
+      description: "Alert",
+    },
+    {
+      name: ".alert--error",
+      description: "Alert with error accent",
+    },
+    {
+      name: ".alert--warning",
+      description: "Alert with warning accent",
+    },
+    {
+      name: ".alert--success",
+      description: "Alert with success accent",
+    },
+    {
+      name: ".alert--info",
+      description: "Alert with info accent",
+    },
+  ]}
+/>

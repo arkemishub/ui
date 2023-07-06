@@ -1,0 +1,75 @@
+---
+title: Avatar
+---
+
+The `Avatar` component is used to display a user's profile picture or an icon representing their identity. It supports customization of color and size.
+
+<Preview name="Avatar" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "color",
+      type: ["primary", "secondary"],
+      defaultValue: "primary",
+    },
+    {
+      name: "name",
+      type: "string",
+    },
+    {
+      name: "size",
+      type: ["xs", "sm", "md", "lg", "xl", "2xl"],
+      defaultValue: "md",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".avatar",
+      description: "Avatar",
+    },
+    {
+      name: ".avatar--primary",
+      description: "Avatar with primary accent",
+    },
+    {
+      name: ".avatar--secondary",
+      description: "Avatar with secondary accent",
+    },
+    {
+      name: ".avatar--xs",
+      description: "Avatar with extra small size",
+    },
+    {
+      name: ".avatar--sm",
+      description: "Avatar with small size",
+    },
+    {
+      name: ".avatar--md",
+      description: "Avatar with medium size",
+    },
+    {
+      name: ".avatar--lg",
+      description: "Avatar with large size",
+    },
+    {
+      name: ".avatar--xl",
+      description: "Avatar with extra large size",
+    },
+    {
+      name: ".avatar--2xl",
+      description: "Avatar with double extra large size",
+    },
+  ]}
+/>

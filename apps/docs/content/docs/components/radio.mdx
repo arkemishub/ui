@@ -1,0 +1,85 @@
+---
+title: Radio
+---
+
+The `Radio` component is used to allow the user to select a single option from a list of choices. It provides a radio button input and supports customization of color and styling.
+
+<Preview name="Radio" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "checked*",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "color",
+      type: ["primary", "secondary"],
+      defaultValue: "secondary",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "label",
+      type: "string",
+    },
+    {
+      name: "labelPlacement",
+      type: ["top", "bottom", "left", "right"],
+      defaultValue: "right",
+    },
+    {
+      name: "name",
+      type: "string",
+    },
+    {
+      name: "onChange",
+      type: "ChangeEventHandler(HTMLInputElement)",
+    },
+    {
+      name: "value",
+      type: "string",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".radio",
+      description: "Applied to Radio input",
+    },
+    {
+      name: ".radio__container",
+      description: "Applied to Radio input container",
+    },
+    {
+      name: ".radio--primary",
+      description: "Radio with primary accent",
+    },
+    {
+      name: ".radio--secondary",
+      description: "Radio with secondary accent",
+    },
+    {
+      name: ".radio--primary--checked",
+      description: "Applied to checked Radio with primary accent",
+    },
+    {
+      name: ".radio--secondary--checked",
+      description: "Applied to checked Radio with secondary accent",
+    },
+  ]}
+/>

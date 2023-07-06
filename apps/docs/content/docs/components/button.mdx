@@ -1,0 +1,63 @@
+---
+title: Button
+---
+
+The "Button" component is used to trigger an action or event when clicked.
+
+<Preview name="Button" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "color",
+      type: ["primary", "secondary"],
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "fullWidth",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "onClick",
+      type: "MouseEventHandler(HTMLButtonElement)",
+    },
+    {
+      name: "type",
+      type: ["submit", "reset"],
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".btn",
+      description: "Button",
+    },
+    {
+      name: ".btn--primary",
+      description: "Button with primary accent",
+    },
+    {
+      name: ".btn--secondary",
+      description: "Button with secondary accent",
+    },
+    {
+      name: ".btn--disabled",
+      description: "Button with disabled state",
+    },
+  ]}
+/>

@@ -1,0 +1,58 @@
+---
+title: Json
+---
+
+The `Json` component is a wrapper of the [@monaco-editor/react](https://github.com/suren-atoyan/monaco-react) library. It provides a JSON editor with syntax highlighting and other features.
+
+<Preview name="Json" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "height",
+      type: ["string", "number"],
+    },
+    {
+      name: "width",
+      type: ["string", "number"],
+    },
+    {
+      name: "value*",
+      type: "string",
+    },
+    {
+      name: "onChange",
+      type: "(value: string) => void",
+    },
+    {
+      name: "label",
+      type: "string",
+    },
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "readOnly",
+      type: "boolean",
+      defaultValue: "false",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".json",
+      description: "Json",
+    },
+    {
+      name: ".json__label",
+      description: "Applied to Json label",
+    },
+  ]}
+/>

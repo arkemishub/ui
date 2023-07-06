@@ -1,0 +1,49 @@
+---
+title: Tabs
+---
+
+The `Tabs` component is used to display multiple content panels in a tabbed interface. It allows the user to switch between different sections of content.
+
+<Preview name="Tabs" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "onChange",
+      type: "(active: number) => void",
+    },
+    {
+      name: "active",
+      type: "number",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".tabs__list",
+      description: "Applied to Tabs container",
+    },
+    {
+      name: ".tab",
+      description: "Tab",
+    },
+    {
+      name: ".tab--selected",
+      description: "Applied to selected Tab",
+    },
+    {
+      name: ".tab__panel",
+      description: "Applied to Tab Panel",
+    },
+  ]}
+/>

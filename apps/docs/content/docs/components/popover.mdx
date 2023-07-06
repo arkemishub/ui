@@ -1,0 +1,66 @@
+---
+title: Popover
+---
+
+The `Popover` component is a wrapper that utilizes the [react-popper](https://github.com/floating-ui/react-popper) library. It provides a way to display content in a popover-style container with customizable placement.
+
+<Preview name="Popover" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "placement",
+      type: [
+        "auto",
+        "auto-start",
+        "auto-end",
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "right",
+        "right-start",
+        "right-end",
+        "left",
+        "left-start",
+        "left-end",
+      ],
+      defaultValue: "auto",
+    },
+    {
+      name: "popover",
+      type: "ReactNode",
+    },
+    {
+      name: "tooltip",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "children",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".popover",
+      description: "Popover",
+    },
+    {
+      name: ".popover__container",
+      description: "Applied to Popover container",
+    },
+  ]}
+/>

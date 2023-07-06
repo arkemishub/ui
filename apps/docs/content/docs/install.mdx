@@ -1,0 +1,36 @@
+---
+title: Install
+---
+
+Install and configure `@arkejs/ui`.
+
+## Install with your favorite package manager
+
+```bash
+npm i @arkejs/ui
+```
+
+## Configure Tailwind
+
+```js
+module.exports = {
+  //   ...
+  content: [
+    // ...
+    "./node_modules/@arkejs/ui/dist/**/*.{js,ts,jsx,tsx}",
+  ],
+  plugins: [require("@arkejs/ui/plugin")],
+};
+```
+
+## Et voilà !
+
+You can now use all the components of `@arkejs/ui` in your project.
+
+```js
+import { Button } from "@arkejs/ui";
+
+export default function Home() {
+  return <Button>Click me</Button>;
+}
+```

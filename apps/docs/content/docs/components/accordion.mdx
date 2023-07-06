@@ -1,0 +1,56 @@
+---
+title: Accordion
+---
+
+<Preview name="Accordion" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "expanded*",
+      type: "boolean",
+    },
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "onChange",
+      type: "() => void",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".accordion",
+      description: "Accordion",
+    },
+    {
+      name: ".accordion__summary",
+      description: "Accordion Summary container",
+    },
+    {
+      name: ".accordion__summary__content",
+      description: "Accordion Summary content",
+    },
+    {
+      name: ".accordion__summary__icon",
+      description: "Accordion Summary icon",
+    },
+    {
+      name: ".accordion__detail",
+      description: "Accordion Detail container",
+    },
+  ]}
+/>

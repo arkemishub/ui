@@ -1,0 +1,73 @@
+---
+title: Dialog
+---
+
+The `Dialog` component is used to display a modal dialog box that requires user interaction. It can contain a title, content, and actions.
+
+<Preview name="Dialog" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "onClose*",
+      type: "() => void",
+    },
+    {
+      name: "open*",
+      type: "boolean",
+    },
+    {
+      name: "title",
+      type: "string",
+    },
+    {
+      name: "children",
+      type: "",
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".dialog",
+      description: "Dialog",
+    },
+    {
+      name: ".dialog__container",
+      description: "Applied to Dialog container",
+    },
+    {
+      name: ".dialog__overlay",
+      description: "Applied to Dialog overlay",
+    },
+    {
+      name: ".dialog__overlay__content",
+      description: "Applied to Dialog overlay content",
+    },
+    {
+      name: ".dialog__head",
+      description: "Applied to Dialog head",
+    },
+    {
+      name: ".dialog__body",
+      description: "Applied to Dialog body",
+    },
+    {
+      name: ".dialog__title",
+      description: "Applied to Dialog title",
+    },
+    {
+      name: ".dialog__close__button",
+      description: "Applied to Dialog close button",
+    },
+  ]}
+/>

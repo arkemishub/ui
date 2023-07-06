@@ -1,0 +1,84 @@
+---
+title: Checkbox
+---
+
+The `Checkbox` component is used to allow the user to select one or more options from a list of choices. It provides a checkbox input and customizable styling options.
+
+<Preview name="Checkbox" />
+
+## Props
+
+<PropsSpec
+  data={[
+    {
+      name: "checked*",
+      type: "boolean",
+    },
+    {
+      name: "onChange*",
+      type: "ChangeEventHandler(HTMLInputElement)",
+    },
+    {
+      name: "color",
+      type: ["primary", "secondary"],
+      defaultValue: "primary",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "hasError",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "helperText",
+      type: "string",
+    },
+    {
+      name: "name",
+      type: "string",
+    },
+    {
+      name: "label",
+      type: "string",
+    },
+    {
+      name: "labelPlacement",
+      type: ["top", "bottom", "left", "right"],
+    },
+  ]}
+/>
+
+## CSS
+
+<CSSSpec
+  data={[
+    {
+      name: ".checkbox",
+      description: "Checkbox input",
+    },
+    {
+      name: ".checkbox__container",
+      description: "Applied to Checkbox container",
+    },
+    {
+      name: ".checkbox__label",
+      description: "Checkbox label",
+    },
+    {
+      name: ".checkbox--primary",
+      description: "Checkbox with primary accent",
+    },
+    {
+      name: ".checkbox--secondary",
+      description: "Checkbox with secondary accent",
+    },
+    {
+      name: ".checkbox--error",
+      description: "Checkbox with error accent",
+    },
+  ]}
+/>

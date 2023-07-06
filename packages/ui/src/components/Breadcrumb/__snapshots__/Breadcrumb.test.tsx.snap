@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb should match snapshot 1`] = `
+<div>
+  <ul
+    class="breadcrumb"
+  >
+    <li
+      class="breadcrumb__crumb"
+    >
+      <span>
+        Home
+      </span>
+      <svg
+        class="breadcrumb__crumb__arrow"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </li>
+    <li
+      class="breadcrumb__crumb"
+    >
+      <span>
+        Library
+      </span>
+      <svg
+        class="breadcrumb__crumb__arrow"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </li>
+    <li
+      class="breadcrumb__crumb"
+    >
+      <span>
+        Data
+      </span>
+    </li>
+  </ul>
+</div>
+`;
