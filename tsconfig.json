@@ -1,20 +1,7 @@
 {
-  "include": ["src/index.ts"],
-  "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "declaration": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "jsx": "react-jsx",
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "emitDeclarationOnly": true,
-    "outDir": "dist",
-    "rootDir": "src"
-  },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
   "exclude": [
-    "**/*.stories.tsx",
+    "node_modules",
   ]
 }

@@ -6,6 +6,8 @@ on:
     branches:
       - main
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   Release:
     name: Release
@@ -19,11 +21,11 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.1
         with:
-         version: latest
-      - name: Setup Node.js
+          version: 8.6.1
+      - name: Setup Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: "lts/*"
+          node-version: 18
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build package
@@ -34,11 +36,17 @@ jobs:
         uses: codecov/codecov-action@v3
       - name: Setup semantic-release
         run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog -D
-      - name: Release
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          commit: "chore(release): version packages"
+          title: "chore(release): version packages"
+          version: npx changeset version
+          publish: npx changeset publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PA_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
   Deploy-Docs:
     name: Deploy Docs
     uses: './.github/workflows/docs.yml'
