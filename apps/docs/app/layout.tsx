@@ -3,6 +3,15 @@ import "./styles/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileNavbar from "@/components/MobileNavbar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Arke UI",
+  description: "Arke UI component library based on Tailwind CSS",
+  openGraph: {
+    images: ["/og.png"],
+  },
+};
 
 export default function RootLayout({
   children,
