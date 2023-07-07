@@ -21,7 +21,7 @@ function AccordionDetail({ children, expanded }: IAccordionDetailProps) {
       data-testid="arke-accordion-detail"
       className={twMerge(
         "accordion__detail",
-        !expanded ? "h-0 overflow-hidden" : "h-[40px]"
+        !expanded ? "h-0 overflow-hidden" : "h-fit"
       )}
     >
       {children}
