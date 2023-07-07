@@ -6,10 +6,10 @@ function Footer() {
       <div className="docs__content px-8">
         <div>
           <div className="flex items-center gap-8">
-            <a href="https://www.mokkastudios.com/en" target="_blank">
+            <a href="https://www.mokkastudios.com" target="_blank">
               <Image src="/mokka.svg" alt="Mokka Logo" width={30} height={30} />
             </a>
-            <a href="https://www.mokkastudios.com/en" target="_blank">
+            <a href="https://arkehub.com" target="_blank">
               <Image src="/arke.svg" alt="Arke Logo" width={100} height={28} />
             </a>
           </div>

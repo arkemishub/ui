@@ -1,7 +1,12 @@
+"use client";
+
 import sidebar from "@/config/sidebar";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { twMerge } from "tailwind-merge";
 
 function Sidebar() {
+  const pathname = usePathname();
   return (
     <aside className="sticky top-16 z-10 hidden h-[calc(100vh-4rem)] py-8 md:block">
       <div className="relative h-full overflow-hidden">
@@ -11,7 +16,10 @@ function Sidebar() {
               <Link
                 key={index}
                 href={href}
-                className="text-neutral block py-1 text-sm hover:underline"
+                className={twMerge(
+                  "text-neutral block py-1 text-sm hover:underline",
+                  href === pathname && "text-background-contrast"
+                )}
               >
                 {title}
               </Link>
