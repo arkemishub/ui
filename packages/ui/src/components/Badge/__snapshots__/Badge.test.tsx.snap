@@ -2,7 +2,7 @@
 
 exports[`Badge should match snapshot 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="relative"
   >
     <div
@@ -10,6 +10,6 @@ exports[`Badge should match snapshot 1`] = `
       data-testid="arke-badge"
     />
     Badge
-  </div>
+  </span>
 </DocumentFragment>
 `;
