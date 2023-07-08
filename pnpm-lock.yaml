@@ -92,6 +92,9 @@ importers:
       shiki:
         specifier: ^0.14.2
         version: 0.14.2
+      tailwind-merge:
+        specifier: ^1.9.0
+        version: 1.9.0
       unist-builder:
         specifier: ^3.0.1
         version: 3.0.1
