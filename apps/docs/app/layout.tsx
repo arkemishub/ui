@@ -8,9 +8,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Arke UI",
   description: "Arke UI component library based on Tailwind CSS",
-  openGraph: {
-    images: ["/og.png"],
-  },
 };
 
 export default function RootLayout({

@@ -13,13 +13,15 @@ function MySelect() {
   const [value, setValue] = React.useState(departments[0]);
 
   return (
-    <Select
-      label="Select an item"
-      value={value}
-      values={departments}
-      onChange={(value) => setValue(value)}
-      renderLabel={(value) => value.name}
-    />
+    <div className="min-w-[80%]">
+      <Select
+        label="Select an item"
+        value={value}
+        values={departments}
+        onChange={(value) => setValue(value)}
+        renderLabel={(value) => value.name}
+      />
+    </div>
   );
 }
 

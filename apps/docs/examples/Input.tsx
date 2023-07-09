@@ -4,7 +4,13 @@ import React from "react";
 function MyInput() {
   const [value, setValue] = React.useState("");
   return (
-    <Input value={value} onChange={(event) => setValue(event.target.value)} />
+    <div className="min-w-[80%]">
+      <Input
+        label="Input"
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+      />
+    </div>
   );
 }
 

@@ -5,7 +5,7 @@ import { useState } from "react";
 function MyAccordion() {
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className="h-[200px]">
+    <div className="h-full w-full">
       <Accordion
         expanded={expanded}
         onChange={() => setExpanded((prevState) => !prevState)}

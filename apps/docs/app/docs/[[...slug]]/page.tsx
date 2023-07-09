@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Mdx from "@/components/Mdx";
 import TableOfContents from "@/components/TableOfContents";
 import Pagination from "@/components/Pagination";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 type Props = { params: { slug: string[] } };
 
@@ -15,9 +15,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `Arke UI - ${doc?.title}`,
-    openGraph: {
-      images: ["/og.png"],
-    },
   };
 }
 
