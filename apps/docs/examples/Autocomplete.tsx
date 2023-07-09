@@ -22,13 +22,16 @@ function MyAutocomplete() {
   );
 
   return (
-    <Autocomplete
-      value={value}
-      values={filteredValues}
-      onInputChange={(e) => setSearch(e.target.value)}
-      onChange={(val) => setValue(val)}
-      getDisplayValue={(val) => val?.name}
-    />
+    <div className="min-w-[80%]">
+      <Autocomplete
+        label="Search for an item"
+        value={value}
+        values={filteredValues}
+        onInputChange={(e) => setSearch(e.target.value)}
+        onChange={(val) => setValue(val)}
+        getDisplayValue={(val) => val?.name}
+      />
+    </div>
   );
 }
 
