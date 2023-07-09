@@ -23,7 +23,7 @@ import type { IBadgeProps } from "./Badge.types";
 
 function Badge({ className, color, label, children }: IBadgeProps) {
   return (
-    <div className="relative">
+    <span className="relative">
       <div
         data-testid="arke-badge"
         className={twMerge(
@@ -36,7 +36,7 @@ function Badge({ className, color, label, children }: IBadgeProps) {
         {label}
       </div>
       {children}
-    </div>
+    </span>
   );
 }
 

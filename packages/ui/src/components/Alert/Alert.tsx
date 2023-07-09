@@ -140,7 +140,7 @@ function Alert({
   return (
     <>
       {visible && (
-        <span
+        <div
           role="presentation"
           className={twMerge(
             "alert",
@@ -170,7 +170,7 @@ function Alert({
               </div>
             )}
           </div>
-        </span>
+        </div>
       )}
     </>
   );

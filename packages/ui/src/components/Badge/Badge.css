@@ -15,7 +15,7 @@
  */
 
 .badge {
-    @apply absolute -top-3 -right-3 z-10 p-0.5 flex items-center justify-center rounded-full text-xs min-w-[0.875rem] min-h-[0.875rem]
+    @apply absolute -top-3 -right-4 z-10 p-0.5 flex items-center justify-center rounded-full text-xs min-w-[1.25rem] min-h-[1.25rem]
 }
 
 .badge--primary {
