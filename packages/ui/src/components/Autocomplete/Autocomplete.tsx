@@ -63,13 +63,13 @@ function Autocomplete<TValue>({
   label,
   placeholder,
   multiple,
-  renderLabel,
+  renderOption,
   startAdornment,
   endAdornment,
   helperText,
   onChange,
   onInputChange,
-  getDisplayValue,
+  renderLabel,
   renderChips = true,
   nullable,
   clearable,
@@ -83,19 +83,19 @@ function Autocomplete<TValue>({
   const [inputValue, setInputValue] = useState<string>("");
   type TActualValue = true extends typeof multiple ? TValue[] : TValue;
 
-  const onGetDisplayValue = (value: TValue) =>
+  const onRenderLabel = (value: TValue) =>
     (value &&
       (Array.isArray(value)
-        ? (value as TValue[]).map((val) => getDisplayValue(val)).join(", ")
-        : getDisplayValue(value))) ??
+        ? (value as TValue[]).map((val) => renderLabel(val)).join(", ")
+        : renderLabel(value))) ??
     "";
 
   function updateInputValue() {
     if (multiple) {
       setInputValue("");
     } else {
-      if (inputValue !== onGetDisplayValue(value as TValue))
-        setInputValue(onGetDisplayValue(value as TValue));
+      if (inputValue !== onRenderLabel(value as TValue))
+        setInputValue(onRenderLabel(value as TValue));
     }
   }
 
@@ -140,7 +140,7 @@ function Autocomplete<TValue>({
             <Combobox.Input
               as={Fragment}
               onChange={(e) => onInputChange?.(e)}
-              displayValue={onGetDisplayValue}
+              displayValue={onRenderLabel}
             >
               <>
                 <div
@@ -165,7 +165,7 @@ function Autocomplete<TValue>({
                         className="autocomplete__chip"
                         onDelete={() => handleOnDelete(index)}
                       >
-                        {onGetDisplayValue(item)}
+                        {onRenderLabel(item)}
                       </Chip>
                     ))}
                   <input
@@ -229,7 +229,7 @@ function Autocomplete<TValue>({
                       (selected || active) && "autocomplete__option--active"
                     )}
                   >
-                    {renderLabel ? renderLabel(val) : getDisplayValue(val)}
+                    {renderOption ? renderOption(val) : renderLabel(val)}
                   </li>
                 )}
               </Combobox.Option>
