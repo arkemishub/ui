@@ -1,5 +1,12 @@
 # @arkejs/ui
 
+## 0.28.4
+
+### Patch Changes
+
+- 3de4c01: fix: use height fit-content on accordion detail
+- 20346b6: fix: minor style fixes on Alert and Badge
+
 ## 0.28.3
 
 ### Patch Changes
