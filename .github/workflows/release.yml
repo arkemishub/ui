@@ -9,7 +9,7 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  Release:
+  release:
     name: Release
     runs-on: ubuntu-latest
     steps:
@@ -45,6 +45,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Deploy Docs
-        if: steps.changesets.outputs.published == 'true'
-        uses: './.github/workflows/docs.yml'
+  docs:
+    name: Publish docs
+    needs: Release
+    if: needs.release.outputs.published == 'true'
+    uses: './.github/workflows/docs.yml'
