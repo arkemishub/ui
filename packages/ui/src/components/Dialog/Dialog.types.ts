@@ -16,10 +16,13 @@
 
 import { MutableRefObject, PropsWithChildren, ReactNode } from "react";
 
+export type TDialogCloseReason = "backdropClick" | "closeButton";
+
 export interface IDialogProps extends PropsWithChildren<{}> {
   open: boolean;
-  onClose: () => void;
+  onClose: (reason: TDialogCloseReason) => void;
   title?: ReactNode;
   className?: string;
   initialFocus?: MutableRefObject<HTMLElement | null>;
+  disableBackdropClose?: boolean;
 }

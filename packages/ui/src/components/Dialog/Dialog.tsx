@@ -20,6 +20,7 @@ import { Dialog as HeadlessDialog } from "@headlessui/react";
 import type { IDialogProps } from "./Dialog.types";
 import { Button } from "../Button";
 import { twMerge } from "tailwind-merge";
+import { TDialogCloseReason } from "./Dialog.types";
 
 function Dialog({
   open,
@@ -28,13 +29,23 @@ function Dialog({
   children,
   className,
   initialFocus,
+  disableBackdropClose = false,
 }: IDialogProps) {
+  const handleClose = (reason: TDialogCloseReason) => {
+    if (reason == "backdropClick" && !disableBackdropClose) {
+      onClose(reason);
+    } else if (reason == "closeButton") {
+      onClose(reason);
+    }
+  };
+
   return (
     <HeadlessDialog
       initialFocus={initialFocus}
       className="dialog__container"
       open={open}
-      onClose={onClose}
+      onClose={() => handleClose("backdropClick")}
+      data-testid="arke-dialog-backdrop"
     >
       <div className="dialog__overlay" aria-hidden="true" />
       <div className="dialog__overlay__content">
@@ -44,7 +55,10 @@ function Dialog({
         >
           <div className="dialog__head">
             {title && <p className="dialog__title">{title}</p>}
-            <Button onClick={onClose} className="dialog__close__button">
+            <Button
+              onClick={() => handleClose("closeButton")}
+              className="dialog__close__button"
+            >
               <svg
                 data-testid="arke-dialog-close"
                 xmlns="http://www.w3.org/2000/svg"
