@@ -1,5 +1,17 @@
 # @arkejs/ui
 
+## 0.29.0
+
+### Minor Changes
+
+- a1d2732: feat: Dialog disableBackdropClose and close reason
+
+### Patch Changes
+
+- 5f0fd14: feat: use renderLabel and renderOptions on autocomplete
+- 507d4fd: chore: extend label type with ReactNode
+- f6a696d: fix: use fixed position for select/autocomplete options
+
 ## 0.28.4
 
 ### Patch Changes
