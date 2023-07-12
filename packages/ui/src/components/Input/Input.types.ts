@@ -20,7 +20,7 @@ export type IInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   fullWidth?: boolean;
   helperText?: string;
   hasError?: boolean;
-  label?: string;
+  label?: string | ReactNode;
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
   prefixAdornment?: ReactNode;

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 export interface IBadgeProps extends PropsWithChildren<{}> {
   className?: string;
   color?: "primary" | "secondary";
-  label?: string;
+  label?: string | ReactNode;
 }

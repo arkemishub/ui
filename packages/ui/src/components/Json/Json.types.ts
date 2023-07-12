@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { ReactNode } from "react";
 
 interface IJsonProps {
   height?: string | number;
   width?: string | number;
   value: string;
   onChange?: (value: string) => void;
-  label?: string;
+  label?: string | ReactNode;
   readOnly?: boolean;
   className?: string;
 }

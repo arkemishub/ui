@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { ReactNode } from "react";
 
 export type ITextAreaProps =
   React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
-    label?: string;
+    label?: string | ReactNode;
   };

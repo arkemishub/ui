@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { ReactNode } from "react";
 
 export interface ISwitchProps {
   checked?: boolean;
   onChange?: () => void;
   color?: "primary" | "secondary";
-  label?: string;
+  label?: string | ReactNode;
   labelPosition?: "top" | "right" | "bottom" | "left";
   size?: "sm" | "md";
   disabled?: boolean;
