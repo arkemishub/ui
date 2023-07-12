@@ -16,11 +16,13 @@
 
 "use client";
 
+import { useRef, RefObject } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { twMerge } from "tailwind-merge";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { IAutocompleteProps } from "./Autocomplete.types";
 import { Chip } from "../Chip";
+import useContainerRect from "../../hooks/useContainerRect";
 
 const ArrowIcon = () => (
   <svg
@@ -80,10 +82,11 @@ function Autocomplete<TValue>({
   boolean | undefined,
   boolean | undefined
 >): JSX.Element {
+  const { containerRef, setPosition, getPosition } = useContainerRect();
   const [inputValue, setInputValue] = useState<string>("");
   type TActualValue = true extends typeof multiple ? TValue[] : TValue;
 
-  const onrenderValue = (value: TValue) =>
+  const onRenderValue = (value: TValue) =>
     (value &&
       (Array.isArray(value)
         ? (value as TValue[]).map((val) => renderValue(val)).join(", ")
@@ -94,8 +97,8 @@ function Autocomplete<TValue>({
     if (multiple) {
       setInputValue("");
     } else {
-      if (inputValue !== onrenderValue(value as TValue))
-        setInputValue(onrenderValue(value as TValue));
+      if (inputValue !== onRenderValue(value as TValue))
+        setInputValue(onRenderValue(value as TValue));
     }
   }
 
@@ -140,10 +143,12 @@ function Autocomplete<TValue>({
             <Combobox.Input
               as={Fragment}
               onChange={(e) => onInputChange?.(e)}
-              displayValue={onrenderValue}
+              displayValue={onRenderValue}
             >
               <>
                 <div
+                  ref={containerRef}
+                  onClick={setPosition}
                   className={twMerge(
                     "autocomplete__input__container",
                     multiple && "autocomplete__input__container--multiple",
@@ -165,7 +170,7 @@ function Autocomplete<TValue>({
                         className="autocomplete__chip"
                         onDelete={() => handleOnDelete(index)}
                       >
-                        {onrenderValue(item)}
+                        {onRenderValue(item)}
                       </Chip>
                     ))}
                   <input
@@ -216,7 +221,10 @@ function Autocomplete<TValue>({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Combobox.Options className="autocomplete__options">
+          <Combobox.Options
+            className="autocomplete__options"
+            style={getPosition()}
+          >
             {values?.length === 0 && (
               <li className={twMerge("autocomplete__option")}>Nothing found</li>
             )}

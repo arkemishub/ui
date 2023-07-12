@@ -33,7 +33,7 @@
 }
 
 .select__options {
-    @apply absolute z-20 mt-2 w-full rounded-theme-sm bg-background text-background-contrast py-2 border border-neutral
+    @apply fixed z-20 mt-2 w-full overflow-y-auto max-h-[220px] rounded-theme-sm bg-background text-background-contrast py-2 border border-neutral
 }
 
 .select__option {

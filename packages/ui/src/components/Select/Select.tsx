@@ -20,6 +20,7 @@ import { Listbox, Transition } from "@headlessui/react";
 import { ISelectProps } from "./Select.types";
 import { Fragment } from "react";
 import { twMerge } from "tailwind-merge";
+import useContainerRect from "../../hooks/useContainerRect";
 
 const ArrowIcon = () => (
   <svg
@@ -54,6 +55,7 @@ function Select<T>({
   className,
   placeholder,
 }: ISelectProps<T>) {
+  const { containerRef, setPosition, getPosition } = useContainerRect();
   return (
     <div className="relative">
       <Listbox
@@ -63,7 +65,11 @@ function Select<T>({
         disabled={disabled}
       >
         {label && <Listbox.Label className="label">{label}</Listbox.Label>}
-        <div className={twMerge("select__container", className)}>
+        <div
+          ref={containerRef}
+          onClick={setPosition}
+          className={twMerge("select__container", className)}
+        >
           <div className="flex w-full items-center">
             {startAdornment && (
               <Listbox.Button className="select__startAdornment">
@@ -101,7 +107,7 @@ function Select<T>({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Listbox.Options className="select__options">
+          <Listbox.Options className="select__options" style={getPosition()}>
             {values?.map((val, index) => (
               <Listbox.Option key={index} value={val} as={Fragment}>
                 {({ active, selected }) => (
