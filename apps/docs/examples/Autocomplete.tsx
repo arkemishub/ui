@@ -29,7 +29,7 @@ function MyAutocomplete() {
         values={filteredValues}
         onInputChange={(e) => setSearch(e.target.value)}
         onChange={(val) => setValue(val)}
-        getDisplayValue={(val) => val?.name}
+        renderLabel={(val) => val?.name}
       />
     </div>
   );
