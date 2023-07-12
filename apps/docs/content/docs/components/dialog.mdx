@@ -16,7 +16,7 @@ The `Dialog` component is used to display a modal dialog box that requires user 
     },
     {
       name: "onClose*",
-      type: "() => void",
+      type: "(reason: TDialogCloseReason) => void",
     },
     {
       name: "open*",
@@ -29,6 +29,10 @@ The `Dialog` component is used to display a modal dialog box that requires user 
     {
       name: "children",
       type: "",
+    },
+    {
+      name: "backdropClose",
+      type: "boolean",
     },
   ]}
 />

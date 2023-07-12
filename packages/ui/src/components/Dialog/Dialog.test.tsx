@@ -44,11 +44,29 @@ describe("Dialog", () => {
     expect(queryAllByTestId("arke-dialog")).toHaveLength(0);
   });
 
-  it("should call onClose when close button is clicked", async () => {
+  it("should call onClose when close button is clicked with closeButton reason", async () => {
     const onClose = jest.fn();
     const { getByTestId } = render(<Dialog open={true} onClose={onClose} />);
     await userEvent.click(getByTestId("arke-dialog-close"));
-    expect(onClose).toHaveBeenCalled();
+    expect(onClose).toHaveBeenCalledWith("closeButton");
+  });
+
+  it("should not call onClose when backdropClose is false", async () => {
+    const onClose = jest.fn();
+    const { getByTestId } = render(
+      <Dialog open={true} onClose={onClose} backdropClose={false} />
+    );
+    await userEvent.click(getByTestId("arke-dialog-backdrop"));
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it("should call onClose when backdrop button is clicked with backdropClick reason", async () => {
+    const onClose = jest.fn();
+    const { getByTestId } = render(
+      <Dialog open={true} onClose={onClose} backdropClose />
+    );
+    await userEvent.click(getByTestId("arke-dialog-backdrop"));
+    expect(onClose).toHaveBeenCalledWith("backdropClick");
   });
 
   it("should render title", () => {

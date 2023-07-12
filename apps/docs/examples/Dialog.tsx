@@ -8,7 +8,12 @@ function MyDialog() {
       <Button color="primary" onClick={() => setOpen(true)}>
         Open Dialog
       </Button>
-      <Dialog title="Dialog" open={open} onClose={() => setOpen(false)}>
+      <Dialog
+        title="Dialog"
+        open={open}
+        onClose={() => setOpen(false)}
+        backdropClose
+      >
         Hey!
       </Dialog>
     </>
