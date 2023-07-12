@@ -19,7 +19,7 @@ import { ChangeEventHandler, ReactNode } from "react";
 type AutocompleteBaseProps<TValue> = {
   values?: TValue[];
   label?: string;
-  renderLabel: (val: TValue) => string | undefined;
+  renderValue: (val: TValue) => string | undefined;
   renderOption?: (val: TValue) => ReactNode;
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;

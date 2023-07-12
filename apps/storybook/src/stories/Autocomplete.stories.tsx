@@ -37,7 +37,7 @@ export const Default = (args: Story["args"]) => {
       values={filteredValues}
       onInputChange={(e) => setSearch(e.target.value)}
       onChange={handleChange}
-      renderLabel={(val) => val?.name}
+      renderValue={(val) => val?.name}
       placeholder="Search..."
     />
   );
@@ -65,7 +65,7 @@ export const Nullable = (args: Story["args"]) => {
           setSearch(e.target.value);
         }}
         onChange={handleChange}
-        renderLabel={(val) => val?.name}
+        renderValue={(val) => val?.name}
         placeholder="Search..."
       />
     </>
@@ -93,7 +93,7 @@ export const Clearable = (args: Story["args"]) => {
         setSearch(e.target.value);
       }}
       onChange={handleChange}
-      renderLabel={(val) => val?.name}
+      renderValue={(val) => val?.name}
       placeholder="Search..."
     />
   );

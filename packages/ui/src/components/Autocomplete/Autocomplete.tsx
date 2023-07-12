@@ -69,7 +69,7 @@ function Autocomplete<TValue>({
   helperText,
   onChange,
   onInputChange,
-  renderLabel,
+  renderValue,
   renderChips = true,
   nullable,
   clearable,
@@ -83,19 +83,19 @@ function Autocomplete<TValue>({
   const [inputValue, setInputValue] = useState<string>("");
   type TActualValue = true extends typeof multiple ? TValue[] : TValue;
 
-  const onRenderLabel = (value: TValue) =>
+  const onrenderValue = (value: TValue) =>
     (value &&
       (Array.isArray(value)
-        ? (value as TValue[]).map((val) => renderLabel(val)).join(", ")
-        : renderLabel(value))) ??
+        ? (value as TValue[]).map((val) => renderValue(val)).join(", ")
+        : renderValue(value))) ??
     "";
 
   function updateInputValue() {
     if (multiple) {
       setInputValue("");
     } else {
-      if (inputValue !== onRenderLabel(value as TValue))
-        setInputValue(onRenderLabel(value as TValue));
+      if (inputValue !== onrenderValue(value as TValue))
+        setInputValue(onrenderValue(value as TValue));
     }
   }
 
@@ -140,7 +140,7 @@ function Autocomplete<TValue>({
             <Combobox.Input
               as={Fragment}
               onChange={(e) => onInputChange?.(e)}
-              displayValue={onRenderLabel}
+              displayValue={onrenderValue}
             >
               <>
                 <div
@@ -165,7 +165,7 @@ function Autocomplete<TValue>({
                         className="autocomplete__chip"
                         onDelete={() => handleOnDelete(index)}
                       >
-                        {onRenderLabel(item)}
+                        {onrenderValue(item)}
                       </Chip>
                     ))}
                   <input
@@ -229,7 +229,7 @@ function Autocomplete<TValue>({
                       (selected || active) && "autocomplete__option--active"
                     )}
                   >
-                    {renderOption ? renderOption(val) : renderLabel(val)}
+                    {renderOption ? renderOption(val) : renderValue(val)}
                   </li>
                 )}
               </Combobox.Option>

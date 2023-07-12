@@ -30,7 +30,7 @@ describe("Select", () => {
       <Select
         values={mockValues}
         onChange={() => null}
-        renderLabel={(val) => val.name}
+        renderValue={(val) => val.name}
       />
     );
     expect(asFragment()).toMatchSnapshot();
@@ -41,7 +41,7 @@ describe("Select", () => {
       <Select
         values={mockValues}
         onChange={() => null}
-        renderLabel={(val) => val.name}
+        renderValue={(val) => val.name}
       />
     );
     expect(getByTestId("arke-select")).toBeInTheDocument();
@@ -52,7 +52,7 @@ describe("Select", () => {
       <Select
         values={mockValues}
         onChange={() => null}
-        renderLabel={(val) => val.name}
+        renderValue={(val) => val.name}
       />
     );
     await userEvent.click(getByTestId("arke-select"));
@@ -67,7 +67,7 @@ describe("Select", () => {
       <Select
         values={mockValues}
         onChange={onChange}
-        renderLabel={(val) => val.name}
+        renderValue={(val) => val.name}
       />
     );
     await userEvent.click(getByTestId("arke-select"));
@@ -80,7 +80,7 @@ describe("Select", () => {
       <Select
         values={mockValues}
         onChange={() => null}
-        renderLabel={(val) => val.name}
+        renderValue={(val) => val.name}
         value={mockValues[0]}
       />
     );
@@ -92,7 +92,7 @@ describe("Select", () => {
       <Select
         values={mockValues}
         onChange={() => null}
-        renderLabel={(val) => val.name}
+        renderValue={(val) => val.name}
         value={mockValues[0]}
         startAdornment={"start adornment"}
         endAdornment={"end adornment"}
