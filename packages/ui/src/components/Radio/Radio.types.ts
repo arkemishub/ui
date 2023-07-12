@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, ReactNode } from "react";
 
 export interface IRadioProps {
   name?: string;
-  label?: string;
+  label?: string | ReactNode;
   labelPlacement?: "top" | "bottom" | "left" | "right";
   color?: "primary" | "secondary";
   checked?: boolean;

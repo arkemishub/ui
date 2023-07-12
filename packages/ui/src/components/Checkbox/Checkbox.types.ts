@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, ReactNode } from "react";
 
 export interface ICheckboxProps {
   name?: string;
   checked: boolean;
   onChange: ChangeEventHandler<HTMLInputElement>;
   disabled?: boolean;
-  label?: string;
+  label?: string | ReactNode;
   helperText?: string;
   hasError?: boolean;
   labelPlacement?: "top" | "bottom" | "left" | "right";
