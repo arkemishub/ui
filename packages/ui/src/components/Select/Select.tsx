@@ -44,7 +44,7 @@ function Select<T>({
   multiple = false,
   onChange,
   label,
-  renderLabel,
+  renderValue,
   renderOption,
   startAdornment,
   endAdornment,
@@ -64,7 +64,7 @@ function Select<T>({
       >
         {label && <Listbox.Label className="label">{label}</Listbox.Label>}
         <div className={twMerge("select__container", className)}>
-          <div className="w-full flex items-center">
+          <div className="flex w-full items-center">
             {startAdornment && (
               <Listbox.Button className="select__startAdornment">
                 {startAdornment}
@@ -79,9 +79,9 @@ function Select<T>({
             >
               {value ? (
                 Array.isArray(value) ? (
-                  value.map((val) => renderLabel(val)).join(", ")
+                  value.map((val) => renderValue(val)).join(", ")
                 ) : (
-                  renderLabel(value)
+                  renderValue(value)
                 )
               ) : (
                 <span className="select__placeholder">
@@ -111,7 +111,7 @@ function Select<T>({
                       (selected || active) && "select__option--active"
                     )}
                   >
-                    {renderOption ? renderOption(val) : renderLabel(val)}
+                    {renderOption ? renderOption(val) : renderValue(val)}
                   </li>
                 )}
               </Listbox.Option>

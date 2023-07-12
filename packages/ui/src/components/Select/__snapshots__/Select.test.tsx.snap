@@ -9,7 +9,7 @@ exports[`Select should match snapshot 1`] = `
       class="select__container"
     >
       <div
-        class="w-full flex items-center"
+        class="flex w-full items-center"
       >
         <button
           aria-expanded="false"

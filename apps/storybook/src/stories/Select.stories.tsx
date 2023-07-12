@@ -30,7 +30,7 @@ export const Default = (args: Story["args"]) => {
       value={value}
       onChange={handleChange}
       values={values}
-      renderLabel={(item) => item?.name}
+      renderValue={(val) => val?.name}
     />
   );
 };
@@ -48,7 +48,7 @@ export const Multiple = (args: Story["args"]) => {
       onChange={handleChange}
       values={values}
       multiple
-      renderLabel={(item) => item?.name}
+      renderValue={(val) => val?.name}
     />
   );
 };

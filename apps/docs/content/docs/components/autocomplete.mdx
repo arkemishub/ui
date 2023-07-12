@@ -19,7 +19,11 @@ The `Autocomplete` component is used to create an input field with suggestions o
       type: "string",
     },
     {
-      name: "renderLabel",
+      name: "renderValue*",
+      type: "(val: TValue) => ReactNode",
+    },
+    {
+      name: "renderOption",
       type: "(val: TValue) => ReactNode",
     },
     {
