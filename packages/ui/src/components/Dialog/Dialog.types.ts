@@ -24,5 +24,5 @@ export interface IDialogProps extends PropsWithChildren<{}> {
   title?: ReactNode;
   className?: string;
   initialFocus?: MutableRefObject<HTMLElement | null>;
-  backdropClose?: boolean;
+  disableBackdropClose?: boolean;
 }

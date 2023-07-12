@@ -12,7 +12,7 @@ function MyDialog() {
         title="Dialog"
         open={open}
         onClose={() => setOpen(false)}
-        backdropClose
+        disableBackdropClose
       >
         Hey!
       </Dialog>

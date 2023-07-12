@@ -29,10 +29,10 @@ function Dialog({
   children,
   className,
   initialFocus,
-  backdropClose = false,
+  disableBackdropClose = true,
 }: IDialogProps) {
   const handleClose = (reason: TDialogCloseReason) => {
-    if (reason == "backdropClick" && backdropClose) {
+    if (reason == "backdropClick" && !disableBackdropClose) {
       onClose(reason);
     } else if (reason == "closeButton") {
       onClose(reason);

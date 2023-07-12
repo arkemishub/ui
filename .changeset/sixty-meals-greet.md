@@ -2,4 +2,4 @@
 "@arkejs/ui": minor
 ---
 
-feat: Dialog backdropClose and close reason
+feat: Dialog disableBackdropClose and close reason
