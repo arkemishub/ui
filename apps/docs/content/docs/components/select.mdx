@@ -50,8 +50,12 @@ The `Select` component is used to allow the user to select an option from a drop
       type: "(value: T) => void",
     },
     {
-      name: "renderLabel*",
-      type: "(value: T) => ReactNode",
+      name: "renderValue*",
+      type: "(val: TValue) => ReactNode",
+    },
+    {
+      name: "renderOption",
+      type: "(val: TValue) => ReactNode",
     },
     {
       name: "value",

@@ -19,7 +19,7 @@ function MySelect() {
         value={value}
         values={departments}
         onChange={(value) => setValue(value)}
-        renderLabel={(value) => value.name}
+        renderValue={(value) => value.name}
       />
     </div>
   );
