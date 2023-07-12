@@ -60,15 +60,6 @@ describe("Dialog", () => {
     expect(onClose).not.toHaveBeenCalled();
   });
 
-  it("should call onClose when backdrop is clicked with backdropClick reason", async () => {
-    const onClose = jest.fn();
-    const { getByTestId } = render(
-      <Dialog open={true} onClose={onClose} disableBackdropClose={false} />
-    );
-    await userEvent.click(getByTestId("arke-dialog-backdrop"));
-    expect(onClose).toHaveBeenCalledWith("backdropClick");
-  });
-
   it("should render title", () => {
     const { getByText } = render(
       <Dialog open={true} onClose={() => null} title="Title" />

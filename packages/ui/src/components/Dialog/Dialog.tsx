@@ -45,12 +45,9 @@ function Dialog({
       className="dialog__container"
       open={open}
       onClose={() => handleClose("backdropClick")}
+      data-testid="arke-dialog-backdrop"
     >
-      <div
-        className="dialog__overlay"
-        aria-hidden="true"
-        data-testid="arke-dialog-backdrop"
-      />
+      <div className="dialog__overlay" aria-hidden="true" />
       <div className="dialog__overlay__content">
         <HeadlessDialog.Panel
           data-testid="arke-dialog"
