@@ -77,6 +77,7 @@ function Autocomplete<TValue>({
   clearable,
   className,
   clearIcon,
+  filterOptions,
 }: IAutocompleteProps<
   TValue,
   boolean | undefined,
@@ -126,6 +127,13 @@ function Autocomplete<TValue>({
     () => clearable && nullable && value !== null,
     [clearable, nullable, value]
   );
+
+  const filteredOptions = useMemo(() => {
+    if (filterOptions) {
+      return values?.filter((v) => filterOptions(v, inputValue));
+    }
+    return values;
+  }, [values, filterOptions, inputValue]);
 
   return (
     <div className="relative">
@@ -225,10 +233,10 @@ function Autocomplete<TValue>({
             className="autocomplete__options"
             style={getPosition()}
           >
-            {values?.length === 0 && (
+            {filteredOptions?.length === 0 && (
               <li className={twMerge("autocomplete__option")}>Nothing found</li>
             )}
-            {values?.map((val, index) => (
+            {filteredOptions?.map((val, index) => (
               <Combobox.Option key={index} value={val} as={Fragment}>
                 {({ active, selected }) => (
                   <li

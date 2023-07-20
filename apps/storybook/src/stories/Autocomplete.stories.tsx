@@ -43,6 +43,27 @@ export const Default = (args: Story["args"]) => {
   );
 };
 
+export const WithFilteredOptions = (args: Story["args"]) => {
+  const [{ value, values = departments }, updateArgs] = useArgs();
+
+  const handleChange = (val: unknown) => updateArgs({ value: val });
+
+  return (
+    //   @ts-ignore
+    <Autocomplete
+      {...args}
+      value={value}
+      values={values}
+      filterOptions={(option, inputValue) =>
+        option.name.toLowerCase().includes(inputValue)
+      }
+      onChange={handleChange}
+      renderValue={(val) => val?.name}
+      placeholder="Search..."
+    />
+  );
+};
+
 export const Nullable = (args: Story["args"]) => {
   const [{ value, values = departments }, updateArgs] = useArgs();
   const [search, setSearch] = useState("");
@@ -101,15 +122,10 @@ export const Clearable = (args: Story["args"]) => {
 
 export const Multiple = (args: Story["args"]) => {
   const [{ value, values = departments }, updateArgs] = useArgs();
-  const [search, setSearch] = useState("");
 
   const handleChange = (val: unknown) => {
     updateArgs({ value: val });
   };
-
-  const filteredValues = values.filter((v: { name: string }) =>
-    v.name.toLowerCase().includes(search)
-  );
 
   return (
     //   @ts-ignore
@@ -119,11 +135,14 @@ export const Multiple = (args: Story["args"]) => {
       value={value}
       nullable
       clearable
-      values={filteredValues}
-      onInputChange={(e) => setSearch(e.target.value)}
+      values={values}
+      filterOptions={(option, inputValue) =>
+        option.name.toLowerCase().includes(inputValue)
+      }
       onChange={handleChange}
       multiple
       placeholder="Search..."
+      renderValue={(val) => val?.name}
     />
   );
 };
@@ -183,6 +202,7 @@ export const Icons = (args: Story["args"]) => {
       startAdornment={<StartIcon />}
       endAdornment={<EndIcon />}
       placeholder="Search..."
+      renderValue={(val) => val?.name}
     />
   );
 };
