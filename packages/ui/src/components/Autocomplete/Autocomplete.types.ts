@@ -31,6 +31,7 @@ type AutocompleteBaseProps<TValue> = {
   renderChips?: boolean;
   className?: string;
   clearIcon?: ReactNode;
+  filterOptions?: (option: TValue, inputValue: string) => boolean;
 };
 
 export type IAutocompleteProps<

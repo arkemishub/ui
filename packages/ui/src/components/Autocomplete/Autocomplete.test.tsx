@@ -75,6 +75,24 @@ describe("Autocomplete", () => {
     expect(getByText("Test 1")).toBeInTheDocument();
   });
 
+  test("should render correct filtered values", async () => {
+    const { getByTestId, getByText, queryAllByText } = render(
+      <Autocomplete
+        onChange={() => null}
+        values={mockValues}
+        renderValue={(val) => val.name}
+        filterOptions={(option, inputValue) =>
+          option.name.toLowerCase().includes(inputValue.toLowerCase())
+        }
+      />
+    );
+    await userEvent.type(getByTestId("arke-autocomplete"), "Test 1");
+
+    expect(getByText("Test 1")).toBeInTheDocument();
+    expect(queryAllByText("Test 2")).toHaveLength(0);
+    expect(queryAllByText("Test 3")).toHaveLength(0);
+  });
+
   test("should call onChange when value is selected", async () => {
     const onChange = jest.fn();
     const { getByTestId, getByText } = render(
