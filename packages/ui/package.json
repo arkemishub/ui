@@ -18,12 +18,10 @@
     }
   },
   "scripts": {
-    "build": "pnpm clean && pnpm utilities && pnpm components && tsup",
+    "build": "sh scripts/build-css.sh && tsup",
     "clean": "rm -rf dist",
     "lint": "eslint",
-    "test": "jest --coverage --silent",
-    "components": "postcss --config src/components src/components/**/*.css --base src --dir dist && cat dist/components/**/*.css > dist/components/base.css && prejss-cli dist/components/base.css --format commonjs",
-    "utilities": "postcss --config src/utilities src/utilities/*.css --base src --dir dist && cat dist/utilities/*.css > dist/utilities/base.css && prejss-cli dist/utilities/base.css --format commonjs"
+    "test": "jest --coverage --silent"
   },
   "keywords": [
     "arke",

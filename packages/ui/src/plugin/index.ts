@@ -17,8 +17,8 @@
 // @ts-nocheck
 const Color = require("color");
 const plugin = require("tailwindcss/plugin");
-const components = require("../../dist/components/base");
-const utilities = require("../../dist/utilities/base");
+const components = require("../../dist/components.js");
+const utilities = require("../../dist/utilities.js");
 const theme = require("../theme/index.js");
 const defaultTheme = require("../theme/defaultTheme.js");
 
