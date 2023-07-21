@@ -1,0 +1,24 @@
+@import '../components/Accordion/Accordion.css';
+@import '../components/Alert/Alert.css';
+@import '../components/Autocomplete/Autocomplete.css';
+@import '../components/Avatar/Avatar.css';
+@import '../components/Badge/Badge.css';
+@import '../components/Breadcrumb/Breadcrumb.css';
+@import '../components/Button/Button.css';
+@import '../components/Calendar/Calendar.css';
+@import '../components/Checkbox/Checkbox.css';
+@import '../components/Chip/Chip.css';
+@import '../components/Dialog/Dialog.css';
+@import '../components/Drawer/Drawer.css';
+@import '../components/Input/Input.css';
+@import '../components/Json/Json.css';
+@import '../components/Popover/Popover.css';
+@import '../components/Radio/Radio.css';
+@import '../components/RadioGroup/RadioGroup.css';
+@import '../components/Select/Select.css';
+@import '../components/Skeleton/Skeleton.css';
+@import '../components/Spinner/Spinner.css';
+@import '../components/Switch/Switch.css';
+@import '../components/Tabs/Tabs.css';
+@import '../components/Textarea/TextArea.css';
+
