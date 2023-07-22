@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    aria-orientation="horizontal"
+    class="w-full flex gap-2 tabs__list"
+    role="tablist"
+  >
+    <button
+      aria-controls="headlessui-tabs-panel-:r2:"
+      aria-selected="true"
+      class="flex-grow px-4 py-2 focus:outline-none rounded-theme-sm tab bg-primary text-primary-contrast tab--selected"
+      data-headlessui-state="selected"
+      id="headlessui-tabs-tab-:r0:"
+      role="tab"
+      tabindex="0"
+      type="button"
+    >
+      Tab 1 
+    </button>
+    <button
+      aria-controls="headlessui-tabs-panel-:r3:"
+      aria-selected="false"
+      class="flex-grow px-4 py-2 focus:outline-none rounded-theme-sm tab"
+      data-headlessui-state=""
+      id="headlessui-tabs-tab-:r1:"
+      role="tab"
+      tabindex="-1"
+      type="button"
+    >
+      Tab 2 
+    </button>
+  </div>
+  <div>
+    <div
+      aria-labelledby="headlessui-tabs-tab-:r0:"
+      class="tab__panel"
+      data-headlessui-state="selected"
+      id="headlessui-tabs-panel-:r2:"
+      role="tabpanel"
+      tabindex="0"
+    >
+       Panel 1 
+    </div>
+    <span
+      aria-labelledby="headlessui-tabs-tab-:r1:"
+      id="headlessui-tabs-panel-:r3:"
+      role="tabpanel"
+      style="position: fixed; top: 1px; left: 1px; width: 1px; height: 0px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px;"
+      tabindex="-1"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="rounded-full flex justify-center items-center avatar bg-primary text-primary-contrast avatar--primary h-8 w-8 avatar--md"
+    data-testid="arke-avatar"
+  />
+</DocumentFragment>
+`;

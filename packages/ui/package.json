@@ -18,7 +18,8 @@
     }
   },
   "scripts": {
-    "build": "sh scripts/build-css.sh && tsup",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "clean": "rm -rf dist",
     "lint": "eslint",
     "test": "jest --coverage --silent"
@@ -48,11 +49,6 @@
     "eslint": "^8.41.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
-    "postcss": "^8.4.21",
-    "postcss-cli": "^10.1.0",
-    "postcss-import": "^15.1.0",
-    "postcss-nested": "^6.0.0",
-    "prejss-cli": "^0.3.3",
     "prettier-eslint": "^15.0.1",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "react-test-renderer": "^18.2.0",
@@ -70,6 +66,7 @@
     "@headlessui/react": "^1.7.8",
     "@monaco-editor/react": "^4.4.6",
     "@popperjs/core": "^2.11.6",
+    "clsx": "^2.0.0",
     "color": "^4.2.3",
     "react-day-picker": "^8.8.0",
     "react-popper": "^2.3.0",

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="p-4 alert"
+    role="presentation"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <div
+          class="flex gap-2"
+        />
+        Alert
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

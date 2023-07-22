@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="block text-sm mb-2 textarea__label"
+  />
+  <textarea
+    class="z-10 w-full px-2 flex items-center min-h-[40px] min-w-[120px] border border-neutral rounded-theme bg-background text-background-contrast focus-within:outline-offset-0 focus-within:border focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-primary/30 focus-within:disabled:cursor-not-allowed py-2 textarea"
+    data-testid="arke-textarea"
+  />
+</DocumentFragment>
+`;

@@ -21,7 +21,6 @@ const sidebarConfig = [
   { title: "Radio", href: "/docs/components/radio" },
   { title: "RadioGroup", href: "/docs/components/radio-group" },
   { title: "Select", href: "/docs/components/select" },
-  { title: "Skeleton", href: "/docs/components/skeleton" },
   { title: "Spinner", href: "/docs/components/spinner" },
   { title: "Switch", href: "/docs/components/switch" },
   { title: "Tabs", href: "/docs/components/tabs" },

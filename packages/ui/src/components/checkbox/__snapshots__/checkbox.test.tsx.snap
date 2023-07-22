@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="inline-flex checkbox__container items-center gap-4 flex-row-reverse justify-end"
+  >
+    <input
+      class="select-none bg-background rounded-theme-sm focus:ring-0 focus:ring-transparent focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50 h-4 w-4 checkbox accent-primary checkbox--primary"
+      data-testid="arke-checkbox"
+      type="checkbox"
+    />
+  </div>
+</DocumentFragment>
+`;
