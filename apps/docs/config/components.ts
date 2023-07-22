@@ -1,26 +1,25 @@
-import Button from "@/examples/Button";
-import Alert from "@/examples/Alert";
-import Autocomplete from "@/examples/Autocomplete";
-import Avatar from "@/examples/Avatar";
-import Badge from "@/examples/Badge";
-import Breadcrumb from "@/examples/Breadcrumb";
-import Checkbox from "@/examples/Checkbox";
-import Chip from "@/examples/Chip";
-import Dialog from "@/examples/Dialog";
-import Drawer from "@/examples/Drawer";
-import Input from "@/examples/Input";
-import Json from "@/examples/Json";
-import Popover from "@/examples/Popover";
-import Radio from "@/examples/Radio";
-import RadioGroup from "@/examples/RadioGroup";
-import Select from "@/examples/Select";
-import Skeleton from "@/examples/Skeleton";
-import Spinner from "@/examples/Spinner";
-import Switch from "@/examples/Switch";
-import Tabs from "@/examples/Tabs";
-import TextArea from "@/examples/TextArea";
-import Calendar from "@/examples/Calendar";
-import Accordion from "@/examples/Accordion";
+import Button from "@/examples/button";
+import Alert from "@/examples/alert";
+import Autocomplete from "@/examples/autocomplete";
+import Avatar from "@/examples/avatar";
+import Badge from "@/examples/badge";
+import Breadcrumb from "@/examples/breadcrumb";
+import Checkbox from "@/examples/checkbox";
+import Chip from "@/examples/chip";
+import Dialog from "@/examples/dialog";
+import Drawer from "@/examples/drawer";
+import Input from "@/examples/input";
+import Json from "@/examples/json";
+import Popover from "@/examples/popover";
+import Radio from "@/examples/radio";
+import RadioGroup from "@/examples/radio-group";
+import Select from "@/examples/select";
+import Spinner from "@/examples/spinner";
+import Switch from "@/examples/switch";
+import Tabs from "@/examples/tabs";
+import TextArea from "@/examples/textarea";
+import Calendar from "@/examples/calendar";
+import Accordion from "@/examples/accordion";
 
 const components = [
   {
@@ -94,10 +93,6 @@ const components = [
   {
     name: "Select",
     component: Select,
-  },
-  {
-    name: "Skeleton",
-    component: Skeleton,
   },
   {
     name: "Spinner",

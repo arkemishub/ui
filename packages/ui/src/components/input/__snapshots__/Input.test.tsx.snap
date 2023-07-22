@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="flex"
+    >
+      <div
+        class="z-10 w-full px-2 flex items-center min-h-[40px] min-w-[120px] border border-neutral rounded-theme bg-background text-background-contrast focus-within:outline-offset-0 focus-within:border focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-primary/30 focus-within:disabled:cursor-not-allowed input__container"
+        data-testid="arke-container"
+      >
+        <input
+          class="bg-transparent min-h-[40px] min-w-[120px] w-full px-2 outline-0 border-0 input"
+          data-testid="arke-input"
+          type="text"
+          value="Value"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

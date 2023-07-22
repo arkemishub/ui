@@ -17,9 +17,8 @@
 // @ts-nocheck
 const Color = require("color");
 const plugin = require("tailwindcss/plugin");
-const components = require("../../dist/components.js");
-const utilities = require("../../dist/utilities.js");
 const theme = require("../theme/index.js");
+const utilities = require("../utilities");
 const defaultTheme = require("../theme/defaultTheme.js");
 
 const accents = [
@@ -95,7 +94,7 @@ const generateBase = (customTheme) => ({
 });
 
 const arkeUiPlugin = plugin(
-  ({ config, addBase, addComponents }) => {
+  ({ config, addBase, addUtilities }) => {
     console.log();
     console.log("\x1b[96m\x1b[40m Arke UI ✨ \x1b[0m");
 
@@ -107,8 +106,7 @@ const arkeUiPlugin = plugin(
       console.error(`\x1b[31m @arkejs/ui: ${e}`);
     }
 
-    addComponents(utilities);
-    addComponents(components);
+    addUtilities(utilities);
   },
   {
     theme: {

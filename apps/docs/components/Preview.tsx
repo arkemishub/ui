@@ -19,7 +19,7 @@ function Preview({
 
   return (
     <>
-      <Tabs className="docs__tabs__list">
+      <Tabs className="docs__tabs__list mb-4 inline-flex w-auto">
         <Tabs.Tab>Preview</Tabs.Tab>
         <Tabs.Tab>Code</Tabs.Tab>
         <Tabs.TabPanel>

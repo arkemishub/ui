@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip should match snapshot 1`] = `
+<DocumentFragment>
+  <span
+    class="flex items-center w-fit p-2 gap-2 rounded-full chip"
+    data-testid="arke-chip"
+    role="presentation"
+  >
+    <span
+      class="px-2 chip__content"
+    >
+      Chip
+    </span>
+  </span>
+</DocumentFragment>
+`;

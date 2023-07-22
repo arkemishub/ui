@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer it should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    class="fixed inset-0 bg-black/30 drawer__overlay visible"
+  />
+  <div
+    class="flex flex-col w-full bg-background text-background-contrast px-6 py-4 overflow-y-auto fixed z-40 transition-transform duration-300 drawer top-0 left-0 h-full"
+    data-testid="arke-drawer"
+    role="presentation"
+  >
+    <div
+      class="mb-6 flex gap-4 drawer__head"
+    >
+      <button
+        class="flex items-center justify-center outline-none rounded-theme btn ml-auto h-6 w-6 p-1 drawer__close__button"
+      >
+        <svg
+          class="h-4 w-4"
+          data-testid="arke-drawer-close"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 18L18 6M6 6l12 12"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

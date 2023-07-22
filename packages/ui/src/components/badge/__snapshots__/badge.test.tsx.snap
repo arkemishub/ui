@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should match snapshot 1`] = `
+<DocumentFragment>
+  <span
+    class="relative"
+  >
+    <div
+      class="absolute -top-3 -right-4 z-10 p-0.5 flex items-center justify-center rounded-full text-xs min-w-[1.25rem] min-h-[1.25rem] badge"
+      data-testid="arke-badge"
+    />
+    Badge
+  </span>
+</DocumentFragment>
+`;
