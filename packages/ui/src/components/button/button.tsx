@@ -18,6 +18,7 @@
 
 import type { ButtonProps } from "./button.types";
 import { cn } from "../../lib/utils";
+import { forwardRef } from "react";
 
 const classNames = {
   btn: cn(
@@ -29,32 +30,40 @@ const classNames = {
   disabled: cn("cursor-not-allowed opacity-50", "btn--disabled"),
 };
 
-function Button({
-  onClick,
-  className,
-  children,
-  color,
-  disabled = false,
-  fullWidth = false,
-  type,
-}: ButtonProps) {
-  return (
-    <button
-      type={type}
-      className={cn(
-        classNames.btn,
-        color === "primary" && classNames.primary,
-        color === "secondary" && classNames.secondary,
-        disabled && classNames.disabled,
-        fullWidth && "w-full",
-        className
-      )}
-      disabled={disabled}
-      onClick={(e) => !disabled && onClick?.(e)}
-    >
-      {children}
-    </button>
-  );
-}
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      onClick,
+      className,
+      children,
+      color,
+      disabled = false,
+      fullWidth = false,
+      type,
+    },
+    ref
+  ) => {
+    return (
+      <button
+        type={type}
+        className={cn(
+          classNames.btn,
+          color === "primary" && classNames.primary,
+          color === "secondary" && classNames.secondary,
+          disabled && classNames.disabled,
+          fullWidth && "w-full",
+          className
+        )}
+        disabled={disabled}
+        onClick={(e) => !disabled && onClick?.(e)}
+        ref={ref}
+      >
+        {children}
+      </button>
+    );
+  }
+);
+
+Button.displayName = "Button";
 
 export default Button;
