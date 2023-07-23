@@ -20,11 +20,13 @@ type Story = StoryObj<typeof Select>;
 export const Default = (args: Story["args"]) => {
   return (
     <Select label="test" helperText="test" placeholder="test">
-      {departments.map((dpt) => (
-        <Select.Option key={dpt.id} value={dpt.id}>
-          {dpt.name}
-        </Select.Option>
-      ))}
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt.id}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
     </Select>
   );
 };

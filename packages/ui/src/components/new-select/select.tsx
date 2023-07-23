@@ -19,7 +19,8 @@ import useOnClickOutside from "../../hooks/useClickOutside";
 import { ModifierPhases } from "@popperjs/core";
 import useDropdown from "../../hooks/useDropdown";
 import SelectIcon from "./select-icon";
-import SelectPlaceholder from "./select-placeholder";
+import SelectOptions from "./select-options";
+import SelectValue from "./select-value";
 
 const classNames = {
   select: cn(
@@ -27,12 +28,9 @@ const classNames = {
     "justify-start px-4 w-full",
     "select__container"
   ),
+  popper: cn("z-20", "select__popper"),
   disabled: cn("opacity-50 cursor-not-allowed", "select--disabled"),
   error: cn("outline outline-error focus:outline-error", "select--error"),
-  options: cn(
-    "z-20 mt-2 w-full overflow-y-auto max-h-[220px] rounded-theme-sm bg-background text-background-contrast py-2 border border-neutral",
-    "select__options"
-  ),
   label: cn(sharedClassNames.label, "select__label"),
   helperText: cn("mt-2 text-sm", "select__helperText"),
 };
@@ -64,16 +62,21 @@ function Select<TValue>({
   );
 
   const rawOptions = useMemo(() => {
-    return (
-      Children.map(children, (child: ReactNode) => {
-        if (isValidElement(child) && child?.type === SelectOption) {
-          return {
-            value: child.props.value,
-            label: child.props.label ?? child.props.children,
-          };
-        }
-      }) ?? []
-    );
+    let opts: Array<{ value: TValue; children: ReactNode }> = [];
+    Children.map(children, (child: ReactNode) => {
+      if (isValidElement(child) && child?.type === SelectOptions) {
+        Children.map(child.props.children, (child: ReactNode) => {
+          if (isValidElement(child) && child?.type === SelectOption) {
+            opts.push({
+              value: child.props.value,
+              children: child.props.children,
+            });
+          }
+        });
+      }
+    });
+
+    return opts;
   }, [children]);
 
   const { isOpen, setIsOpen, activeIndex, setActiveIndex, selectOption } =
@@ -83,19 +86,34 @@ function Select<TValue>({
     });
 
   const options = useMemo(() => {
-    let index = -1;
-    return Children.map(children, (child: ReactNode) => {
-      if (isValidElement(child) && child?.type === SelectOption) {
-        index = index + 1;
-        return cloneElement(child as ReactElement, {
-          isSelected: child.props.value === value,
-          isHighlighted: index === activeIndex,
-          onChange: selectOption,
-          index,
-          onHighlightChange: (index: number) => setActiveIndex(index),
-        });
-      }
-    });
+    const getOptions = (children: ReactElement) => {
+      let index = -1;
+
+      return Children.map(children, (child: ReactNode) => {
+        if (isValidElement(child) && child?.type === SelectOption) {
+          index = index + 1;
+          return cloneElement(child as ReactElement, {
+            value: child.props.value,
+            children: child.props.children,
+            isSelected: child.props.value === value,
+            isHighlighted: index === activeIndex,
+            onChange: selectOption,
+            index,
+            onHighlightChange: (index: number) => setActiveIndex(index),
+          });
+        }
+      });
+    };
+
+    return (
+      Children.map(children, (child: ReactNode) => {
+        if (isValidElement(child) && child?.type === SelectOptions) {
+          return cloneElement(child as ReactElement, {
+            children: getOptions(child.props.children),
+          });
+        }
+      }) ?? []
+    );
   }, [children, value, activeIndex, selectOption]);
 
   useOnClickOutside(rootRef, () => setIsOpen(false));
@@ -133,7 +151,7 @@ function Select<TValue>({
     if (!value) return null;
 
     const option = rawOptions.find((option) => option.value === value);
-    return option?.label ?? option?.value;
+    return option?.children ?? (option?.value as string);
   }, [value, rawOptions]);
 
   return (
@@ -149,9 +167,7 @@ function Select<TValue>({
         ref={setReferenceElement}
         role="combobox"
       >
-        {getDisplayValue() ?? (
-          <SelectPlaceholder>{placeholder}</SelectPlaceholder>
-        )}
+        <SelectValue placeholder={placeholder}>{getDisplayValue()}</SelectValue>
         <SelectIcon />
       </Button>
       {isOpen && (
@@ -159,7 +175,7 @@ function Select<TValue>({
           {...attributes.popper}
           style={styles.popper}
           ref={setPopperElement}
-          className={classNames.options}
+          className={classNames.popper}
         >
           {options}
         </div>
@@ -178,6 +194,7 @@ function Select<TValue>({
   );
 }
 
+Select.Options = SelectOptions;
 Select.Option = SelectOption;
 
 export default Select;
