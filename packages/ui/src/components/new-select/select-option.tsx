@@ -13,6 +13,16 @@ const classNames = {
   ),
 };
 
+type SelectOptionProps<TValue> = PropsWithChildren<{
+  value: TValue;
+  className?: string;
+  readonly onChange?: (value: TValue) => void;
+  readonly onHighlightChange?: (index: number) => void;
+  readonly index: number;
+  readonly isSelected: boolean;
+  readonly isHighlighted?: boolean;
+}>;
+
 function SelectOption<TValue>({
   isSelected,
   children,
@@ -22,17 +32,7 @@ function SelectOption<TValue>({
   value,
   onHighlightChange,
   index,
-}: PropsWithChildren<{
-  value: TValue;
-  className?: string;
-}> &
-  Readonly<{
-    onChange?: (value: TValue) => void;
-    onHighlightChange?: (index: number) => void;
-    index: number;
-    isSelected: boolean;
-    isHighlighted?: boolean;
-  }>) {
+}: SelectOptionProps<TValue>) {
   const handleClick = useCallback(() => {
     onChange?.(value);
   }, [onChange, value]);
@@ -59,4 +59,5 @@ function SelectOption<TValue>({
   );
 }
 
+export type { SelectOptionProps };
 export default SelectOption;

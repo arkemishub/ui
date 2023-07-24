@@ -31,4 +31,5 @@ const SelectOptions = forwardRef<HTMLDivElement, SelectOptionsProps>(
 
 SelectOptions.displayName = "SelectOptions";
 
+export type { SelectOptionsProps };
 export default SelectOptions;

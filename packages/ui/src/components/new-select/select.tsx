@@ -13,11 +13,11 @@ import {
 import { usePopper } from "react-popper";
 import { cn } from "../../lib/utils";
 import sharedClassNames from "../../shared/classNames";
-import SelectOption from "./select-option";
+import SelectOption, { SelectOptionProps } from "./select-option";
 import useOnClickOutside from "../../hooks/useClickOutside";
 import { ModifierPhases } from "@popperjs/core";
 import useDropdown from "../../hooks/useDropdown";
-import SelectOptions from "./select-options";
+import SelectOptions, { SelectOptionsProps } from "./select-options";
 import SelectButton from "./select-button";
 
 const classNames = {
@@ -34,9 +34,13 @@ function Select<TValue>({
   helperText,
   hasError,
   disabled,
-  ...props
-}: SelectProps<TValue>) {
-  const [value, setValue] = useState<TValue | null>(props.value ?? null);
+  multiple,
+  value,
+}: SelectProps<TValue, boolean | undefined>) {
+  type TActualValue = true extends typeof multiple ? TValue[] : TValue;
+  const [internalValue, setInternalValue] = useState<TActualValue | null>(
+    (value as TActualValue) ?? null
+  );
   const rootRef = useRef(null);
   const [referenceElement, setReferenceElement] =
     useState<HTMLButtonElement | null>(null);
@@ -44,23 +48,17 @@ function Select<TValue>({
     null
   );
 
-  const handleChange = useCallback(
-    (value: TValue | null) => {
-      setValue(value);
-      onChange?.(value);
-    },
-    [onChange]
-  );
-
   const rawOptions = useMemo(() => {
     let opts: Array<{ value: TValue; children: ReactNode }> = [];
     Children.map(children, (child: ReactNode) => {
       if (isValidElement(child) && child?.type === SelectOptions) {
-        Children.map(child.props.children, (child: ReactNode) => {
+        const options = child as ReactElement<SelectOptionsProps>;
+        Children.map(options.props.children, (child: ReactNode) => {
           if (isValidElement(child) && child?.type === SelectOption) {
+            const option = child as ReactElement<SelectOptionProps<TValue>>;
             opts.push({
-              value: child.props.value,
-              children: child.props.children,
+              value: option.props.value,
+              children: option.props.children,
             });
           }
         });
@@ -69,6 +67,23 @@ function Select<TValue>({
 
     return opts;
   }, [children]);
+
+  const handleChange = useCallback(
+    (value: TValue | null) => {
+      if (multiple) {
+        const newValue = internalValue?.includes(value as TValue)
+          ? internalValue.filter((val) => val !== value)
+          : [...(internalValue ?? []), value];
+
+        setInternalValue(newValue as TActualValue);
+        onChange?.(newValue as TValue[]);
+      } else {
+        setInternalValue(value as TActualValue);
+        onChange?.(value);
+      }
+    },
+    [onChange, internalValue]
+  );
 
   const { isOpen, setIsOpen, activeIndex, setActiveIndex, selectOption } =
     useDropdown({
@@ -106,16 +121,19 @@ function Select<TValue>({
   });
 
   const options = useMemo(() => {
-    const getOptions = (children: ReactElement) => {
+    const getOptions = (children: ReactNode | ReactNode[]) => {
       let index = -1;
 
       return Children.map(children, (child: ReactNode) => {
         if (isValidElement(child) && child?.type === SelectOption) {
           index = index + 1;
-          return cloneElement(child as ReactElement, {
-            value: child.props.value,
-            children: child.props.children,
-            isSelected: child.props.value === value,
+          const option = child as ReactElement<SelectOptionProps<TValue>>;
+          return cloneElement(option, {
+            value: option.props.value,
+            children: option.props.children,
+            isSelected: multiple
+              ? (internalValue as TValue[])?.includes(option.props.value)
+              : option.props.value === internalValue,
             isHighlighted: index === activeIndex,
             onChange: selectOption,
             index,
@@ -130,14 +148,16 @@ function Select<TValue>({
         if (isValidElement(child) && child?.type === SelectOptions) {
           return cloneElement(child as ReactElement, {
             ...attributes.popper,
-            children: getOptions(child.props.children),
+            children: getOptions(
+              (child as ReactElement<SelectOptionsProps>).props.children
+            ),
             style: styles.popper,
             ref: setPopperElement,
           });
         }
       }) ?? []
     );
-  }, [children, value, activeIndex, selectOption, attributes]);
+  }, [children, internalValue, activeIndex, selectOption, attributes]);
 
   useOnClickOutside(rootRef, () => setIsOpen(false));
 
@@ -148,10 +168,13 @@ function Select<TValue>({
           placeholder,
           onClick: () => setIsOpen(true),
           ref: setReferenceElement,
+          hasError,
+          disabled,
+          value: internalValue,
         });
       }
     });
-  }, [children]);
+  }, [children, hasError, disabled, placeholder, internalValue]);
 
   return (
     <div ref={rootRef}>

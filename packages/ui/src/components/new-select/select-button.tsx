@@ -1,4 +1,4 @@
-import { forwardRef, PropsWithChildren } from "react";
+import { forwardRef, PropsWithChildren, useMemo } from "react";
 import { Button } from "../button";
 import { cn } from "../../lib/utils";
 import sharedClassNames from "../../shared/classNames";
@@ -9,6 +9,7 @@ type SelectButtonProps = PropsWithChildren<{
   readonly disabled?: boolean;
   readonly hasError?: boolean;
   readonly placeholder?: string;
+  readonly value?: any;
   className?: string;
 }>;
 
@@ -24,21 +25,29 @@ const classNames = {
 };
 
 const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
-  ({ children, onClick, className, disabled, hasError, placeholder }, ref) => {
+  (
+    { children, value, onClick, className, disabled, hasError, placeholder },
+    ref
+  ) => {
+    const hasValue = useMemo(
+      () => (Array.isArray(value) ? value && value.length > 0 : value),
+      [value]
+    );
+
     return (
       <Button
         className={cn(
           classNames.button,
           disabled && classNames.disabled,
           hasError && classNames.error,
-          placeholder && !children && classNames.placeholder,
+          placeholder && !hasValue && classNames.placeholder,
           className
         )}
         onClick={onClick}
         role="combobox"
         ref={ref}
       >
-        {children ?? placeholder}
+        {hasValue ? children : placeholder}
         <SelectIcon />
       </Button>
     );

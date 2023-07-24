@@ -40,3 +40,75 @@ export const Default = (args: Story["args"]) => {
     </Select>
   );
 };
+
+export const WithObject = (args: Story["args"]) => {
+  const [value, setValue] = useState(null);
+  return (
+    <Select
+      onChange={(value) => setValue(value)}
+      label="test"
+      helperText="test"
+      placeholder="test"
+    >
+      <Select.Button>{value?.name}</Select.Button>
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
+    </Select>
+  );
+};
+
+export const Multiple = (args: Story["args"]) => {
+  const [value, setValue] = useState([]);
+
+  return (
+    <Select
+      onChange={(value) => setValue(value)}
+      label="test"
+      helperText="test"
+      placeholder="test"
+      multiple
+    >
+      <Select.Button>
+        {departments
+          .filter((item) => value?.includes(item.id))
+          .map((item) => item.name)
+          .join(", ")}
+      </Select.Button>
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt.id}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
+    </Select>
+  );
+};
+
+export const MultipleObjects = (args: Story["args"]) => {
+  const [value, setValue] = useState([]);
+
+  return (
+    <Select
+      onChange={(value) => setValue(value)}
+      label="test"
+      helperText="test"
+      placeholder="test"
+      multiple
+    >
+      <Select.Button>{value.map((item) => item.name).join(", ")}</Select.Button>
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
+    </Select>
+  );
+};
