@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 type SelectBaseProps = PropsWithChildren<{
   placeholder?: string;
@@ -6,6 +6,8 @@ type SelectBaseProps = PropsWithChildren<{
   helperText?: string;
   hasError?: boolean;
   disabled?: boolean;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
 }>;
 
 type SelectProps<TValue, TMultiple extends boolean | undefined> = Extract<

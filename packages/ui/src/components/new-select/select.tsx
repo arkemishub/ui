@@ -36,6 +36,8 @@ function Select<TValue>({
   disabled,
   multiple,
   value,
+  startAdornment,
+  endAdornment,
 }: SelectProps<TValue, boolean | undefined>) {
   type TActualValue = true extends typeof multiple ? TValue[] : TValue;
   const [internalValue, setInternalValue] = useState<TActualValue | null>(
@@ -171,6 +173,8 @@ function Select<TValue>({
           hasError,
           disabled,
           value: internalValue,
+          startAdornment,
+          endAdornment,
         });
       }
     });
