@@ -1,6 +1,13 @@
 import { Select } from "@arkejs/ui";
-import { Meta, StoryObj } from "@storybook/react";
-import { useArgs } from "@storybook/client-api";
+import { Meta } from "@storybook/react";
+import { useState } from "react";
+import { BuildingIcon, ShipIcon } from "lucide-react";
+
+type Department = {
+  id: number;
+  name: string;
+  contact: string;
+};
 
 const departments = [
   { id: 1, name: "Marketing", contact: "Durward Reynolds" },
@@ -16,39 +23,127 @@ const meta: Meta<typeof Select> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Select>;
-
-export const Default = (args: Story["args"]) => {
-  const [{ value, values = departments }, updateArgs] = useArgs();
-
-  const handleChange = (val: unknown) => updateArgs({ value: val });
-
+export const Default = () => {
+  const [value, setValue] = useState<number | null>(null);
   return (
     <Select
-      {...args}
-      label="Select an item"
+      onChange={setValue}
+      label="test"
+      helperText="test"
+      placeholder="test"
       value={value}
-      onChange={handleChange}
-      values={values}
-      renderValue={(val) => val?.name}
-    />
+    >
+      <Select.Button>
+        {departments.find((item) => item.id == value)?.name}
+      </Select.Button>
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt.id}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
+    </Select>
   );
 };
 
-export const Multiple = (args: Story["args"]) => {
-  const [{ value, values = departments }, updateArgs] = useArgs();
+export const WithObject = () => {
+  const [value, setValue] = useState<Department | null>(null);
+  return (
+    <Select
+      onChange={setValue}
+      label="test"
+      helperText="test"
+      placeholder="test"
+      value={value}
+    >
+      <Select.Button>{value?.name}</Select.Button>
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
+    </Select>
+  );
+};
 
-  const handleChange = (val: unknown) => updateArgs({ value: val });
+export const Multiple = () => {
+  const [value, setValue] = useState<number[]>([]);
 
   return (
     <Select
-      {...args}
-      label="Select an item"
-      value={value}
-      onChange={handleChange}
-      values={values}
+      onChange={(value) => setValue(value)}
+      label="test"
+      helperText="test"
+      placeholder="test"
       multiple
-      renderValue={(val) => val?.name}
-    />
+      value={value}
+    >
+      <Select.Button>
+        {departments
+          .filter((item) => value?.includes(item.id))
+          .map((item) => item.name)
+          .join(", ")}
+      </Select.Button>
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt.id}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
+    </Select>
+  );
+};
+
+export const MultipleObjects = () => {
+  const [value, setValue] = useState<Department[]>([]);
+
+  return (
+    <Select
+      onChange={(v) => setValue(v)}
+      label="test"
+      helperText="test"
+      placeholder="test"
+      multiple
+      value={value}
+    >
+      <Select.Button>{value.map((item) => item.name).join(", ")}</Select.Button>
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
+    </Select>
+  );
+};
+
+export const WithAdornments = () => {
+  const [value, setValue] = useState<number | null>(null);
+  return (
+    <Select
+      onChange={setValue}
+      label="test"
+      helperText="test"
+      placeholder="test"
+      startAdornment={<BuildingIcon />}
+      endAdornment={<ShipIcon />}
+      value={value}
+    >
+      <Select.Button>
+        {departments.find((item) => item.id == value)?.name}
+      </Select.Button>
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt.id}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
+    </Select>
   );
 };

@@ -1,5 +1,5 @@
 import { Select } from "@arkejs/ui";
-import React from "react";
+import React, { useState } from "react";
 
 function MySelect() {
   const departments = [
@@ -10,18 +10,25 @@ function MySelect() {
     { id: 5, name: "Customer service", contact: "Katelyn Rohan" },
   ];
 
-  const [value, setValue] = React.useState(departments[0]);
-
+  const [value, setValue] = useState<number | null>(null);
   return (
-    <div className="min-w-[80%]">
-      <Select
-        label="Select an item"
-        value={value}
-        values={departments}
-        onChange={(value) => setValue(value)}
-        renderValue={(value) => value.name}
-      />
-    </div>
+    <Select
+      onChange={setValue}
+      label="My Select"
+      placeholder="Select an option..."
+      value={value}
+    >
+      <Select.Button>
+        {departments.find((item) => item.id == value)?.name}
+      </Select.Button>
+      <Select.Options>
+        {departments.map((dpt) => (
+          <Select.Option key={dpt.id} value={dpt.id}>
+            {dpt.name}
+          </Select.Option>
+        ))}
+      </Select.Options>
+    </Select>
   );
 }
 

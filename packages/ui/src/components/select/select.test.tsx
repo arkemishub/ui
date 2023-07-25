@@ -18,7 +18,9 @@ import { Select } from "./index";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-const mockValues = [
+type ExampleData = { id: string; name: string };
+
+const mockValues: ExampleData[] = [
   { id: "1", name: "Test 1" },
   { id: "2", name: "Test 2" },
   { id: "3", name: "Test 3" },
@@ -27,33 +29,48 @@ const mockValues = [
 describe("Select", () => {
   test("should match snapshot", () => {
     const { asFragment } = render(
-      <Select
-        values={mockValues}
-        onChange={() => null}
-        renderValue={(val) => val.name}
-      />
+      <Select onChange={() => null}>
+        <Select.Button>test</Select.Button>
+        <Select.Options>
+          {mockValues.map((v) => (
+            <Select.Option key={v.id} value={v.id}>
+              {v.name}
+            </Select.Option>
+          ))}
+        </Select.Options>
+      </Select>
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test("should render select", () => {
     const { getByTestId } = render(
-      <Select
-        values={mockValues}
-        onChange={() => null}
-        renderValue={(val) => val.name}
-      />
+      <Select onChange={() => null}>
+        <Select.Button>test</Select.Button>
+        <Select.Options>
+          {mockValues.map((v) => (
+            <Select.Option key={v.id} value={v.id}>
+              {v.name}
+            </Select.Option>
+          ))}
+        </Select.Options>
+      </Select>
     );
     expect(getByTestId("arke-select")).toBeInTheDocument();
   });
 
   test("should render values", async () => {
     const { getByTestId, getByText } = render(
-      <Select
-        values={mockValues}
-        onChange={() => null}
-        renderValue={(val) => val.name}
-      />
+      <Select onChange={() => null}>
+        <Select.Button>test</Select.Button>
+        <Select.Options>
+          {mockValues.map((v) => (
+            <Select.Option key={v.id} value={v.id}>
+              {v.name}
+            </Select.Option>
+          ))}
+        </Select.Options>
+      </Select>
     );
     await userEvent.click(getByTestId("arke-select"));
     expect(getByText("Test 1")).toBeInTheDocument();
@@ -64,11 +81,16 @@ describe("Select", () => {
   test("should call onChange when value is selected", async () => {
     const onChange = jest.fn();
     const { getByTestId, getByText } = render(
-      <Select
-        values={mockValues}
-        onChange={onChange}
-        renderValue={(val) => val.name}
-      />
+      <Select onChange={onChange}>
+        <Select.Button>test</Select.Button>
+        <Select.Options>
+          {mockValues.map((v) => (
+            <Select.Option key={v.id} value={v.id}>
+              {v.name}
+            </Select.Option>
+          ))}
+        </Select.Options>
+      </Select>
     );
     await userEvent.click(getByTestId("arke-select"));
     await userEvent.click(getByText("Test 1"));
@@ -77,32 +99,38 @@ describe("Select", () => {
 
   test("should render selected value", () => {
     const { getByText } = render(
-      <Select
-        values={mockValues}
-        onChange={() => null}
-        renderValue={(val) => val.name}
-        value={mockValues[0]}
-      />
+      <Select onChange={() => null}>
+        <Select.Button>test</Select.Button>
+        <Select.Options>
+          {mockValues.map((v) => (
+            <Select.Option key={v.id} value={v.id}>
+              {v.name}
+            </Select.Option>
+          ))}
+        </Select.Options>
+      </Select>
     );
     expect(getByText("Test 1")).toBeVisible();
   });
 
   test("should contain start/end Adornment when props is passed", () => {
-    const { container } = render(
+    const { getAllByText } = render(
       <Select
-        values={mockValues}
-        onChange={() => null}
-        renderValue={(val) => val.name}
-        value={mockValues[0]}
         startAdornment={"start adornment"}
         endAdornment={"end adornment"}
-      />
+        onChange={() => null}
+      >
+        <Select.Button>test</Select.Button>
+        <Select.Options>
+          {mockValues.map((v) => (
+            <Select.Option key={v.id} value={v.id}>
+              {v.name}
+            </Select.Option>
+          ))}
+        </Select.Options>
+      </Select>
     );
-    expect(
-      container.getElementsByClassName("select__startAdornment").length
-    ).toBe(1);
-    expect(
-      container.getElementsByClassName("select__endAdornment").length
-    ).toBe(1);
+    expect(getAllByText("start adornment").length).toBe(1);
+    expect(getAllByText("end adornment").length).toBe(1);
   });
 });

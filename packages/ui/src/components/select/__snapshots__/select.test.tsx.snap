@@ -3,52 +3,38 @@
 exports[`Select should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="relative"
+    data-testid="arke-select"
   >
     <div
-      class="z-10 flex items-center min-h-[40px] min-w-[120px] border border-neutral rounded-theme bg-background text-background-contrast focus-within:outline-offset-0 focus-within:border focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-primary/30 focus-within:disabled:cursor-not-allowed w-full text-left px-4 select__container"
+      class="z-20 mt-2 select__options__popper"
+      style="position: fixed; left: 0px; top: 0px;"
     >
       <div
-        class="flex w-full items-center"
+        class="w-full overflow-y-auto max-h-[220px] rounded-theme-sm bg-background text-background-contrast py-2 border border-neutral select__options hidden select__options--closed"
+        role="presentation"
+        tabindex="0"
       >
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          class="w-full text-left px-2 outline-0 border-0"
-          data-headlessui-state=""
-          data-testid="arke-select"
-          id="headlessui-listbox-button-:r0:"
-          type="button"
+        <div
+          aria-selected="false"
+          class="cursor-pointer px-4 py-1 select__option"
+          role="option"
         >
-          <span
-            class="text-neutral select__placeholder"
-          >
-             
-          </span>
-        </button>
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          class="px-1 flex items-center focus-visible:outline-none select__endAdornment"
-          data-headlessui-state=""
-          id="headlessui-listbox-button-:r1:"
-          type="button"
+          Test 1
+        </div>
+        <div
+          aria-selected="false"
+          class="cursor-pointer px-4 py-1 select__option"
+          role="option"
         >
-          <svg
-            class="h-4 w-4 cursor-pointer stroke-2"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
+          Test 2
+        </div>
+        <div
+          aria-selected="false"
+          class="cursor-pointer px-4 py-1 select__option"
+          role="option"
+        >
+          Test 3
+        </div>
       </div>
     </div>
   </div>

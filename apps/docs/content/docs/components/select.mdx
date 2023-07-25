@@ -20,11 +20,11 @@ The `Select` component is used to allow the user to select an option from a drop
       defaultValue: "false",
     },
     {
-      name: "startIcon",
+      name: "startAdornment",
       type: "ReactNode",
     },
     {
-      name: "endIcon",
+      name: "endAdornment",
       type: "ReactNode",
     },
     {
@@ -46,24 +46,12 @@ The `Select` component is used to allow the user to select an option from a drop
       defaultValue: "false",
     },
     {
-      name: "onChange*",
+      name: "onChange",
       type: "(value: T) => void",
     },
     {
-      name: "renderValue*",
-      type: "(val: TValue) => ReactNode",
-    },
-    {
-      name: "renderOption",
-      type: "(val: TValue) => ReactNode",
-    },
-    {
       name: "value",
-      type: "T | T[]",
-    },
-    {
-      name: "values",
-      type: "T[]",
+      type: "T",
     },
   ]}
 />
@@ -73,12 +61,36 @@ The `Select` component is used to allow the user to select an option from a drop
 <CSSSpec
   data={[
     {
-      name: ".select__input",
-      description: "Applied to Select input",
+      name: ".select__container",
+      description: "Applied to Select container",
+    },
+    {
+      name: ".select__button",
+      description: "Applied to Select button",
+    },
+    {
+      name: ".select__label",
+      description: "Applied to Select label",
+    },
+    {
+      name: ".select__placeholder",
+      description: "Applied to Select placeholder",
+    },
+    {
+      name: ".select__helperText",
+      description: "Applied to Select helper text",
     },
     {
       name: ".select__options",
       description: "Applied to Select options list",
+    },
+    {
+      name: ".select__options--closed",
+      description: "Applied to Select options list when closed",
+    },
+    {
+      name: ".select__options__popper",
+      description: "Applied to Select options list popper",
     },
     {
       name: ".select__option",
@@ -89,20 +101,24 @@ The `Select` component is used to allow the user to select an option from a drop
       description: "Applied to Select active option",
     },
     {
-      name: ".select__startAdornment",
-      description: "Applied to Select start adornment",
+      name: ".select__option--highlighted",
+      description: "Applied to Select highlighted option",
     },
     {
-      name: ".select__startAdornment__icon",
-      description: "Applied to Select start adornment icon",
+      name: ".select__startAdornment",
+      description: "Applied to Select start adornment",
     },
     {
       name: ".select__endAdornment",
       description: "Applied to Select end adornment",
     },
     {
-      name: ".select__endAdornment__icon",
-      description: "Applied to Select end adornment icon",
+      name: ".select--disabled",
+      description: "Applied to Select with disabled state",
+    },
+    {
+      name: ".select--error",
+      description: "Applied to Select with error state",
     },
   ]}
 />
