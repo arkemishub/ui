@@ -1,0 +1,24 @@
+header:
+license:
+  spdx-id: Apache-2.0
+  copyright-owner: Arkemis S.r.l.
+
+paths-ignore:
+  - '.npmrc'
+  - '.dockerignore'
+  - 'dist'
+  - 'licenses'
+  - 'apps'
+  - '**/*.md'
+  - '**/*.json'
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '.idea/**'
+  - 'LICENSE'
+  - 'NOTICE'
+  - 'Dockerfile'
+  - '.env*'
+  - '.github/**'
+  - '.gitignore'
+
+comment: on-failure
