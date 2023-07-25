@@ -1,4 +1,10 @@
-import { PropsWithChildren, useMemo, KeyboardEvent, useCallback } from "react";
+import {
+  PropsWithChildren,
+  useMemo,
+  KeyboardEvent,
+  useCallback,
+  MouseEventHandler,
+} from "react";
 import { Button } from "../button";
 import { cn } from "../../lib/utils";
 import sharedClassNames from "../../shared/classNames";
@@ -64,6 +70,14 @@ const SelectButton = ({ children, className }: SelectButtonProps) => {
     [openOptions]
   );
 
+  const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback(
+    (event) => {
+      event.preventDefault();
+      openOptions();
+    },
+    []
+  );
+
   return (
     <div className={classNames.container} ref={buttonRef}>
       {startAdornment && (
@@ -77,7 +91,7 @@ const SelectButton = ({ children, className }: SelectButtonProps) => {
           placeholder && !hasValue && classNames.placeholder,
           className
         )}
-        onClick={openOptions}
+        onClick={handleClick}
         onKeyDown={handleKeyDown}
         role="combobox"
       >
