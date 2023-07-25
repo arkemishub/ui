@@ -6,11 +6,36 @@ exports[`Select should match snapshot 1`] = `
     data-testid="arke-select"
   >
     <div
+      class="z-10 flex min-h-[40px] min-w-[120px] border border-neutral rounded-theme bg-background text-background-contrast focus-within:outline-offset-0 focus-within:border focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-primary/30 focus-within:disabled:cursor-not-allowed justify-start p-0 w-full items-stretch group select__container"
+    >
+      <button
+        class="flex items-center justify-center px-4 py-2 outline-none rounded-theme btn grow select__button"
+      >
+        <span
+          class="h-5 w-5 text-neutral ml-auto select__icon"
+        >
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
       class="z-20 mt-2 select__options__popper"
-      style="position: fixed; left: 0px; top: 0px;"
+      style="position: fixed; left: 0px; top: 0px; width: 0px;"
     >
       <div
-        class="w-full overflow-y-auto max-h-[220px] rounded-theme-sm bg-background text-background-contrast py-2 border border-neutral select__options hidden select__options--closed"
+        class="w-full overflow-y-auto max-h-[220px] outline-none rounded-theme-sm bg-background text-background-contrast py-2 border border-neutral select__options hidden select__options--closed"
         role="presentation"
         tabindex="0"
       >
