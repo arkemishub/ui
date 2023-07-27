@@ -14,17 +14,20 @@
  * limitations under the License.
  */
 
-import { MutableRefObject, PropsWithChildren, ReactNode } from "react";
-
-type DialogCloseReason = "backdropClick" | "closeButton";
+import { PropsWithChildren } from "react";
 
 interface DialogProps extends PropsWithChildren<{}> {
   open: boolean;
-  onClose: (reason: DialogCloseReason) => void;
-  title?: ReactNode;
+  onClose: () => void;
   className?: string;
-  initialFocus?: MutableRefObject<HTMLElement | null>;
-  disableBackdropClose?: boolean;
 }
 
-export type { DialogProps, DialogCloseReason };
+interface DialogHeadProps extends PropsWithChildren<{}> {
+  className?: string;
+}
+
+interface DialogBodyProps extends PropsWithChildren<{}> {
+  className?: string;
+}
+
+export type { DialogProps, DialogHeadProps, DialogBodyProps };
