@@ -16,7 +16,14 @@ export const Default = (args: Story["args"]) => {
   return (
     <>
       <Button onClick={() => setOpen(true)}>Open Dialog</Button>
-      <Dialog {...args} open={open} onClose={() => setOpen(false)}>
+      <Dialog
+        {...args}
+        open={open}
+        onClose={() => {
+          setOpen(false);
+        }}
+        overlay
+      >
         <Dialog.Head>
           <p className="mb-4 text-lg font-bold">Title Dialog</p>
           <Button

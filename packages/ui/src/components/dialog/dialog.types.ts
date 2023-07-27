@@ -20,6 +20,7 @@ interface DialogProps extends PropsWithChildren<{}> {
   open: boolean;
   onClose: () => void;
   className?: string;
+  overlay?: boolean;
 }
 
 interface DialogHeadProps extends PropsWithChildren<{}> {

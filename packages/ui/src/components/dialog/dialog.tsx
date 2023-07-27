@@ -9,12 +9,16 @@ import DialogBody from "./dialog-body";
 
 const classNames = {
   container: cn(
-    "relative z-50 px-6 py-4 max-w-[70%] mx-auto h-[50vh]",
+    "z-50 px-6 py-4 max-w-[70%] m-auto top-0 bottom-0 h-[50vh]",
     "dialog"
+  ),
+  overlay: cn(
+    "absolute w-full h-full top-0 left-0 bg-gray-500/50",
+    "dialog__overlay"
   ),
 };
 
-function Dialog({ open, onClose, children, className }: DialogProps) {
+function Dialog({ open, onClose, children, className, overlay }: DialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useOnClickOutside(dialogRef, () => {
@@ -43,17 +47,26 @@ function Dialog({ open, onClose, children, className }: DialogProps) {
   }, [open]);
 
   return (
-    <dialog
-      className={cn(classNames.container, className)}
-      open={open}
-      onCancel={() => {
-        onClose();
-      }}
-      data-testid="arke-dialog"
-      ref={dialogRef}
-    >
-      {children}
-    </dialog>
+    <>
+      {open && overlay && (
+        <div
+          className={cn(classNames.overlay, className)}
+          data-testid="arke-dialog-overlay"
+        ></div>
+      )}
+      <dialog
+        className={cn(classNames.container, open && "flex flex-col", className)}
+        open={open}
+        onCancel={() => {
+          console.log("daje");
+          onClose();
+        }}
+        data-testid="arke-dialog"
+        ref={dialogRef}
+      >
+        {children}
+      </dialog>
+    </>
   );
 }
 

@@ -56,9 +56,9 @@ function Drawer({
         role="presentation"
         className={cn(
           classNames.drawer,
-          position === "right" && "top-0 right-0 h-full",
-          position === "left" && " top-0 left-0 h-full",
-          position === "bottom" && "left-0 bottom-0 w-full max-w-[inherit]",
+          position === "right" && "right-0 top-0 h-full",
+          position === "left" && " left-0 top-0 h-full",
+          position === "bottom" && "bottom-0 left-0 w-full max-w-[inherit]",
           position === "top" && "left-0 top-0 w-full max-w-[inherit]",
           !open && position === "left" ? "-translate-x-full" : "",
           !open && position === "right" ? "translate-x-full" : "",
