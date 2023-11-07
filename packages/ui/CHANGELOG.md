@@ -1,5 +1,11 @@
 # @arkejs/ui
 
+## 0.29.1
+
+### Patch Changes
+
+- 36f4ce7: onClose not required on dialog/drawer and add tertiary
+
 ## 0.29.0
 
 ### Minor Changes
