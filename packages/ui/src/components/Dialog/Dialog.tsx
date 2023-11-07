@@ -33,9 +33,9 @@ function Dialog({
 }: IDialogProps) {
   const handleClose = (reason: TDialogCloseReason) => {
     if (reason == "backdropClick" && !disableBackdropClose) {
-      onClose(reason);
+      onClose?.(reason);
     } else if (reason == "closeButton") {
-      onClose(reason);
+      onClose?.(reason);
     }
   };
 
@@ -53,29 +53,33 @@ function Dialog({
           data-testid="arke-dialog"
           className={twMerge("dialog", className)}
         >
-          <div className="dialog__head">
-            {title && <p className="dialog__title">{title}</p>}
-            <Button
-              onClick={() => handleClose("closeButton")}
-              className="dialog__close__button"
-            >
-              <svg
-                data-testid="arke-dialog-close"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-4 w-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </Button>
-          </div>
+          {(title || onClose) && (
+            <div className="dialog__head">
+              {title && <p className="dialog__title">{title}</p>}
+              {onClose && (
+                <Button
+                  onClick={() => handleClose("closeButton")}
+                  className="dialog__close__button"
+                >
+                  <svg
+                    data-testid="arke-dialog-close"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="h-4 w-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </Button>
+              )}
+            </div>
+          )}
           <div className="dialog__body">{children}</div>
         </HeadlessDialog.Panel>
       </div>

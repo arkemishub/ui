@@ -25,3 +25,11 @@ module.exports = {
     plugins: [require("@arkejs/ui/plugin")],
 }
 ```
+
+### How versioning with changesets
+
+The @arkejs/ui use [changeset](https://github.com/changesets/changesets) to versioning changes.
+
+After your commits run `npx changeset`, it will ask if you want to use a patch/minor/major a summary for your changes.
+
+Completed the process will be created a `.md` file under `.changeset` folder, commit it to create your PR. 

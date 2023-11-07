@@ -20,7 +20,7 @@ export type TDialogCloseReason = "backdropClick" | "closeButton";
 
 export interface IDialogProps extends PropsWithChildren<{}> {
   open: boolean;
-  onClose: (reason: TDialogCloseReason) => void;
+  onClose?: (reason: TDialogCloseReason) => void;
   title?: ReactNode;
   className?: string;
   initialFocus?: MutableRefObject<HTMLElement | null>;

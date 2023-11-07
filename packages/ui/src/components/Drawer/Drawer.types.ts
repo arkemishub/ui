@@ -20,6 +20,6 @@ export interface IDrawerProps extends PropsWithChildren<{}> {
   className?: string;
   position?: "right" | "left" | "bottom" | "top";
   open: boolean;
-  onClose(): void;
+  onClose?(): void;
   title?: string;
 }
