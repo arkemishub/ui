@@ -5,11 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "build-storybook",
+    "build": "storybook build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@arkejs/ui": "workspace:ui",

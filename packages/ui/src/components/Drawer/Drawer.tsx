@@ -56,26 +56,30 @@ function Drawer({
           className
         )}
       >
-        <div className="drawer__head">
-          {title && <p className="drawer__title">{title}</p>}
-          <Button onClick={onClose} className="drawer__close__button">
-            <svg
-              data-testid="arke-drawer-close"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-4 w-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </Button>
-        </div>
+        {(title || onClose) && (
+          <div className="drawer__head">
+            {title && <p className="drawer__title">{title}</p>}
+            {onClose && (
+              <Button onClick={onClose} className="drawer__close__button">
+                <svg
+                  data-testid="arke-drawer-close"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-4 w-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </Button>
+            )}
+          </div>
+        )}
         {children}
       </div>
     </>
