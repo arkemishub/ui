@@ -26,6 +26,7 @@ function Button({
   disabled = false,
   fullWidth = false,
   type,
+  form,
 }: IButtonProps) {
   return (
     <button
@@ -40,6 +41,7 @@ function Button({
       )}
       disabled={disabled}
       onClick={(e) => !disabled && onClick?.(e)}
+      form={form}
     >
       {children}
     </button>

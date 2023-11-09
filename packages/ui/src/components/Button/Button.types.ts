@@ -23,4 +23,5 @@ export interface IButtonProps extends PropsWithChildren<{}> {
   disabled?: boolean;
   fullWidth?: boolean;
   type?: "submit" | "reset";
+  form: string;
 }
