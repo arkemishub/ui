@@ -1,5 +1,11 @@
 # @arkejs/ui
 
+## 0.29.3
+
+### Patch Changes
+
+- d1dcd80: Add form prop on Button
+
 ## 0.29.2
 
 ### Patch Changes
