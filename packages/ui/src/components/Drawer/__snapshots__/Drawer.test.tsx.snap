@@ -16,6 +16,7 @@ exports[`Drawer it should match snapshot 1`] = `
     >
       <button
         class="btn drawer__close__button"
+        type="button"
       >
         <svg
           class="h-4 w-4"

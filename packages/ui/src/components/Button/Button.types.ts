@@ -14,14 +14,9 @@
  * limitations under the License.
  */
 
-import { MouseEventHandler, PropsWithChildren } from "react";
+import { ButtonHTMLAttributes } from "react";
 
-export interface IButtonProps extends PropsWithChildren<{}> {
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-  className?: string;
+export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: "primary" | "secondary";
-  disabled?: boolean;
   fullWidth?: boolean;
-  type?: "submit" | "reset";
-  form?: string;
 }
