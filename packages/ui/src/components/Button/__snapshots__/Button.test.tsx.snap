@@ -4,6 +4,7 @@ exports[`Button should match snapshot 1`] = `
 <DocumentFragment>
   <button
     class="btn"
+    type="button"
   >
     Button
   </button>
