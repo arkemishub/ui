@@ -25,7 +25,7 @@ function Button({
   color,
   disabled = false,
   fullWidth = false,
-  type,
+  type = "button",
   form,
 }: IButtonProps) {
   return (

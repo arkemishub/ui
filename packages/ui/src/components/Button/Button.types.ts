@@ -22,6 +22,6 @@ export interface IButtonProps extends PropsWithChildren<{}> {
   color?: "primary" | "secondary";
   disabled?: boolean;
   fullWidth?: boolean;
-  type?: "submit" | "reset";
+  type?: HTMLButtonElement["type"];
   form?: string;
 }
