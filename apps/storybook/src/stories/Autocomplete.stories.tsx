@@ -68,6 +68,19 @@ export const Nullable = (args: Story["args"]) => {
         renderValue={(val) => val?.name}
         placeholder="Search..."
       />
+      <Autocomplete
+        {...args}
+        nullable
+        value={value}
+        values={filteredValues}
+        onInputChange={(e) => {
+          setSearch(e.target.value);
+        }}
+        onChange={handleChange}
+        renderValue={(val) => val?.name}
+        placeholder="Search..."
+        disabled
+      />
     </>
   );
 };

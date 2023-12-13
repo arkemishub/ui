@@ -123,8 +123,8 @@ function Autocomplete<TValue>({
   }
 
   const shouldDisplayClear = useMemo(
-    () => clearable && nullable && value !== null,
-    [clearable, nullable, value]
+    () => clearable && disabled && nullable && value !== null,
+    [clearable, disabled, nullable, value]
   );
 
   return (
