@@ -117,7 +117,8 @@ function Autocomplete<TValue>({
     updateInputValue();
   }
 
-  function handleClear() {
+  function handleClear(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    event.preventDefault();
     // @ts-ignore
     onChange(multiple ? [] : null);
   }
