@@ -1,5 +1,12 @@
 # @arkejs/ui
 
+## 0.29.4
+
+### Patch Changes
+
+- d4c5057: fix: add preventDefault to clear button event
+- 8454506: Extend button type with native button html
+
 ## 0.29.3
 
 ### Patch Changes
