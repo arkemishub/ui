@@ -35,9 +35,7 @@ function Drawer({
   const ref = useRef<any>();
 
   function handleOnClose() {
-    if (!disableBackdropClick && open) {
-      return onClose?.();
-    }
+    if (!disableBackdropClick && open) onClose?.();
   }
 
   useClickOutside(ref, handleOnClose);
