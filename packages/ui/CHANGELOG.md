@@ -1,5 +1,11 @@
 # @arkejs/ui
 
+## 0.29.5
+
+### Patch Changes
+
+- 1d1341a: add disableBackdropClick on Drawer
+
 ## 0.29.4
 
 ### Patch Changes
