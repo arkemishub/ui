@@ -22,4 +22,5 @@ export interface IDrawerProps extends PropsWithChildren<{}> {
   open: boolean;
   onClose?(): void;
   title?: string;
+  disableBackdropClick?: boolean;
 }

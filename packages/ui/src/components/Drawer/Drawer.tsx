@@ -30,9 +30,15 @@ function Drawer({
   children,
   className,
   position = "left",
+  disableBackdropClick = false,
 }: IDrawerProps) {
   const ref = useRef<any>();
-  useClickOutside(ref, open ? onClose : () => null);
+
+  function handleOnClose() {
+    if (!disableBackdropClick && open) onClose?.();
+  }
+
+  useClickOutside(ref, handleOnClose);
   return (
     <>
       <div

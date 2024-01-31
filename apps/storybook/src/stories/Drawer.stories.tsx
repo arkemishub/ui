@@ -21,6 +21,8 @@ export const Default = (args: Story["args"]) => {
         title="Drawer"
         open={open}
         onClose={() => setOpen(false)}
+        position="right"
+        className="w-6/12"
       >
         <div className="mb-4">
           <p>
