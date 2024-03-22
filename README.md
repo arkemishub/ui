@@ -1,6 +1,6 @@
 # @arkejs/ui
 
-![UI](https://user-images.githubusercontent.com/81776297/233085905-585ea964-cfa5-4672-90e3-d63910b0583f.png)
+![UI](https://github.com/arkemishub/ui/assets/81776297/29f37eaf-cd2a-40c5-b4ea-e236cdcffc4c)
 
 [![codecov](https://codecov.io/gh/arkemishub/ui/branch/main/graph/badge.svg?token=RXV4ARVWHO)](https://codecov.io/gh/arkemishub/ui)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/arkemishub/ui/release.yml)
