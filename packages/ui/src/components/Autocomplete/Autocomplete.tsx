@@ -77,6 +77,7 @@ function Autocomplete<TValue>({
   clearable,
   className,
   clearIcon,
+  nothingFoundText,
 }: IAutocompleteProps<
   TValue,
   boolean | undefined,
@@ -227,7 +228,9 @@ function Autocomplete<TValue>({
             style={getPosition()}
           >
             {values?.length === 0 && (
-              <li className={twMerge("autocomplete__option")}>Nothing found</li>
+              <li className={twMerge("autocomplete__option")}>
+                {nothingFoundText || "Nothing found"}
+              </li>
             )}
             {values?.map((val, index) => (
               <Combobox.Option key={index} value={val} as={Fragment}>
