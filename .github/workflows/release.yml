@@ -19,13 +19,13 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.1
+        uses: pnpm/action-setup@v4
         with:
-          version: 8.6.1
-      - name: Setup Node.js 18
+          version: 9.5.0
+      - name: Setup Node.js 20
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build package
