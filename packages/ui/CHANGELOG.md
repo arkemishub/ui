@@ -1,5 +1,11 @@
 # @arkejs/ui
 
+## 0.30.0
+
+### Minor Changes
+
+- 5a792d1: Add nothingFoundText prop to AutoComplete component
+
 ## 0.29.5
 
 ### Patch Changes
